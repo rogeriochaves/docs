@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Integer</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <div id="content">
+      <div class="breadcrumbs">Elixir v1.0.2 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Integer.html">Integer</a></div>
+
+      <h1>
+        Integer
+        
+      </h1>
+
+      <ul class="summary_links">
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+          <li><a href="#macros_details">Macros</a></li>
+        
+        
+        
+      </ul>
+
+      
+        <div id="moduledoc" class="docstring">
+          <p>Functions for working with integers.</p>
+
+        </div>
+      
+
+      
+        <a href="https://github.com/elixir-lang/elixir/blob/v1.0.2/lib/elixir/lib/integer.ex#L1" class="view_source">Source</a>
+      
+
+      
+        <h2 id="summary">Summary<div class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></div></h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#is_even/1">is_even(n)</a></td>
+  
+    <td class="summary_synopsis"><p>Determines if an integer is even</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#is_odd/1">is_odd(n)</a></td>
+  
+    <td class="summary_synopsis"><p>Determines if an integer is odd</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#parse/1">parse(bin)</a></td>
+  
+    <td class="summary_synopsis"><p>Converts a binary to an integer</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#to_char_list/1">to_char_list(number)</a></td>
+  
+    <td class="summary_synopsis"><p>Returns a char list which corresponds to the text representation of the given integer</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#to_char_list/2">to_char_list(number, base)</a></td>
+  
+    <td class="summary_synopsis"><p>Returns a char list which corresponds to the text representation of the
+given integer in the given case</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#to_string/1">to_string(some_integer)</a></td>
+  
+    <td class="summary_synopsis"><p>Returns a binary which corresponds to the text representation
+of <code class="inline">some_integer</code></p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#to_string/2">to_string(some_integer, base)</a></td>
+  
+    <td class="summary_synopsis"><p>Returns a binary which corresponds to the text representation
+of <code class="inline">some_integer</code> in base <code class="inline">base</code></p>
+</td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+        <div id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <div class="detail">
+  <div class="detail_header" id="parse/1">
+    <span class="signature"><strong>parse(bin)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#parse/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>parse(binary) :: {integer, binary} | :error</li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Converts a binary to an integer.</p>
+<p>If successful, returns a tuple of the form <code class="inline">{integer, remainder_of_binary}</code>.
+Otherwise <code class="inline">:error</code>.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; Integer.parse(&quot;34&quot;)
+{34,&quot;&quot;}
+
+iex&gt; Integer.parse(&quot;34.5&quot;)
+{34,&quot;.5&quot;}
+
+iex&gt; Integer.parse(&quot;three&quot;)
+:error</code></pre>
+</div>
+  
+    <a href="https://github.com/elixir-lang/elixir/blob/v1.0.2/lib/elixir/lib/integer.ex#L49" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <div class="detail_header" id="to_char_list/1">
+    <span class="signature"><strong>to_char_list(number)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#to_char_list/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>to_char_list(integer) :: char_list</li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Returns a char list which corresponds to the text representation of the given integer.</p>
+<p>Inlined by the compiler.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; Integer.to_char_list(7)
+'7'</code></pre>
+</div>
+  
+    <a href="https://github.com/elixir-lang/elixir/blob/v1.0.2/lib/elixir/lib/integer.ex#L121" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <div class="detail_header" id="to_char_list/2">
+    <span class="signature"><strong>to_char_list(number, base)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#to_char_list/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>to_char_list(integer, 2 .. 36) :: char_list</li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Returns a char list which corresponds to the text representation of the
+given integer in the given case.</p>
+<p>Inlined by the compiler.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; Integer.to_char_list(1023, 16)
+'3FF'</code></pre>
+</div>
+  
+    <a href="https://github.com/elixir-lang/elixir/blob/v1.0.2/lib/elixir/lib/integer.ex#L138" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <div class="detail_header" id="to_string/1">
+    <span class="signature"><strong>to_string(some_integer)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#to_string/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>to_string(integer) :: <a href="String.html#t:t/0">String.t</a></li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Returns a binary which corresponds to the text representation
+of <code class="inline">some_integer</code>.</p>
+<p>Inlined by the compiler.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; Integer.to_string(123)
+&quot;123&quot;</code></pre>
+</div>
+  
+    <a href="https://github.com/elixir-lang/elixir/blob/v1.0.2/lib/elixir/lib/integer.ex#L88" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <div class="detail_header" id="to_string/2">
+    <span class="signature"><strong>to_string(some_integer, base)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#to_string/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+    <p>Specs:</p>
+    <ul class="spec">
+      
+        <li>to_string(integer, 2 .. 36) :: <a href="String.html#t:t/0">String.t</a></li>
+      
+    </ul>
+  
+  <div class="docstring"><p>Returns a binary which corresponds to the text representation
+of <code class="inline">some_integer</code> in base <code class="inline">base</code>.</p>
+<p>Inlined by the compiler.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; Integer.to_string(100, 16)
+&quot;64&quot;</code></pre>
+</div>
+  
+    <a href="https://github.com/elixir-lang/elixir/blob/v1.0.2/lib/elixir/lib/integer.ex#L105" class="view_source">Source</a>
+  
+</div>
+
+        </div>
+      
+
+      
+        <div id="macros_details" class="details_list">
+          <h2>Macros</h2>
+          <div class="detail">
+  <div class="detail_header" id="is_even/1">
+    <span class="signature"><strong>is_even(n)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#is_even/1" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <div class="docstring"><p>Determines if an integer is even.</p>
+<p>Returns <code class="inline">true</code> if <code class="inline">n</code> is an even number, otherwise <code class="inline">false</code>.</p>
+<p>Allowed in guard clauses.</p>
+</div>
+  
+    <a href="https://github.com/elixir-lang/elixir/blob/v1.0.2/lib/elixir/lib/integer.ex#L26" class="view_source">Source</a>
+  
+</div>
+<div class="detail">
+  <div class="detail_header" id="is_odd/1">
+    <span class="signature"><strong>is_odd(n)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(macro)</span>
+      <a href="#is_odd/1" class="detail_link" title="Link to this macro">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <div class="docstring"><p>Determines if an integer is odd.</p>
+<p>Returns <code class="inline">true</code> if <code class="inline">n</code> is an odd number, otherwise <code class="inline">false</code>.</p>
+<p>Allowed in guard clauses.</p>
+</div>
+  
+    <a href="https://github.com/elixir-lang/elixir/blob/v1.0.2/lib/elixir/lib/integer.ex#L15" class="view_source">Source</a>
+  
+</div>
+
+        </div>
+      
+
+      
+    </div>
+  </body>
+</html>
