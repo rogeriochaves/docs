@@ -50,7 +50,7 @@
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/b72d3edfc0c9b997769d61f73909a252fd890c9a/lib/elixir/lib/integer.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/4c0ffdff2e57ee9843df2101511e1309b2b966a9/lib/elixir/lib/integer.ex#L1" class="view_source">Source</a>
       
 
       
@@ -78,9 +78,10 @@
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#parse/1">parse(bin)</a></td>
+  <td class="summary_signature"><a href="#parse/2">parse(binary, base \\ 10)</a></td>
   
-    <td class="summary_synopsis"><p>Converts a binary to an integer</p>
+    <td class="summary_synopsis"><p>Converts a binary from a text representation of an integer
+in an optional base <code class="inline">base</code> to the corresponding integer</p>
 </td>
   
 </tr>
@@ -144,7 +145,7 @@ of <code class="inline">some_integer</code> in base <code class="inline">base</c
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>digits(non_neg_integer, non_neg_integer) :: [non_neg_integer]</li>
+        <li>digits(non_neg_integer, pos_integer) :: [non_neg_integer]</li>
       
     </ul>
   
@@ -161,15 +162,15 @@ iex&gt; Integer.digits(58127, 2)
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/b72d3edfc0c9b997769d61f73909a252fd890c9a/lib/elixir/lib/integer.ex#L46" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/4c0ffdff2e57ee9843df2101511e1309b2b966a9/lib/elixir/lib/integer.ex#L46" class="view_source">Source</a>
   
 </section>
 <section class="detail">
-  <div class="detail_header" id="parse/1">
-    <span class="signature"><strong>parse(bin)</strong></span>
+  <div class="detail_header" id="parse/2">
+    <span class="signature"><strong>parse(binary, base \\ 10)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
-      <a href="#parse/1" class="detail_link" title="Link to this function">#</a>
+      <a href="#parse/2" class="detail_link" title="Link to this function">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -177,14 +178,17 @@ iex&gt; Integer.digits(58127, 2)
     <p>Specs:</p>
     <ul class="spec">
       
-        <li>parse(binary) :: {integer, binary} | :error</li>
+        <li>parse(binary, 2 .. 36) :: {integer, binary} | :error | no_return</li>
       
     </ul>
   
   <section class="docstring">
-    <p>Converts a binary to an integer.</p>
+    <p>Converts a binary from a text representation of an integer
+in an optional base <code class="inline">base</code> to the corresponding integer.</p>
+<p>If the base <code class="inline">base</code> is not given, base 10 will be used.</p>
 <p>If successful, returns a tuple of the form <code class="inline">{integer, remainder_of_binary}</code>.
 Otherwise <code class="inline">:error</code>.</p>
+<p>Raises an error if <code class="inline">base</code> is less than 2 or more than 36.</p>
 <h2>Examples</h2>
 <pre><code>iex&gt; Integer.parse(&quot;34&quot;)
 {34,&quot;&quot;}
@@ -193,11 +197,26 @@ iex&gt; Integer.parse(&quot;34.5&quot;)
 {34,&quot;.5&quot;}
 
 iex&gt; Integer.parse(&quot;three&quot;)
-:error</code></pre>
+:error
+
+iex&gt; Integer.parse(&quot;34&quot;, 10)
+{34, &quot;&quot;}
+
+iex&gt; Integer.parse(&quot;f4&quot;, 16)
+{244, &quot;&quot;}
+
+iex&gt; Integer.parse(&quot;Awww++&quot;, 36)
+{509216, &quot;++&quot;}
+
+iex&gt; Integer.parse(&quot;fab&quot;, 10)
+:error
+
+iex&gt; Integer.parse(&quot;a2&quot;, 38)
+** (ArgumentError) invalid base 38</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/b72d3edfc0c9b997769d61f73909a252fd890c9a/lib/elixir/lib/integer.ex#L99" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/4c0ffdff2e57ee9843df2101511e1309b2b966a9/lib/elixir/lib/integer.ex#L119" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -226,7 +245,7 @@ iex&gt; Integer.parse(&quot;three&quot;)
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/b72d3edfc0c9b997769d61f73909a252fd890c9a/lib/elixir/lib/integer.ex#L171" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/4c0ffdff2e57ee9843df2101511e1309b2b966a9/lib/elixir/lib/integer.ex#L228" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -256,7 +275,7 @@ given integer in the given base.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/b72d3edfc0c9b997769d61f73909a252fd890c9a/lib/elixir/lib/integer.ex#L188" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/4c0ffdff2e57ee9843df2101511e1309b2b966a9/lib/elixir/lib/integer.ex#L245" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -286,7 +305,7 @@ of <code class="inline">some_integer</code>.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/b72d3edfc0c9b997769d61f73909a252fd890c9a/lib/elixir/lib/integer.ex#L138" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/4c0ffdff2e57ee9843df2101511e1309b2b966a9/lib/elixir/lib/integer.ex#L195" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -316,7 +335,7 @@ of <code class="inline">some_integer</code> in base <code class="inline">base</c
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/b72d3edfc0c9b997769d61f73909a252fd890c9a/lib/elixir/lib/integer.ex#L155" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/4c0ffdff2e57ee9843df2101511e1309b2b966a9/lib/elixir/lib/integer.ex#L212" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -348,7 +367,7 @@ of <code class="inline">some_integer</code> in base <code class="inline">base</c
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/b72d3edfc0c9b997769d61f73909a252fd890c9a/lib/elixir/lib/integer.ex#L71" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/4c0ffdff2e57ee9843df2101511e1309b2b966a9/lib/elixir/lib/integer.ex#L71" class="view_source">Source</a>
   
 </section>
 
@@ -375,7 +394,7 @@ of <code class="inline">some_integer</code> in base <code class="inline">base</c
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/b72d3edfc0c9b997769d61f73909a252fd890c9a/lib/elixir/lib/integer.ex#L26" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/4c0ffdff2e57ee9843df2101511e1309b2b966a9/lib/elixir/lib/integer.ex#L26" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -395,7 +414,7 @@ of <code class="inline">some_integer</code> in base <code class="inline">base</c
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/b72d3edfc0c9b997769d61f73909a252fd890c9a/lib/elixir/lib/integer.ex#L15" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/4c0ffdff2e57ee9843df2101511e1309b2b966a9/lib/elixir/lib/integer.ex#L15" class="view_source">Source</a>
   
 </section>
 
