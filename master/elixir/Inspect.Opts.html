@@ -67,8 +67,13 @@ to 50.</p>
 <li><p><code class="inline">:width</code> - defaults to the 80 characters, used when pretty is true or
 when printing to IO devices.</p>
 </li>
-<li><code class="inline">:base</code> - print integers as :binary, :octal, :decimal, or :hex, defaults
-to :decimal
+<li><p><code class="inline">:base</code> - print integers as :binary, :octal, :decimal, or :hex, defaults
+to :decimal</p>
+</li>
+<li><code class="inline">:safe</code> - when true, failures while inspecting structs won’t propagate,
+instead they will be wrapped in the Inspect.Error exception. This is
+useful when inspecting must not fail, like when generating error reports,
+printing stacktraces and so on
 </li>
 </ul>
 
@@ -76,7 +81,7 @@ to :decimal
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/e7d684a703f0c9b48098b334e99eb85e240260c9/lib/elixir/lib/inspect/algebra.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/a7dbfd1e82d2061a9e1a88e8896c3d11f3fc9a0a/lib/elixir/lib/inspect/algebra.ex#L1" class="view_source">Source</a>
       
 
       
@@ -86,7 +91,7 @@ to :decimal
           <h2>Types <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></h2>
           <div class="type_detail">
   <p class="typespec" id="t:t/0">
-    <a href="#t:t/0">t</a> :: %Inspect.Opts{structs: boolean, binaries: :infer | :as_binaries | :as_strings, char_lists: :infer | :as_lists | :as_char_lists, limit: pos_integer | :infinity, width: pos_integer | :infinity, base: :decimal | :binary | :hex | :octal, pretty: boolean}
+    <a href="#t:t/0">t</a> :: %Inspect.Opts{structs: boolean, binaries: :infer | :as_binaries | :as_strings, char_lists: :infer | :as_lists | :as_char_lists, limit: pos_integer | :infinity, width: pos_integer | :infinity, base: :decimal | :binary | :hex | :octal, pretty: boolean, safe: boolean}
   </p>
   
 </div>
