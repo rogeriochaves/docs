@@ -46,7 +46,7 @@
         <section id="moduledoc" class="docstring">
           <p>A behaviour module for implementing supervision functionality.</p>
 <p>A supervisor is a process which supervises other processes called
-child processes. Supervisors are used to build an hierarchical process
+child processes. Supervisors are used to build a hierarchical process
 structure called a supervision tree, a nice way to structure fault-tolerant
 applications.</p>
 <p>A supervisor implemented using this module will have a standard set
@@ -171,7 +171,7 @@ Read more about it in the <a href="GenServer.html"><code class="inline">GenServe
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/a7dbfd1e82d2061a9e1a88e8896c3d11f3fc9a0a/lib/elixir/lib/supervisor.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/43dc03b6e87a9778ff1847e0202d41e7784afadb/lib/elixir/lib/supervisor.ex#L1" class="view_source">Source</a>
       
 
       
@@ -334,7 +334,7 @@ is still alive
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/a7dbfd1e82d2061a9e1a88e8896c3d11f3fc9a0a/lib/elixir/lib/supervisor.ex#L396" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/43dc03b6e87a9778ff1847e0202d41e7784afadb/lib/elixir/lib/supervisor.ex#L396" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -365,7 +365,7 @@ process is running or being restarted.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/a7dbfd1e82d2061a9e1a88e8896c3d11f3fc9a0a/lib/elixir/lib/supervisor.ex#L313" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/43dc03b6e87a9778ff1847e0202d41e7784afadb/lib/elixir/lib/supervisor.ex#L313" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -404,7 +404,7 @@ or if it fails, the function returns <code class="inline">{:error, error}</code>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/a7dbfd1e82d2061a9e1a88e8896c3d11f3fc9a0a/lib/elixir/lib/supervisor.ex#L344" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/43dc03b6e87a9778ff1847e0202d41e7784afadb/lib/elixir/lib/supervisor.ex#L344" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -439,7 +439,7 @@ or <code class="inline">:already_present</code> if the corresponding child proce
 <p>If the child process start function returns <code class="inline">{:ok, child}</code> or <code class="inline">{:ok, child, info}</code>,
 the child specification and pid is added to the supervisor and the function returns
 the same value.</p>
-<p>If the child process start function returns `:ignore, the child specification is
+<p>If the child process start function returns <code class="inline">:ignore</code>, the child specification is
 added to the supervisor, the pid is set to undefined and the function returns
 <code class="inline">{:ok, :undefined}</code>.</p>
 <p>If the child process start function returns an error tuple or an erroneous value,
@@ -449,7 +449,7 @@ and child specification.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/a7dbfd1e82d2061a9e1a88e8896c3d11f3fc9a0a/lib/elixir/lib/supervisor.ex#L271" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/43dc03b6e87a9778ff1847e0202d41e7784afadb/lib/elixir/lib/supervisor.ex#L271" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -475,7 +475,7 @@ and child specification.</p>
 the <code class="inline">:max_restarts</code> and <code class="inline">:max_seconds</code> value can be configured
 as described in <a href="Supervisor.Spec.html#supervise/2"><code class="inline">Supervisor.Spec.supervise/2</code></a> docs.</p>
 <p>The options can also be used to register a supervisor name.
-the supported values are described under the <code class="inline">Name Registration</code>
+The supported values are described under the <code class="inline">Name Registration</code>
 section in the <a href="GenServer.html"><code class="inline">GenServer</code></a> module docs.</p>
 <p>If the supervisor and its child processes are successfully created
 (i.e. if the start function of all child processes returns <code class="inline">{:ok, child}</code>,
@@ -494,7 +494,7 @@ exits with <code class="inline">:normal</code> reason.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/a7dbfd1e82d2061a9e1a88e8896c3d11f3fc9a0a/lib/elixir/lib/supervisor.ex#L204" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/43dc03b6e87a9778ff1847e0202d41e7784afadb/lib/elixir/lib/supervisor.ex#L204" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -532,7 +532,7 @@ section in the <a href="GenServer.html"><code class="inline">GenServer</code></a
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/a7dbfd1e82d2061a9e1a88e8896c3d11f3fc9a0a/lib/elixir/lib/supervisor.ex#L230" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/43dc03b6e87a9778ff1847e0202d41e7784afadb/lib/elixir/lib/supervisor.ex#L230" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -568,7 +568,7 @@ pid, the function returns <code class="inline">{:error, :not_found}</code>.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/a7dbfd1e82d2061a9e1a88e8896c3d11f3fc9a0a/lib/elixir/lib/supervisor.ex#L295" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/43dc03b6e87a9778ff1847e0202d41e7784afadb/lib/elixir/lib/supervisor.ex#L295" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -609,7 +609,7 @@ there is no such process</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/a7dbfd1e82d2061a9e1a88e8896c3d11f3fc9a0a/lib/elixir/lib/supervisor.ex#L372" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/43dc03b6e87a9778ff1847e0202d41e7784afadb/lib/elixir/lib/supervisor.ex#L372" class="view_source">Source</a>
   
 </section>
 
