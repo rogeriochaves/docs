@@ -50,7 +50,7 @@ with the VM or the host system.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L1" class="view_source">Source</a>
       
 
       
@@ -235,7 +235,7 @@ with the VM or the host system.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L74" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L74" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -262,7 +262,7 @@ as it destroys any previous argv information.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L85" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L85" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -287,7 +287,7 @@ function is invoked.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L226" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L226" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -313,7 +313,7 @@ function is invoked.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L64" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L64" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -341,7 +341,18 @@ unless an absolute path is given.</p>
 in any way. For example, this means wildcard expansion will
 not happen unless <a href="Path.html#wildcard/2"><code class="inline">Path.wildcard/2</code></a> is used. On Windows though,
 wildcard expansion is up to the program.</p>
-<p>A set of options are also supported and described below.</p>
+<p>This function returns a tuple containing the collected result
+and the command exit status.</p>
+<h2>Examples</h2>
+<pre><code>iex&gt; System.cmd &quot;echo&quot;, [&quot;hello&quot;]
+{&quot;hello</code></pre>
+<p>“, 0}</p>
+<pre><code>iex&gt; System.cmd &quot;echo&quot;, [&quot;hello&quot;], env: [{&quot;MIX_ENV&quot;, &quot;test&quot;}]
+{&quot;hello</code></pre>
+<p>“, 0}</p>
+<pre><code>iex&gt; System.cmd &quot;echo&quot;, [&quot;hello&quot;], into: IO.stream(:stdio, :line)
+hello
+{%IO.Stream{}, 0}</code></pre>
 <h2>Options</h2>
 <ul>
 <li><code class="inline">:into</code> - injects the result into the given collectable, defaults to <code class="inline">&quot;&quot;</code>
@@ -393,7 +404,7 @@ redirecting and so on, please check
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L433" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L446" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -413,7 +424,7 @@ is not available.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L95" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L95" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -432,7 +443,7 @@ is not available.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L116" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L116" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -458,7 +469,7 @@ is not available.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L316" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L316" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -488,7 +499,7 @@ lookup files with <code class="inline">.com</code>, <code class="inline">.cmd</c
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L240" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L240" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -515,7 +526,7 @@ lookup files with <code class="inline">.com</code>, <code class="inline">.cmd</c
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L254" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L254" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -543,7 +554,7 @@ variable is undefined.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L270" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L270" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -571,7 +582,7 @@ in the format most commonly used by the operating system environment.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L286" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L286" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -616,7 +627,7 @@ System.halt(:abort)</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L363" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L363" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -643,7 +654,7 @@ to each key in <code class="inline">dict</code>.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L306" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L306" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -669,7 +680,7 @@ to each key in <code class="inline">dict</code>.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L294" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L294" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -691,7 +702,7 @@ latest exception.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L330" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L330" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -717,7 +728,7 @@ Searches for directories in the following order:</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L173" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L173" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -737,7 +748,7 @@ instead of returning <code class="inline">nil</code> if no temp dir is set.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L187" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L187" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -757,7 +768,7 @@ Returns <code class="inline">nil</code> if no user home is set.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L127" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L127" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -777,7 +788,7 @@ instead of returning <code class="inline">nil</code> if no user home is set.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L140" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L140" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -803,7 +814,7 @@ instead of returning <code class="inline">nil</code> if no user home is set.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/c09225073d0e60e475c005c97d2db63a6008e584/lib/elixir/lib/system.ex#L56" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/3e42aa1f60ef746d06e0566b7a3501b674ba64d1/lib/elixir/lib/system.ex#L56" class="view_source">Source</a>
   
 </section>
 
