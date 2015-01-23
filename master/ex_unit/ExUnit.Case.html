@@ -61,7 +61,7 @@ information.</p>
    use ExUnit.Case, async: true
 
    # The `test` macro is imported by ExUnit.Case
-   test &quot;always pass&quot; do
+   test \&quot;always pass\&quot; do
      assert true
    end
  end</code></pre>
@@ -76,14 +76,14 @@ useful for sharing information between callbacks and tests:</p>
     {:ok, [pid: pid]}
   end
 
-  test &quot;stores key-values&quot;, context do
+  test \&quot;stores key-values\&quot;, context do
     assert KV.put(context[:pid], :hello, :world) == :ok
     assert KV.get(context[:pid], :hello) == :world
   end
 end</code></pre>
 <p>As the context is a map, it can be pattern matched on to extract
 information:</p>
-<pre><code>test &quot;stores key-values&quot;, %{pid: pid} do
+<pre><code>test \&quot;stores key-values\&quot;, %{pid: pid} do
   assert KV.put(pid, :hello, :world) == :ok
   assert KV.get(pid, :hello) == :world
 end</code></pre>
@@ -103,15 +103,15 @@ example:</p>
     if cd = context[:cd] do
       prev_cd = File.cwd!
       File.cd!(cd)
-      on_exit fn -&gt; File.cd!(prev_cd) end
+      on_exit fn -\&gt; File.cd!(prev_cd) end
     end
 
     :ok
   end
 
-  @tag cd: &quot;fixtures&quot;
-  test &quot;reads utf-8 fixtures&quot; do
-    File.read(&quot;hello&quot;)
+  @tag cd: \&quot;fixtures\&quot;
+  test \&quot;reads utf-8 fixtures\&quot; do
+    File.read(\&quot;hello\&quot;)
   end
 end</code></pre>
 <p>In the example above, we have defined a tag called <code class="inline">:cd</code> that is
@@ -170,7 +170,7 @@ excluded first, the <code class="inline">include</code> option has no effect.</p
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/case.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/case.ex#L1" class="view_source">Source</a>
       
 
       
@@ -213,13 +213,13 @@ a passing test always returns <code class="inline">:ok</code>, but, more importa
 it forces Elixir to not tail call optimize the test and
 therefore avoids hiding lines from the backtrace.</p>
 <h2>Examples</h2>
-<pre><code>test &quot;true is equal to true&quot; do
+<pre><code>test \&quot;true is equal to true\&quot; do
   assert true == true
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/case.ex#L203" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/case.ex#L203" class="view_source">Source</a>
   
 </section>
 

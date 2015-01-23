@@ -50,7 +50,7 @@
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/filters.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/filters.ex#L1" class="view_source">Source</a>
       
 
       
@@ -130,15 +130,15 @@ find the closest line, that’s why it must also be passed as argument.</p>
 that implements to <code class="inline">String.Chars</code>, which is invoked before comparing
 the filter with the tag value.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; ExUnit.Filters.eval([foo: &quot;bar&quot;], [:foo], %{foo: &quot;bar&quot;}, [])
+<pre><code>iex\&gt; ExUnit.Filters.eval([foo: \&quot;bar\&quot;], [:foo], %{foo: \&quot;bar\&quot;}, [])
 :ok
 
-iex&gt; ExUnit.Filters.eval([foo: &quot;bar&quot;], [:foo], %{foo: &quot;baz&quot;}, [])
+iex\&gt; ExUnit.Filters.eval([foo: \&quot;bar\&quot;], [:foo], %{foo: \&quot;baz\&quot;}, [])
 {:error, :foo}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/filters.ex#L84" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/filters.ex#L84" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -162,15 +162,15 @@ iex&gt; ExUnit.Filters.eval([foo: &quot;bar&quot;], [:foo], %{foo: &quot;baz&quo
     <p>Normalizes include and excludes to remove duplicates
 and keep precedence.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; ExUnit.Filters.normalize(nil, nil)
+<pre><code>iex\&gt; ExUnit.Filters.normalize(nil, nil)
 {[], []}
 
-iex&gt; ExUnit.Filters.normalize([:foo, :bar, :bar], [:foo, :baz])
+iex\&gt; ExUnit.Filters.normalize([:foo, :bar, :bar], [:foo, :baz])
 {[:foo, :bar], [:baz]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/filters.ex#L39" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/filters.ex#L39" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -193,12 +193,12 @@ iex&gt; ExUnit.Filters.normalize([:foo, :bar, :bar], [:foo, :baz])
   <section class="docstring">
     <p>Parses the given filters, as one would receive from the command line.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; ExUnit.Filters.parse([&quot;foo:bar&quot;, &quot;baz&quot;, &quot;line:9&quot;, &quot;bool:true&quot;])
-[{:foo, &quot;bar&quot;}, :baz, {:line, &quot;9&quot;}, {:bool, &quot;true&quot;}]</code></pre>
+<pre><code>iex\&gt; ExUnit.Filters.parse([\&quot;foo:bar\&quot;, \&quot;baz\&quot;, \&quot;line:9\&quot;, \&quot;bool:true\&quot;])
+[{:foo, \&quot;bar\&quot;}, :baz, {:line, \&quot;9\&quot;}, {:bool, \&quot;true\&quot;}]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/filters.ex#L55" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/filters.ex#L55" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -226,7 +226,7 @@ appropriate ExUnit configuration options.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/filters.ex#L16" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/filters.ex#L16" class="view_source">Source</a>
   
 </section>
 

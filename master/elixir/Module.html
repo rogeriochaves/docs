@@ -55,7 +55,7 @@ are currently defined by Elixir:</p>
 <ul>
 <li><p><code class="inline">@after_compile</code></p>
 <p>A hook that will be invoked right after the current module is compiled.</p>
-<p>Accepts a module or a tuple <code class="inline">{&lt;module&gt;, &lt;function atom&gt;}</code>. The function
+<p>Accepts a module or a tuple <code class="inline">{\&lt;module\&gt;, \&lt;function atom\&gt;}</code>. The function
 must take two arguments: the module environment and its bytecode.
 When just a module is provided, the function is assumed to be
 <code class="inline">__after_compile__/2</code>.</p>
@@ -70,7 +70,7 @@ end</code></pre>
 </li>
 <li><p><code class="inline">@before_compile</code></p>
 <p>A hook that will be invoked before the module is compiled.</p>
-<p>Accepts a module or a tuple <code class="inline">{&lt;module&gt;, &lt;function/macro atom&gt;}</code>. The
+<p>Accepts a module or a tuple <code class="inline">{\&lt;module\&gt;, \&lt;function/macro atom\&gt;}</code>. The
 function/macro must take one argument: the module environment. If it’s a
 macro, its returned value will be injected at the end of the module definition
 before the compilation starts.</p>
@@ -83,7 +83,7 @@ the current module does not yet exist).</p>
 <pre><code>defmodule A do
   defmacro __before_compile__(_env) do
     quote do
-      def hello, do: &quot;world&quot;
+      def hello, do: \&quot;world\&quot;
     end
   end
 end
@@ -127,14 +127,14 @@ like ExDoc.</p>
 <p>Can be invoked more than once.</p>
 <h3>Example</h3>
 <pre><code>defmodule M do
-    @doc &quot;Hello world&quot;
+    @doc \&quot;Hello world\&quot;
     def hello do
-      &quot;world&quot;
+      \&quot;world\&quot;
     end
 
-    @doc &quot;&quot;&quot;
+    @doc \&quot;\&quot;\&quot;
     Sum.
-    &quot;&quot;&quot;
+    \&quot;\&quot;\&quot;
     def sum(a, b) do
       a + b
     end
@@ -146,10 +146,10 @@ follows the attribute.</p>
 <p>Accepts a string. Can be used more than once.</p>
 <h3>Example</h3>
 <pre><code>defmodule M do
-    @doc &quot;Hello world&quot;
-    @file &quot;hello.ex&quot;
+    @doc \&quot;Hello world\&quot;
+    @file \&quot;hello.ex\&quot;
     def hello do
-      &quot;world&quot;
+      \&quot;world\&quot;
     end
   end</code></pre>
 </li>
@@ -160,15 +160,15 @@ follows the attribute.</p>
 documentation extraction tools like ExDoc.</p>
 <h3>Example</h3>
 <pre><code>defmodule M do
-    @moduledoc &quot;&quot;&quot;
+    @moduledoc \&quot;\&quot;\&quot;
     A very useful module
-    &quot;&quot;&quot;
+    \&quot;\&quot;\&quot;
   end</code></pre>
 </li>
 <li><p><code class="inline">@on_definition</code></p>
 <p>A hook that will be invoked when each function or macro in the current
 module is defined. Useful when annotating functions.</p>
-<p>Accepts a module or a tuple <code class="inline">{&lt;module&gt;, &lt;function atom&gt;}</code>. The function
+<p>Accepts a module or a tuple <code class="inline">{\&lt;module\&gt;, \&lt;function atom\&gt;}</code>. The function
 must take 6 arguments:</p>
 <ul>
 <li>the module environment
@@ -198,11 +198,11 @@ Elixir).</p>
 <h3>Example</h3>
 <pre><code>defmodule H do
     def on_def(_env, kind, name, args, guards, body) do
-      IO.puts &quot;Defining #{kind} named #{name} with args:&quot;
+      IO.puts \&quot;Defining #{kind} named #{name} with args:\&quot;
       IO.inspect args
-      IO.puts &quot;and guards&quot;
+      IO.puts \&quot;and guards\&quot;
       IO.inspect guards
-      IO.puts &quot;and body&quot;
+      IO.puts \&quot;and body\&quot;
       IO.puts Macro.to_string(body)
     end
   end
@@ -211,7 +211,7 @@ Elixir).</p>
     @on_definition {H, :on_def}
 
     def hello(arg) when is_binary(arg) or is_list(arg) do
-      &quot;Hello&quot; &lt;&gt; to_string(arg)
+      \&quot;Hello\&quot; \&lt;\&gt; to_string(arg)
     end
 
     def hello(_) do
@@ -245,7 +245,7 @@ loading of the module will be aborted.</p>
 <p>Specify the module version. Accepts any valid Elixir value.</p>
 <h3>Example</h3>
 <pre><code>defmodule M do
-    @vsn &quot;1.0&quot;
+    @vsn \&quot;1.0\&quot;
   end</code></pre>
 </li>
 <li><p><code class="inline">@external_resource</code></p>
@@ -275,7 +275,7 @@ Elixir (see <a href="Kernel.Typespec.html"><code class="inline">Kernel.Typespec<
 also be added. A custom attribute is any valid identifier prefixed with an
 <code class="inline">@</code> and followed by a valid Elixir value:</p>
 <pre><code>defmodule M do
-    @custom_attr [some: &quot;stuff&quot;]
+    @custom_attr [some: \&quot;stuff\&quot;]
   end</code></pre>
 <p>For more advanced options available when defining custom attributes, see
 <a href="#register_attribute/3"><code class="inline">register_attribute/3</code></a>.</p>
@@ -287,7 +287,7 @@ macros it defines, extract its docstrings, etc. See <a href="#__info__/1"><code 
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L1" class="view_source">Source</a>
       
 
       
@@ -506,7 +506,7 @@ more information.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L308" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L308" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -528,13 +528,13 @@ should be omitted for types) and the documentation, which should
 be either a binary or a boolean.</p>
 <h2>Examples</h2>
 <pre><code>defmodule MyModule do
-  Module.add_doc(__MODULE__, __ENV__.line + 1, :def, {:version, 0}, [], &quot;Manually added docs&quot;)
+  Module.add_doc(__MODULE__, __ENV__.line + 1, :def, {:version, 0}, [], \&quot;Manually added docs\&quot;)
   def version, do: 1
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L498" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L498" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -557,15 +557,15 @@ end</code></pre>
   <section class="docstring">
     <p>Concatenates a list of aliases and returns a new alias.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Module.concat([Foo, Bar])
+<pre><code>iex\&gt; Module.concat([Foo, Bar])
 Foo.Bar
 
-iex&gt; Module.concat([Foo, &quot;Bar&quot;])
+iex\&gt; Module.concat([Foo, \&quot;Bar\&quot;])
 Foo.Bar</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L421" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L421" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -588,15 +588,15 @@ Foo.Bar</code></pre>
   <section class="docstring">
     <p>Concatenates two aliases and returns a new alias.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Module.concat(Foo, Bar)
+<pre><code>iex\&gt; Module.concat(Foo, Bar)
 Foo.Bar
 
-iex&gt; Module.concat(Foo, &quot;Bar&quot;)
+iex\&gt; Module.concat(Foo, \&quot;Bar\&quot;)
 Foo.Bar</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L438" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L438" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -622,7 +622,7 @@ be passed as options.</p>
 
 Module.create(Hello, contents, Macro.Env.location(__ENV__))
 
-Hello.world #=&gt; true</code></pre>
+Hello.world #=\&gt; true</code></pre>
 <h2>Differences from `defmodule`</h2>
 <p><code class="inline">Module.create</code> works similarly to <code class="inline">defmodule</code> and
 return the same results. While one could also use
@@ -636,7 +636,7 @@ shares the same environment.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L395" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L395" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -654,14 +654,14 @@ shares the same environment.</p>
 Use <a href="#defines?/3"><code class="inline">defines?/3</code></a> to assert for a specific type.</p>
 <h2>Examples</h2>
 <pre><code>defmodule Example do
-  Module.defines? __MODULE__, {:version, 0} #=&gt; false
+  Module.defines? __MODULE__, {:version, 0} #=\&gt; false
   def version, do: 1
-  Module.defines? __MODULE__, {:version, 0} #=&gt; true
+  Module.defines? __MODULE__, {:version, 0} #=\&gt; true
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L613" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L613" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -680,14 +680,14 @@ given <code class="inline">kind</code>. <code class="inline">kind</code> can be 
 <code class="inline">:defmacro</code> or <code class="inline">:defmacrop</code>.</p>
 <h2>Examples</h2>
 <pre><code>defmodule Example do
-  Module.defines? __MODULE__, {:version, 0}, :defp #=&gt; false
+  Module.defines? __MODULE__, {:version, 0}, :defp #=\&gt; false
   def version, do: 1
-  Module.defines? __MODULE__, {:version, 0}, :defp #=&gt; false
+  Module.defines? __MODULE__, {:version, 0}, :defp #=\&gt; false
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L633" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L633" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -705,12 +705,12 @@ end</code></pre>
 <h2>Examples</h2>
 <pre><code>defmodule Example do
   def version, do: 1
-  Module.definitions_in __MODULE__ #=&gt; [{:version,0}]
+  Module.definitions_in __MODULE__ #=\&gt; [{:version,0}]
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L653" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L653" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -729,13 +729,13 @@ to its kind.</p>
 <h2>Examples</h2>
 <pre><code>defmodule Example do
   def version, do: 1
-  Module.definitions_in __MODULE__, :def  #=&gt; [{:version,0}]
-  Module.definitions_in __MODULE__, :defp #=&gt; []
+  Module.definitions_in __MODULE__, :def  #=\&gt; [{:version,0}]
+  Module.definitions_in __MODULE__, :defp #=\&gt; []
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L672" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L672" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -765,7 +765,7 @@ end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L791" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L791" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -789,7 +789,7 @@ See <a href="Code.html#eval_string/3"><code class="inline">Code.eval_string/3</c
   Module.eval_quoted __MODULE__, contents
 end
 
-Foo.sum(1, 2) #=&gt; 3</code></pre>
+Foo.sum(1, 2) #=\&gt; 3</code></pre>
 <p>For convenience, you can my pass <code class="inline">__ENV__</code> as argument and
 all options will be automatically extracted from the environment:</p>
 <pre><code>defmodule Foo do
@@ -797,11 +797,11 @@ all options will be automatically extracted from the environment:</p>
   Module.eval_quoted __MODULE__, contents, [], __ENV__
 end
 
-Foo.sum(1, 2) #=&gt; 3</code></pre>
+Foo.sum(1, 2) #=\&gt; 3</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L346" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L346" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -833,16 +833,16 @@ the following code:</p>
 <h2>Examples</h2>
 <pre><code>defmodule Foo do
   Module.put_attribute __MODULE__, :value, 1
-  Module.get_attribute __MODULE__, :value #=&gt; 1
+  Module.get_attribute __MODULE__, :value #=\&gt; 1
 
   Module.register_attribute __MODULE__, :value, accumulate: true
   Module.put_attribute __MODULE__, :value, 1
-  Module.get_attribute __MODULE__, :value #=&gt; [1]
+  Module.get_attribute __MODULE__, :value #=\&gt; [1]
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L775" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L775" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -863,7 +863,7 @@ more information and documentation.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L684" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L684" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -882,7 +882,7 @@ and its attributes and functions can be modified.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L314" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L314" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -900,7 +900,7 @@ and its attributes and functions can be modified.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L713" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L713" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -924,7 +924,7 @@ end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L729" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L729" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -961,12 +961,12 @@ Abstract Format. Useful when interfacing with Erlang libraries.
 
   @custom_threshold_for_lib 10
   @custom_threshold_for_lib 20
-  @custom_threshold_for_lib #=&gt; [20, 10]
+  @custom_threshold_for_lib #=\&gt; [20, 10]
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L829" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L829" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -992,15 +992,15 @@ if the alias was already referenced. If the alias was not
 referenced yet, fails with <a href="ArgumentError.html"><code class="inline">ArgumentError</code></a>.
 It handles char lists, binaries and atoms.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Module.safe_concat([Unknown, Module])
+<pre><code>iex\&gt; Module.safe_concat([Unknown, Module])
 ** (ArgumentError) argument error
 
-iex&gt; Module.safe_concat([List, Chars])
+iex\&gt; Module.safe_concat([List, Chars])
 List.Chars</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L458" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L458" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1026,15 +1026,15 @@ if the alias was already referenced. If the alias was not
 referenced yet, fails with <a href="ArgumentError.html"><code class="inline">ArgumentError</code></a>.
 It handles char lists, binaries and atoms.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Module.safe_concat(Unknown, Module)
+<pre><code>iex\&gt; Module.safe_concat(Unknown, Module)
 ** (ArgumentError) argument error
 
-iex&gt; Module.safe_concat(List, Chars)
+iex\&gt; Module.safe_concat(List, Chars)
 List.Chars</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L478" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L478" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1051,11 +1051,11 @@ List.Chars</code></pre>
     <p>Splits the given module name into binary parts.</p>
 <h2>Examples</h2>
 <pre><code>Module.split Very.Long.Module.Name.And.Even.Longer
-#=&gt; [&quot;Very&quot;, &quot;Long&quot;, &quot;Module&quot;, &quot;Name&quot;, &quot;And&quot;, &quot;Even&quot;, &quot;Longer&quot;]</code></pre>
+#=\&gt; [\&quot;Very\&quot;, \&quot;Long\&quot;, \&quot;Module\&quot;, \&quot;Name\&quot;, \&quot;And\&quot;, \&quot;Even\&quot;, \&quot;Longer\&quot;]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/module.ex#L853" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/module.ex#L853" class="view_source">Source</a>
   
 </section>
 

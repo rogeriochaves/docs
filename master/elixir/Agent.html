@@ -56,21 +56,21 @@ to keep a set of all tasks executed by a given project. Since
 this set is shared, we can implement it with an Agent:</p>
 <pre><code>defmodule Mix.TasksServer do
   def start_link do
-    Agent.start_link(fn -&gt; HashSet.new end, name: __MODULE__)
+    Agent.start_link(fn -\&gt; HashSet.new end, name: __MODULE__)
   end
 
-  @doc &quot;Checks if the task has already executed&quot;
+  @doc \&quot;Checks if the task has already executed\&quot;
   def executed?(task, project) do
     item = {task, project}
-    Agent.get(__MODULE__, fn set -&gt;
+    Agent.get(__MODULE__, fn set -\&gt;
       item in set
     end)
   end
 
-  @doc &quot;Marks a task as executed&quot;
+  @doc \&quot;Marks a task as executed\&quot;
   def put_task(task, project) do
     item = {task, project}
-    Agent.update(__MODULE__, &amp;Set.put(&amp;1, item))
+    Agent.update(__MODULE__, \&amp;Set.put(\&amp;1, item))
   end
 end</code></pre>
 <p>Note that agents still provide a segregation between the
@@ -82,12 +82,12 @@ effectively block the agent until the request is fulfilled.</p>
 <p>Consider these two examples:</p>
 <pre><code># Compute in the agent/server
 def get_something(agent) do
-  Agent.get(agent, fn state -&gt; do_something_expensive(state) end)
+  Agent.get(agent, fn state -\&gt; do_something_expensive(state) end)
 end
 
 # Compute in the agent/client
 def get_something(agent) do
-  Agent.get(agent, &amp;(&amp;1)) |&gt; do_something_expensive()
+  Agent.get(agent, \&amp;(\&amp;1)) |\&gt; do_something_expensive()
 end</code></pre>
 <p>The first one blocks the agent while the second one copies
 all the state to the client and executes the operation in the client.
@@ -125,7 +125,7 @@ instruction:</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L1" class="view_source">Source</a>
       
 
       
@@ -299,7 +299,7 @@ destination node or agent exists.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L274" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L274" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -327,7 +327,7 @@ argument to the given list of args.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L286" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L286" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -356,7 +356,7 @@ returned.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L195" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L195" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -384,7 +384,7 @@ argument to the given list of args.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L207" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L207" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -414,7 +414,7 @@ and the second one is the new state.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L222" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L222" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -442,7 +442,7 @@ argument to the given list of args.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L234" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L234" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -468,7 +468,7 @@ argument to the given list of args.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L170" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L170" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -495,7 +495,7 @@ instead of an anonymous function.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L181" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L181" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -541,7 +541,7 @@ an agent with the specified name, the function returns
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L148" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L148" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -569,7 +569,7 @@ instead of an anonymous function.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L160" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L160" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -595,7 +595,7 @@ instead of an anonymous function.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L296" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L296" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -624,7 +624,7 @@ This function always returns <code class="inline">:ok</code>.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L248" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L248" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -652,7 +652,7 @@ argument to the given list of args.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/agent.ex#L260" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/agent.ex#L260" class="view_source">Source</a>
   
 </section>
 

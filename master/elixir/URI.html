@@ -50,7 +50,7 @@
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L1" class="view_source">Source</a>
       
 
       
@@ -113,7 +113,7 @@
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#encode/2">encode(str, predicate \\ &amp;(char_unescaped? / 1))</a></td>
+  <td class="summary_signature"><a href="#encode/2">encode(str, predicate \\ \&amp;(char_unescaped? / 1))</a></td>
   
     <td class="summary_synopsis"><p>Percent-escapes a URI.
 Accepts <code class="inline">predicate</code> function as an argument to specify if char can be left as is</p>
@@ -192,7 +192,7 @@ the query string in steps</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L160" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L160" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -212,7 +212,7 @@ reserved and unreserved characters are kept unescaped.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L182" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L182" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -231,7 +231,7 @@ reserved and unreserved characters are kept unescaped.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L169" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L169" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -247,12 +247,12 @@ reserved and unreserved characters are kept unescaped.</p>
   <section class="docstring">
     <p>Percent-unescapes a URI.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; URI.decode(&quot;http%3A%2F%2Felixir-lang.org&quot;)
-&quot;http://elixir-lang.org&quot;</code></pre>
+<pre><code>iex\&gt; URI.decode(\&quot;http%3A%2F%2Felixir-lang.org\&quot;)
+\&quot;http://elixir-lang.org\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L238" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L238" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -267,17 +267,17 @@ reserved and unreserved characters are kept unescaped.</p>
   
   <section class="docstring">
     <p>Decodes a query string into a dictionary (by default uses a map).</p>
-<p>Given a query string of the form “key1=value1&amp;key2=value2…”, produces a
+<p>Given a query string of the form “key1=value1\&amp;key2=value2…”, produces a
 map with one entry for each key-value pair. Each key and value will be a
 binary. Keys and values will be percent-unescaped.</p>
 <p>Use <a href="#query_decoder/1"><code class="inline">query_decoder/1</code></a> if you want to iterate over each value manually.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; URI.decode_query(&quot;foo=1&amp;bar=2&quot;)
-%{&quot;bar&quot; =&gt; &quot;2&quot;, &quot;foo&quot; =&gt; &quot;1&quot;}</code></pre>
+<pre><code>iex\&gt; URI.decode_query(\&quot;foo=1\&amp;bar=2\&quot;)
+%{\&quot;bar\&quot; =\&gt; \&quot;2\&quot;, \&quot;foo\&quot; =\&gt; \&quot;1\&quot;}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L102" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L102" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -293,12 +293,12 @@ binary. Keys and values will be percent-unescaped.</p>
   <section class="docstring">
     <p>Decodes a string as “x-www-urlencoded”.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; URI.decode_www_form(&quot;%3Call+in%2F&quot;)
-&quot;&lt;all in/&quot;</code></pre>
+<pre><code>iex\&gt; URI.decode_www_form(\&quot;%3Call+in%2F\&quot;)
+\&quot;\&lt;all in/\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L254" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L254" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -316,15 +316,15 @@ binary. Keys and values will be percent-unescaped.</p>
 <p>If the scheme is unknown to URI, returns <code class="inline">nil</code>.
 Any scheme may be registered via <a href="#default_port/2"><code class="inline">default_port/2</code></a>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; URI.default_port(&quot;ftp&quot;)
+<pre><code>iex\&gt; URI.default_port(\&quot;ftp\&quot;)
 21
 
-iex&gt; URI.default_port(&quot;ponzi&quot;)
+iex\&gt; URI.default_port(\&quot;ponzi\&quot;)
 nil</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L27" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L27" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -345,12 +345,12 @@ new URIs.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L63" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L63" class="view_source">Source</a>
   
 </section>
 <section class="detail">
   <div class="detail_header" id="encode/2">
-    <span class="signature"><strong>encode(str, predicate \\ &amp;(char_unescaped? / 1))</strong></span>
+    <span class="signature"><strong>encode(str, predicate \\ \&amp;(char_unescaped? / 1))</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
       <a href="#encode/2" class="detail_link" title="Link to this function">#</a>
@@ -362,12 +362,12 @@ new URIs.</p>
     <p>Percent-escapes a URI.
 Accepts <code class="inline">predicate</code> function as an argument to specify if char can be left as is.</p>
 <h2>Example</h2>
-<pre><code>iex&gt; URI.encode(&quot;ftp://s-ite.tld/?value=put it+й&quot;)
-&quot;ftp://s-ite.tld/?value=put%20it+%D0%B9&quot;</code></pre>
+<pre><code>iex\&gt; URI.encode(\&quot;ftp://s-ite.tld/?value=put it+й\&quot;)
+\&quot;ftp://s-ite.tld/?value=put%20it+%D0%B9\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L196" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L196" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -383,18 +383,18 @@ Accepts <code class="inline">predicate</code> function as an argument to specify
   <section class="docstring">
     <p>Encodes an enumerable into a query string.</p>
 <p>Takes an enumerable (containing a sequence of two-item tuples)
-and returns a string of the form “key1=value1&amp;key2=value2…” where
+and returns a string of the form “key1=value1\&amp;key2=value2…” where
 keys and values are URL encoded as per <a href="#encode/2"><code class="inline">encode/2</code></a>.</p>
 <p>Keys and values can be any term that implements the <a href="String.Chars.html"><code class="inline">String.Chars</code></a>
 protocol, except lists which are explicitly forbidden.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; hd = %{&quot;foo&quot; =&gt; 1, &quot;bar&quot; =&gt; 2}
-iex&gt; URI.encode_query(hd)
-&quot;bar=2&amp;foo=1&quot;</code></pre>
+<pre><code>iex\&gt; hd = %{\&quot;foo\&quot; =\&gt; 1, \&quot;bar\&quot; =\&gt; 2}
+iex\&gt; URI.encode_query(hd)
+\&quot;bar=2\&amp;foo=1\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L85" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L85" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -410,12 +410,12 @@ iex&gt; URI.encode_query(hd)
   <section class="docstring">
     <p>Encodes a string as “x-www-urlencoded”.</p>
 <h2>Example</h2>
-<pre><code>iex&gt; URI.encode_www_form(&quot;put: it+й&quot;)
-&quot;put%3A+it%2B%D0%B9&quot;</code></pre>
+<pre><code>iex\&gt; URI.encode_www_form(\&quot;put: it+й\&quot;)
+\&quot;put%3A+it%2B%D0%B9\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L209" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L209" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -433,7 +433,7 @@ iex&gt; URI.encode_query(hd)
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L26" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L26" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -456,26 +456,26 @@ in the Appendix B of RFC3986.</p>
 <p>When a URI is given without a port, the values registered via
 <a href="URI.html#default_port/1"><code class="inline">URI.default_port/1</code></a> and <a href="URI.html#default_port/2"><code class="inline">URI.default_port/2</code></a> are used.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; URI.parse(&quot;http://elixir-lang.org/&quot;)
-%URI{scheme: &quot;http&quot;, path: &quot;/&quot;, query: nil, fragment: nil,
-     authority: &quot;elixir-lang.org&quot;, userinfo: nil,
-     host: &quot;elixir-lang.org&quot;, port: 80}
+<pre><code>iex\&gt; URI.parse(\&quot;http://elixir-lang.org/\&quot;)
+%URI{scheme: \&quot;http\&quot;, path: \&quot;/\&quot;, query: nil, fragment: nil,
+     authority: \&quot;elixir-lang.org\&quot;, userinfo: nil,
+     host: \&quot;elixir-lang.org\&quot;, port: 80}
 
-iex&gt; URI.parse(&quot;//elixir-lang.org/&quot;)
-%URI{authority: &quot;elixir-lang.org&quot;, fragment: nil, host: &quot;elixir-lang.org&quot;,
-     path: &quot;/&quot;, port: nil, query: nil, scheme: nil, userinfo: nil}
+iex\&gt; URI.parse(\&quot;//elixir-lang.org/\&quot;)
+%URI{authority: \&quot;elixir-lang.org\&quot;, fragment: nil, host: \&quot;elixir-lang.org\&quot;,
+     path: \&quot;/\&quot;, port: nil, query: nil, scheme: nil, userinfo: nil}
 
-iex&gt; URI.parse(&quot;/foo/bar&quot;)
-%URI{authority: nil, fragment: nil, host: nil, path: &quot;/foo/bar&quot;,
+iex\&gt; URI.parse(\&quot;/foo/bar\&quot;)
+%URI{authority: nil, fragment: nil, host: nil, path: \&quot;/foo/bar\&quot;,
      port: nil, query: nil, scheme: nil, userinfo: nil}
 
-iex&gt; URI.parse(&quot;foo/bar&quot;)
-%URI{authority: nil, fragment: nil, host: nil, path: &quot;foo/bar&quot;,
+iex\&gt; URI.parse(\&quot;foo/bar\&quot;)
+%URI{authority: nil, fragment: nil, host: nil, path: \&quot;foo/bar\&quot;,
      port: nil, query: nil, scheme: nil, userinfo: nil}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L311" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L311" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -492,12 +492,12 @@ iex&gt; URI.parse(&quot;foo/bar&quot;)
     <p>Returns an iterator function over the query string that decodes
 the query string in steps.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; URI.query_decoder(&quot;foo=1&amp;bar=2&quot;) |&gt; Enum.map &amp;(&amp;1)
-[{&quot;foo&quot;, &quot;1&quot;}, {&quot;bar&quot;, &quot;2&quot;}]</code></pre>
+<pre><code>iex\&gt; URI.query_decoder(\&quot;foo=1\&amp;bar=2\&quot;) |\&gt; Enum.map \&amp;(\&amp;1)
+[{\&quot;foo\&quot;, \&quot;1\&quot;}, {\&quot;bar\&quot;, \&quot;2\&quot;}]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/uri.ex#L116" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/uri.ex#L116" class="view_source">Source</a>
   
 </section>
 

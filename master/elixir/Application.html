@@ -72,7 +72,7 @@ end</code></pre>
 for our application. By starting your application with <code class="inline">iex -S mix</code>, you
 can access the default value:</p>
 <pre><code>Application.get_env(:APP_NAME, :hello)
-#=&gt; :world</code></pre>
+#=\&gt; :world</code></pre>
 <p>It is also possible to put and delete values from the application value,
 including new values that are not defined in the environment file (although
 those should be avoided).</p>
@@ -121,7 +121,7 @@ supervisor is automatically handled by the VM.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L1" class="view_source">Source</a>
       
 
       
@@ -286,24 +286,24 @@ returns a string</p>
     <p>Gets the directory for app.</p>
 <p>This information is returned based on the code path. Here is an
 example:</p>
-<pre><code>File.mkdir_p!(&quot;foo/ebin&quot;)
-Code.prepend_path(&quot;foo/ebin&quot;)
+<pre><code>File.mkdir_p!(\&quot;foo/ebin\&quot;)
+Code.prepend_path(\&quot;foo/ebin\&quot;)
 Application.app_dir(:foo)
-#=&gt; &quot;foo&quot;</code></pre>
+#=\&gt; \&quot;foo\&quot;</code></pre>
 <p>Even though the directory is empty and there is no <code class="inline">.app</code> file
 it is considered the application directory based on the name
 “foo/ebin”. The name may contain a dash <code class="inline">-</code> which is considered
 to be the app version and it is removed for the lookup purposes:</p>
-<pre><code>File.mkdir_p!(&quot;bar-123/ebin&quot;)
-Code.prepend_path(&quot;bar-123/ebin&quot;)
+<pre><code>File.mkdir_p!(\&quot;bar-123/ebin\&quot;)
+Code.prepend_path(\&quot;bar-123/ebin\&quot;)
 Application.app_dir(:bar)
-#=&gt; &quot;bar-123&quot;</code></pre>
+#=\&gt; \&quot;bar-123\&quot;</code></pre>
 <p>For more information on code paths, check the <a href="Code.html"><code class="inline">Code</code></a> module in
 Elixir and also Erlang’s <code class="inline">:code</code> module.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L308" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L308" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -328,7 +328,7 @@ Elixir and also Erlang’s <code class="inline">:code</code> module.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L319" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L319" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -354,7 +354,7 @@ Elixir and also Erlang’s <code class="inline">:code</code> module.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L178" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L178" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -382,7 +382,7 @@ started.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L205" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L205" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -411,7 +411,7 @@ applications need to be explicitly started:</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L193" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L193" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -438,7 +438,7 @@ does not exist, the function returns <code class="inline">:error</code>.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L143" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L143" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -465,7 +465,7 @@ returns a string.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L329" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L329" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -490,7 +490,7 @@ returns a string.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L118" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L118" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -517,7 +517,7 @@ does not exist, the function returns the <code class="inline">default</code> val
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L129" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L129" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -546,7 +546,7 @@ it does load its environment.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L268" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L268" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -585,7 +585,7 @@ stick after the application is loaded and also on application reload.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L168" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L168" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -637,7 +637,7 @@ supervision tree terminates, the reason is set to <code class="inline">:shutdown
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L244" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L244" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -663,7 +663,7 @@ supervision tree terminates, the reason is set to <code class="inline">:shutdown
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L254" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L254" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -690,7 +690,7 @@ Note that the function does not purge the application modules.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/application.ex#L279" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/application.ex#L279" class="view_source">Source</a>
   
 </section>
 

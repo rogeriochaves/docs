@@ -46,8 +46,8 @@
         <section id="moduledoc" class="docstring">
           <p>EEx stands for Embedded Elixir. It allows you to embed
 Elixir code inside a string in a robust way:</p>
-<pre><code>iex&gt; EEx.eval_string &quot;foo &lt;%= bar %&gt;&quot;, [bar: &quot;baz&quot;]
-&quot;foo baz&quot;</code></pre>
+<pre><code>iex\&gt; EEx.eval_string \&quot;foo \&lt;%= bar %\&gt;\&quot;, [bar: \&quot;baz\&quot;]
+\&quot;foo baz\&quot;</code></pre>
 <h2>API</h2>
 <p>This module provides 3 main APIs for you to use:</p>
 <p>  1. Evaluate a string (<code class="inline">eval_string</code>) or a file (<code class="inline">eval_file</code>)</p>
@@ -81,31 +81,31 @@ transform the code extracted from the given string or file.</p>
 conveniences on top of the simple <a href="EEx.Engine.html"><code class="inline">EEx.Engine</code></a>.</p>
 <h3>Tags</h3>
 <p><a href="EEx.SmartEngine.html"><code class="inline">EEx.SmartEngine</code></a> supports the following tags:</p>
-<pre><code>&lt;% Elixir expression - inline with output %&gt;
-&lt;%= Elixir expression - replace with result %&gt;
-&lt;%% EEx quotation - returns the contents inside %&gt;
-&lt;%# Comments - they are discarded from source %&gt;</code></pre>
+<pre><code>\&lt;% Elixir expression - inline with output %\&gt;
+\&lt;%= Elixir expression - replace with result %\&gt;
+\&lt;%% EEx quotation - returns the contents inside %\&gt;
+\&lt;%# Comments - they are discarded from source %\&gt;</code></pre>
 <p>All expressions that output something to the template
 <strong>must</strong> use the equals sign (<code class="inline">=</code>). Since everything in
 Elixir is a macro, there are no exceptions for this rule.
 For example, while some template languages would special-
 case <code class="inline">if</code> clauses, they are treated the same in EEx and
 also require <code class="inline">=</code> in order to have their result printed:</p>
-<pre><code>&lt;%= if true do %&gt;
+<pre><code>\&lt;%= if true do %\&gt;
   It is obviously true
-&lt;% else %&gt;
+\&lt;% else %\&gt;
   This will never appear
-&lt;% end %&gt;</code></pre>
+\&lt;% end %\&gt;</code></pre>
 <p>Notice that different engines may have different rules
 for each tag. Other tags may be added in future versions.</p>
 <h3>Macros</h3>
 <p><a href="EEx.SmartEngine.html"><code class="inline">EEx.SmartEngine</code></a> also adds some macros to your template.
 An example is the <code class="inline">@</code> macro which allows easy data access
 in a template:</p>
-<pre><code>iex&gt; EEx.eval_string &quot;&lt;%= @foo %&gt;&quot;, assigns: [foo: 1]
-&quot;1&quot;</code></pre>
-<p>In other words, <code class="inline">&lt;%= @foo %&gt;</code> is simply translated to:</p>
-<pre><code>&lt;%= Dict.get assigns, :foo %&gt;</code></pre>
+<pre><code>iex\&gt; EEx.eval_string \&quot;\&lt;%= @foo %\&gt;\&quot;, assigns: [foo: 1]
+\&quot;1\&quot;</code></pre>
+<p>In other words, <code class="inline">\&lt;%= @foo %\&gt;</code> is simply translated to:</p>
+<pre><code>\&lt;%= Dict.get assigns, :foo %\&gt;</code></pre>
 <p>The assigns extension is useful when the number of variables
 required by the template is not specified at compilation time.</p>
 
@@ -113,7 +113,7 @@ required by the template is not specified at compilation time.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex.ex#L9" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex.ex#L9" class="view_source">Source</a>
       
 
       
@@ -188,7 +188,7 @@ that can be evaluated by Elixir or compiled to a function.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex.ex#L176" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex.ex#L176" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -207,7 +207,7 @@ that can be evaluated by Elixir or compiled to a function.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex.ex#L168" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex.ex#L168" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -224,14 +224,14 @@ that can be evaluated by Elixir or compiled to a function.</p>
     <p>Get a <code class="inline">filename</code> and evaluate the values using the <code class="inline">bindings</code>.</p>
 <h2>Examples</h2>
 <pre><code># sample.eex
-foo &lt;%= bar %&gt;
+foo \&lt;%= bar %\&gt;
 
 # iex
-EEx.eval_file &quot;sample.eex&quot;, [bar: &quot;baz&quot;] #=&gt; &quot;foo baz&quot;</code></pre>
+EEx.eval_file \&quot;sample.eex\&quot;, [bar: \&quot;baz\&quot;] #=\&gt; \&quot;foo baz\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex.ex#L207" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex.ex#L207" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -247,12 +247,12 @@ EEx.eval_file &quot;sample.eex&quot;, [bar: &quot;baz&quot;] #=&gt; &quot;foo ba
   <section class="docstring">
     <p>Get a string <code class="inline">source</code> and evaluate the values using the <code class="inline">bindings</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; EEx.eval_string &quot;foo &lt;%= bar %&gt;&quot;, [bar: &quot;baz&quot;]
-&quot;foo baz&quot;</code></pre>
+<pre><code>iex\&gt; EEx.eval_string \&quot;foo \&lt;%= bar %\&gt;\&quot;, [bar: \&quot;baz\&quot;]
+\&quot;foo baz\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex.ex#L190" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex.ex#L190" class="view_source">Source</a>
   
 </section>
 
@@ -280,20 +280,20 @@ function name, its arguments and the compilation options.</p>
 you want to precompile inside a module for speed.</p>
 <h2>Examples</h2>
 <pre><code># sample.eex
-&lt;%= a + b %&gt;
+\&lt;%= a + b %\&gt;
 
 # sample.ex
 defmodule Sample do
   require EEx
-  EEx.function_from_file :def, :sample, &quot;sample.eex&quot;, [:a, :b]
+  EEx.function_from_file :def, :sample, \&quot;sample.eex\&quot;, [:a, :b]
 end
 
 # iex
-Sample.sample(1, 2) #=&gt; &quot;3&quot;</code></pre>
+Sample.sample(1, 2) #=\&gt; \&quot;3\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex.ex#L149" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex.ex#L149" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -311,16 +311,16 @@ Sample.sample(1, 2) #=&gt; &quot;3&quot;</code></pre>
 <p>The kind (<code class="inline">:def</code> or <code class="inline">:defp</code>) must be given, the
 function name, its arguments and the compilation options.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; defmodule Sample do
-...&gt;   require EEx
-...&gt;   EEx.function_from_string :def, :sample, &quot;&lt;%= a + b %&gt;&quot;, [:a, :b]
-...&gt; end
-iex&gt; Sample.sample(1, 2)
-&quot;3&quot;</code></pre>
+<pre><code>iex\&gt; defmodule Sample do
+...\&gt;   require EEx
+...\&gt;   EEx.function_from_string :def, :sample, \&quot;\&lt;%= a + b %\&gt;\&quot;, [:a, :b]
+...\&gt; end
+iex\&gt; Sample.sample(1, 2)
+\&quot;3\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex.ex#L112" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex.ex#L112" class="view_source">Source</a>
   
 </section>
 

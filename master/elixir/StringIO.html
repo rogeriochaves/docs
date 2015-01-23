@@ -44,15 +44,15 @@
         <section id="moduledoc" class="docstring">
           <p>This module provides an IO device that wraps a string.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; {:ok, pid} = StringIO.open(&quot;foo&quot;)
-iex&gt; IO.read(pid, 2)
-&quot;fo&quot;</code></pre>
+<pre><code>iex\&gt; {:ok, pid} = StringIO.open(\&quot;foo\&quot;)
+iex\&gt; IO.read(pid, 2)
+\&quot;fo\&quot;</code></pre>
 
         </section>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/string_io.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/string_io.ex#L1" class="view_source">Source</a>
       
 
       
@@ -115,14 +115,14 @@ iex&gt; IO.read(pid, 2)
   <section class="docstring">
     <p>Stops the IO device and returns remaining buffers.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; {:ok, pid} = StringIO.open(&quot;in&quot;)
-iex&gt; IO.write(pid, &quot;out&quot;)
-iex&gt; StringIO.close(pid)
-{:ok, {&quot;in&quot;, &quot;out&quot;}}</code></pre>
+<pre><code>iex\&gt; {:ok, pid} = StringIO.open(\&quot;in\&quot;)
+iex\&gt; IO.write(pid, \&quot;out\&quot;)
+iex\&gt; StringIO.close(pid)
+{:ok, {\&quot;in\&quot;, \&quot;out\&quot;}}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/string_io.ex#L88" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/string_io.ex#L88" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -145,14 +145,14 @@ iex&gt; StringIO.close(pid)
   <section class="docstring">
     <p>Returns current buffers.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; {:ok, pid} = StringIO.open(&quot;in&quot;)
-iex&gt; IO.write(pid, &quot;out&quot;)
-iex&gt; StringIO.contents(pid)
-{&quot;in&quot;, &quot;out&quot;}</code></pre>
+<pre><code>iex\&gt; {:ok, pid} = StringIO.open(\&quot;in\&quot;)
+iex\&gt; IO.write(pid, \&quot;out\&quot;)
+iex\&gt; StringIO.contents(pid)
+{\&quot;in\&quot;, \&quot;out\&quot;}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/string_io.ex#L54" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/string_io.ex#L54" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -175,16 +175,16 @@ iex&gt; StringIO.contents(pid)
   <section class="docstring">
     <p>Flushes output buffer.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; {:ok, pid} = StringIO.open(&quot;in&quot;)
-iex&gt; IO.write(pid, &quot;out&quot;)
-iex&gt; StringIO.flush(pid)
-&quot;out&quot;
-iex&gt; StringIO.contents(pid)
-{&quot;in&quot;, &quot;&quot;}</code></pre>
+<pre><code>iex\&gt; {:ok, pid} = StringIO.open(\&quot;in\&quot;)
+iex\&gt; IO.write(pid, \&quot;out\&quot;)
+iex\&gt; StringIO.flush(pid)
+\&quot;out\&quot;
+iex\&gt; StringIO.contents(pid)
+{\&quot;in\&quot;, \&quot;\&quot;}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/string_io.ex#L72" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/string_io.ex#L72" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -210,21 +210,21 @@ iex&gt; StringIO.contents(pid)
 prompts (specified as arguments to <code class="inline">IO.get*</code> functions)
 are captured.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; {:ok, pid} = StringIO.open(&quot;foo&quot;)
-iex&gt; IO.gets(pid, &quot;&gt;&quot;)
-&quot;foo&quot;
-iex&gt; StringIO.contents(pid)
-{&quot;&quot;, &quot;&quot;}
+<pre><code>iex\&gt; {:ok, pid} = StringIO.open(\&quot;foo\&quot;)
+iex\&gt; IO.gets(pid, \&quot;\&gt;\&quot;)
+\&quot;foo\&quot;
+iex\&gt; StringIO.contents(pid)
+{\&quot;\&quot;, \&quot;\&quot;}
 
-iex&gt; {:ok, pid} = StringIO.open(&quot;foo&quot;, capture_prompt: true)
-iex&gt; IO.gets(pid, &quot;&gt;&quot;)
-&quot;foo&quot;
-iex&gt; StringIO.contents(pid)
-{&quot;&quot;, &quot;&gt;&quot;}</code></pre>
+iex\&gt; {:ok, pid} = StringIO.open(\&quot;foo\&quot;, capture_prompt: true)
+iex\&gt; IO.gets(pid, \&quot;\&gt;\&quot;)
+\&quot;foo\&quot;
+iex\&gt; StringIO.contents(pid)
+{\&quot;\&quot;, \&quot;\&gt;\&quot;}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/string_io.ex#L38" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/string_io.ex#L38" class="view_source">Source</a>
   
 </section>
 

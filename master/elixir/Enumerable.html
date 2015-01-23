@@ -50,15 +50,15 @@
 <p>When you invoke a function in the <a href="Enum.html"><code class="inline">Enum</code></a> module, the first argument
 is usually a collection that must implement this protocol. For example,
 the expression</p>
-<pre><code>Enum.map([1, 2, 3], &amp;(&amp;1 * 2))</code></pre>
+<pre><code>Enum.map([1, 2, 3], \&amp;(\&amp;1 * 2))</code></pre>
 <p>invokes underneath <a href="Enumerable.html#reduce/3"><code class="inline">Enumerable.reduce/3</code></a> to perform the reducing
 operation that builds a mapped list by calling the mapping function
-<code class="inline">&amp;(&amp;1 * 2)</code> on every element in the collection and cons’ing the
+<code class="inline">\&amp;(\&amp;1 * 2)</code> on every element in the collection and cons’ing the
 element with an accumulated list.</p>
 <p>Internally, <a href="Enum.html#map/2"><code class="inline">Enum.map/2</code></a> is implemented as follows:</p>
 <pre><code>def map(enum, fun) do
-  reducer = fn x, acc -&gt; {:cont, [fun.(x)|acc]} end
-  Enumerable.reduce(enum, {:cont, []}, reducer) |&gt; elem(1) |&gt; :lists.reverse()
+  reducer = fn x, acc -\&gt; {:cont, [fun.(x)|acc]} end
+  Enumerable.reduce(enum, {:cont, []}, reducer) |\&gt; elem(1) |\&gt; :lists.reverse()
 end</code></pre>
 <p>Notice the user given function is wrapped into a <code class="inline">reducer</code> function.
 The <code class="inline">reducer</code> function must return a tagged tuple after each step,
@@ -75,7 +75,7 @@ as represented by the <code class="inline">result/0</code> type.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/enum.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/enum.ex#L1" class="view_source">Source</a>
       
 
       
@@ -219,7 +219,7 @@ algorithm that is significantly faster.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/enum.ex#L140" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/enum.ex#L140" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -249,7 +249,7 @@ algorithm that is significantly faster.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/enum.ex#L126" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/enum.ex#L126" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -276,13 +276,13 @@ This function should apply the given <code class="inline">reducer</code> functio
 item in the collection and proceed as expected by the returned accumulator.</p>
 <p>As an example, here is the implementation of <code class="inline">reduce</code> for lists:</p>
 <pre><code>def reduce(_,     {:halt, acc}, _fun),   do: {:halted, acc}
-def reduce(list,  {:suspend, acc}, fun), do: {:suspended, acc, &amp;reduce(list, &amp;1, fun)}
+def reduce(list,  {:suspend, acc}, fun), do: {:suspended, acc, \&amp;reduce(list, \&amp;1, fun)}
 def reduce([],    {:cont, acc}, _fun),   do: {:done, acc}
 def reduce([h|t], {:cont, acc}, fun),    do: reduce(t, fun.(h, acc), fun)</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/enum.ex#L112" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/enum.ex#L112" class="view_source">Source</a>
   
 </section>
 

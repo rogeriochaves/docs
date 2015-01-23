@@ -50,7 +50,7 @@
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/option_parser.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/option_parser.ex#L1" class="view_source">Source</a>
       
 
       
@@ -169,7 +169,7 @@ command line)</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/option_parser.ex#L192" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/option_parser.ex#L192" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -194,14 +194,14 @@ command line)</p>
 <p>It returns the parsed values, remaining arguments and the
 invalid options.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; OptionParser.parse([&quot;--debug&quot;])
+<pre><code>iex\&gt; OptionParser.parse([\&quot;--debug\&quot;])
 {[debug: true], [], []}
 
-iex&gt; OptionParser.parse([&quot;--source&quot;, &quot;lib&quot;])
-{[source: &quot;lib&quot;], [], []}
+iex\&gt; OptionParser.parse([\&quot;--source\&quot;, \&quot;lib\&quot;])
+{[source: \&quot;lib\&quot;], [], []}
 
-iex&gt; OptionParser.parse([&quot;--source-path&quot;, &quot;lib&quot;, &quot;test/enum_test.exs&quot;, &quot;--verbose&quot;])
-{[source_path: &quot;lib&quot;, verbose: true], [&quot;test/enum_test.exs&quot;], []}</code></pre>
+iex\&gt; OptionParser.parse([\&quot;--source-path\&quot;, \&quot;lib\&quot;, \&quot;test/enum_test.exs\&quot;, \&quot;--verbose\&quot;])
+{[source_path: \&quot;lib\&quot;, verbose: true], [\&quot;test/enum_test.exs\&quot;], []}</code></pre>
 <p>By default, Elixir will try to automatically parse switches.
 Switches without an argument, like <code class="inline">--debug</code> will automatically
 be set to true. Switches followed by a value will be assigned
@@ -246,38 +246,38 @@ of the returned tuple).</p>
 </li>
 </ul>
 <p>Examples:</p>
-<pre><code>iex&gt; OptionParser.parse([&quot;--unlock&quot;, &quot;path/to/file&quot;], strict: [unlock: :boolean])
-{[unlock: true], [&quot;path/to/file&quot;], []}
+<pre><code>iex\&gt; OptionParser.parse([\&quot;--unlock\&quot;, \&quot;path/to/file\&quot;], strict: [unlock: :boolean])
+{[unlock: true], [\&quot;path/to/file\&quot;], []}
 
-iex&gt; OptionParser.parse([&quot;--unlock&quot;, &quot;--limit&quot;, &quot;0&quot;, &quot;path/to/file&quot;],
-...&gt;                    strict: [unlock: :boolean, limit: :integer])
-{[unlock: true, limit: 0], [&quot;path/to/file&quot;], []}
+iex\&gt; OptionParser.parse([\&quot;--unlock\&quot;, \&quot;--limit\&quot;, \&quot;0\&quot;, \&quot;path/to/file\&quot;],
+...\&gt;                    strict: [unlock: :boolean, limit: :integer])
+{[unlock: true, limit: 0], [\&quot;path/to/file\&quot;], []}
 
-iex&gt; OptionParser.parse([&quot;--limit&quot;, &quot;3&quot;], strict: [limit: :integer])
+iex\&gt; OptionParser.parse([\&quot;--limit\&quot;, \&quot;3\&quot;], strict: [limit: :integer])
 {[limit: 3], [], []}
 
-iex&gt; OptionParser.parse([&quot;--limit&quot;, &quot;xyz&quot;], strict: [limit: :integer])
-{[], [], [{&quot;--limit&quot;, &quot;xyz&quot;}]}
+iex\&gt; OptionParser.parse([\&quot;--limit\&quot;, \&quot;xyz\&quot;], strict: [limit: :integer])
+{[], [], [{\&quot;--limit\&quot;, \&quot;xyz\&quot;}]}
 
-iex&gt; OptionParser.parse([&quot;--unknown&quot;, &quot;xyz&quot;], strict: [])
-{[], [&quot;xyz&quot;], [{&quot;--unknown&quot;, nil}]}
+iex\&gt; OptionParser.parse([\&quot;--unknown\&quot;, \&quot;xyz\&quot;], strict: [])
+{[], [\&quot;xyz\&quot;], [{\&quot;--unknown\&quot;, nil}]}
 
-iex&gt; OptionParser.parse([&quot;--limit&quot;, &quot;3&quot;, &quot;--unknown&quot;, &quot;xyz&quot;],
-...&gt;                    switches: [limit: :integer])
-{[limit: 3, unknown: &quot;xyz&quot;], [], []}</code></pre>
+iex\&gt; OptionParser.parse([\&quot;--limit\&quot;, \&quot;3\&quot;, \&quot;--unknown\&quot;, \&quot;xyz\&quot;],
+...\&gt;                    switches: [limit: :integer])
+{[limit: 3, unknown: \&quot;xyz\&quot;], [], []}</code></pre>
 <h2>Negation switches</h2>
 <p>In case a switch is declared as boolean, it may be passed as <code class="inline">--no-SWITCH</code>
 which will set the option to false:</p>
-<pre><code>iex&gt; OptionParser.parse([&quot;--no-op&quot;, &quot;path/to/file&quot;], switches: [op: :boolean])
-{[op: false], [&quot;path/to/file&quot;], []}</code></pre>
+<pre><code>iex\&gt; OptionParser.parse([\&quot;--no-op\&quot;, \&quot;path/to/file\&quot;], switches: [op: :boolean])
+{[op: false], [\&quot;path/to/file\&quot;], []}</code></pre>
 <h2>Aliases</h2>
 <p>A set of aliases can be given as options too:</p>
-<pre><code>iex&gt; OptionParser.parse([&quot;-d&quot;], aliases: [d: :debug])
+<pre><code>iex\&gt; OptionParser.parse([\&quot;-d\&quot;], aliases: [d: :debug])
 {[debug: true], [], []}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/option_parser.ex#L109" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/option_parser.ex#L109" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -302,15 +302,15 @@ which will set the option to false:</p>
 as soon as it finds a non-switch, it stops parsing.</p>
 <p>See <a href="#parse/2"><code class="inline">parse/2</code></a> for more information.</p>
 <h2>Example</h2>
-<pre><code>iex&gt; OptionParser.parse_head([&quot;--source&quot;, &quot;lib&quot;, &quot;test/enum_test.exs&quot;, &quot;--verbose&quot;])
-{[source: &quot;lib&quot;], [&quot;test/enum_test.exs&quot;, &quot;--verbose&quot;], []}
+<pre><code>iex\&gt; OptionParser.parse_head([\&quot;--source\&quot;, \&quot;lib\&quot;, \&quot;test/enum_test.exs\&quot;, \&quot;--verbose\&quot;])
+{[source: \&quot;lib\&quot;], [\&quot;test/enum_test.exs\&quot;, \&quot;--verbose\&quot;], []}
 
-iex&gt; OptionParser.parse_head([&quot;--verbose&quot;, &quot;--source&quot;, &quot;lib&quot;, &quot;test/enum_test.exs&quot;, &quot;--unlock&quot;])
-{[verbose: true, source: &quot;lib&quot;], [&quot;test/enum_test.exs&quot;, &quot;--unlock&quot;], []}</code></pre>
+iex\&gt; OptionParser.parse_head([\&quot;--verbose\&quot;, \&quot;--source\&quot;, \&quot;lib\&quot;, \&quot;test/enum_test.exs\&quot;, \&quot;--unlock\&quot;])
+{[verbose: true, source: \&quot;lib\&quot;], [\&quot;test/enum_test.exs\&quot;, \&quot;--unlock\&quot;], []}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/option_parser.ex#L129" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/option_parser.ex#L129" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -333,15 +333,15 @@ iex&gt; OptionParser.parse_head([&quot;--verbose&quot;, &quot;--source&quot;, &q
   <section class="docstring">
     <p>Splits a string into argv chunks.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; OptionParser.split(&quot;foo bar&quot;)
-[&quot;foo&quot;, &quot;bar&quot;]
+<pre><code>iex\&gt; OptionParser.split(\&quot;foo bar\&quot;)
+[\&quot;foo\&quot;, \&quot;bar\&quot;]
 
-iex&gt; OptionParser.split(&quot;foo \&quot;bar baz\&quot;&quot;)
-[&quot;foo&quot;, &quot;bar baz&quot;]</code></pre>
+iex\&gt; OptionParser.split(\&quot;foo \\&quot;bar baz\\&quot;\&quot;)
+[\&quot;foo\&quot;, \&quot;bar baz\&quot;]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/option_parser.ex#L276" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/option_parser.ex#L276" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -367,15 +367,15 @@ iex&gt; OptionParser.split(&quot;foo \&quot;bar baz\&quot;&quot;)
 boolean values are converted to <code class="inline">--key</code> or <code class="inline">--no-key</code>
 and all other values are converted using <code class="inline">to_string/1</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt;  OptionParser.to_argv([foo_bar: &quot;baz&quot;])
-[&quot;--foo-bar&quot;, &quot;baz&quot;]
+<pre><code>iex\&gt;  OptionParser.to_argv([foo_bar: \&quot;baz\&quot;])
+[\&quot;--foo-bar\&quot;, \&quot;baz\&quot;]
 
-iex&gt;  OptionParser.to_argv([bool: true, bool: false, discarded: nil])
-[&quot;--bool&quot;, &quot;--no-bool&quot;]</code></pre>
+iex\&gt;  OptionParser.to_argv([bool: true, bool: false, discarded: nil])
+[\&quot;--bool\&quot;, \&quot;--no-bool\&quot;]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/option_parser.ex#L251" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/option_parser.ex#L251" class="view_source">Source</a>
   
 </section>
 

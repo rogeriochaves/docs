@@ -66,10 +66,10 @@ test itself. Since the test process exits with reason <code class="inline">:shut
 of times <code class="inline">on_exit/1</code> can be avoided as processes are going to clean
 up on their own.</p>
 <h2>Context</h2>
-<p>If you return <code class="inline">{:ok, &lt;dict&gt;}</code> from <code class="inline">setup_all</code>, the dictionary
+<p>If you return <code class="inline">{:ok, \&lt;dict\&gt;}</code> from <code class="inline">setup_all</code>, the dictionary
 will be merged into the current context and be available in all
 subsequent <code class="inline">setup_all</code>, <code class="inline">setup</code> and the test itself.</p>
-<p>Similarly, returning <code class="inline">{:ok, &lt;dict&gt;}</code> from <code class="inline">setup</code>, the dict returned
+<p>Similarly, returning <code class="inline">{:ok, \&lt;dict\&gt;}</code> from <code class="inline">setup</code>, the dict returned
 will be merged into the current context and be available in all
 subsequent <code class="inline">setup</code> and the <code class="inline">test</code> itself.</p>
 <p>Returning <code class="inline">:ok</code> leaves the context unchanged in both cases.</p>
@@ -81,7 +81,7 @@ while a bad response from <code class="inline">setup</code> causes the current t
 
   # `setup_all` is called once before every test
   setup_all do
-    IO.puts &quot;Starting AssertionTest&quot;
+    IO.puts \&quot;Starting AssertionTest\&quot;
 
     # No metadata
     :ok
@@ -89,29 +89,29 @@ while a bad response from <code class="inline">setup</code> causes the current t
 
   # `setup` is called before each test is run
   setup do
-    IO.puts &quot;This is a setup callback&quot;
+    IO.puts \&quot;This is a setup callback\&quot;
 
-    on_exit fn -&gt;
-      IO.puts &quot;This is invoked once the test is done&quot;
+    on_exit fn -\&gt;
+      IO.puts \&quot;This is invoked once the test is done\&quot;
     end
 
     # Returns extra metadata, it must be a dict
-    {:ok, hello: &quot;world&quot;}
+    {:ok, hello: \&quot;world\&quot;}
   end
 
   # Same as `setup`, but receives the context
   # for the current test
   setup context do
-    IO.puts &quot;Setting up: #{context[:test]}&quot;
+    IO.puts \&quot;Setting up: #{context[:test]}\&quot;
     :ok
   end
 
-  test &quot;always pass&quot; do
+  test \&quot;always pass\&quot; do
     assert true
   end
 
-  test &quot;another one&quot;, context do
-    assert context[:hello] == &quot;world&quot;
+  test \&quot;another one\&quot;, context do
+    assert context[:hello] == \&quot;world\&quot;
   end
 end</code></pre>
 
@@ -119,7 +119,7 @@ end</code></pre>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/callbacks.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/callbacks.ex#L1" class="view_source">Source</a>
       
 
       
@@ -183,7 +183,7 @@ guarantee the callback will be invoked only once.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/callbacks.ex#L139" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/callbacks.ex#L139" class="view_source">Source</a>
   
 </section>
 
@@ -208,7 +208,7 @@ guarantee the callback will be invoked only once.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/callbacks.ex#L108" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/callbacks.ex#L108" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -226,7 +226,7 @@ guarantee the callback will be invoked only once.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/callbacks.ex#L119" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/callbacks.ex#L119" class="view_source">Source</a>
   
 </section>
 

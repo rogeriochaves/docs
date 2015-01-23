@@ -52,7 +52,7 @@ testing Elixir projects, as well as handle dependencies, and more.</p>
 
   def project do
     [app: :my_app,
-     version: &quot;1.0.0&quot;]
+     version: \&quot;1.0.0\&quot;]
   end
 end</code></pre>
 <p>The <code class="inline">project/0</code> function is where the project information is defined
@@ -82,7 +82,7 @@ be available to everyone that uses your project:</p>
   use Mix.Task
 
   def run(_) do
-    Mix.shell.info &quot;hello&quot;
+    Mix.shell.info \&quot;hello\&quot;
   end
 end</code></pre>
 <p>Now they can invoke it with <code class="inline">mix hello</code>.</p>
@@ -97,13 +97,13 @@ listing to its own functions:</p>
 
   def project do
     [app: :my_app,
-     version: &quot;1.0.0&quot;,
+     version: \&quot;1.0.0\&quot;,
      deps: deps]
   end
 
   defp deps do
-    [{:ecto, &quot;~&gt; 0.2.5&quot;},
-     {:plug, github: &quot;elixir-lang/plug&quot;}]
+    [{:ecto, \&quot;~\&gt; 0.2.5\&quot;},
+     {:plug, github: \&quot;elixir-lang/plug\&quot;}]
   end
 end</code></pre>
 <p>You can run <code class="inline">mix help deps</code> to learn more about dependencies in Mix.</p>
@@ -134,17 +134,17 @@ define an alias:</p>
 
   def project do
     [app: :my_app,
-     version: &quot;1.0.0&quot;,
+     version: \&quot;1.0.0\&quot;,
      aliases: aliases]
   end
 
   defp aliases do
-    [c: &quot;compile&quot;,
-     hello: &amp;hello/1]
+    [c: \&quot;compile\&quot;,
+     hello: \&amp;hello/1]
   end
 
   defp hello(_) do
-    Mix.shell.info &quot;Hello world&quot;
+    Mix.shell.info \&quot;Hello world\&quot;
   end
 end</code></pre>
 <p>In the example above, we have defined two aliases. One is <code class="inline">mix c</code>
@@ -153,7 +153,7 @@ which is a shortcut for <code class="inline">mix compile</code>. The other is na
 we have defined in the <a href="Mix.Task.html"><code class="inline">Mix.Task</code></a> section.</p>
 <p>Aliases may also be lists, specifying multiple tasks to run
 at once:</p>
-<pre><code>[all: [&amp;hello/1, &quot;deps.get --only #{Mix.env}&quot;, &quot;compile&quot;]]</code></pre>
+<pre><code>[all: [\&amp;hello/1, \&quot;deps.get --only #{Mix.env}\&quot;, \&quot;compile\&quot;]]</code></pre>
 <p>In the example above, we have defined an alias named <code class="inline">mix all</code>,
 that prints hello, then fetches dependencies specific to the
 current environment and compiles it.</p>
@@ -163,8 +163,8 @@ they will be given as a list of strings to the function.</p>
 <p>Finally, aliases can also be use to augment existing tasks.
 Let’s suppose you want to augment <code class="inline">mix clean</code> to clean another
 directory Mix does not know about:</p>
-<pre><code>[clean: [&quot;clean&quot;, &amp;clean_extra/1]]</code></pre>
-<p>Where <code class="inline">&amp;clean_extra/1</code> would be a function in your <code class="inline">mix.exs</code>
+<pre><code>[clean: [\&quot;clean\&quot;, \&amp;clean_extra/1]]</code></pre>
+<p>Where <code class="inline">\&amp;clean_extra/1</code> would be a function in your <code class="inline">mix.exs</code>
 with extra clean up logic.</p>
 <p>Note aliases do not show up on <code class="inline">mix help</code>.</p>
 
@@ -172,7 +172,7 @@ with extra clean up logic.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix.ex#L1" class="view_source">Source</a>
       
 
       
@@ -256,7 +256,7 @@ end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix.ex#L213" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix.ex#L213" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -274,7 +274,7 @@ end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix.ex#L187" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix.ex#L187" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -294,7 +294,7 @@ configuration won’t be reloaded.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix.ex#L198" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix.ex#L198" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -312,7 +312,7 @@ configuration won’t be reloaded.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix.ex#L239" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix.ex#L239" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -333,7 +333,7 @@ automatically by the formatting tools.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix.ex#L250" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix.ex#L250" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -355,7 +355,7 @@ messages to the current process.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix.ex#L225" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix.ex#L225" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -373,7 +373,7 @@ messages to the current process.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix.ex#L232" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix.ex#L232" class="view_source">Source</a>
   
 </section>
 

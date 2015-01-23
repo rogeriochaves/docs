@@ -46,7 +46,7 @@
 cannot be overridden by the developer and are the basic
 building blocks of Elixir code.</p>
 <p>Some of those forms are lexical (like <code class="inline">alias</code>, <code class="inline">case</code>, etc).
-The macros <code class="inline">{}</code> and <code class="inline">&lt;&lt;&gt;&gt;</code> are also special forms used to define
+The macros <code class="inline">{}</code> and <code class="inline">\&lt;\&lt;\&gt;\&gt;</code> are also special forms used to define
 tuple and binary data structures respectively.</p>
 <p>This module also documents Elixir’s pseudo variables (<code class="inline">__ENV__</code>,
 <code class="inline">__MODULE__</code>, <code class="inline">__DIR__</code> and <code class="inline">__CALLER__</code>). Pseudo variables return
@@ -61,7 +61,7 @@ in Elixir’s constructs.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1" class="view_source">Source</a>
       
 
       
@@ -82,7 +82,7 @@ in Elixir’s constructs.</p>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#&amp;/1">&amp;expr</a></td>
+  <td class="summary_signature"><a href="#\&amp;/1">\&amp;expr</a></td>
   
     <td class="summary_synopsis"><p>Captures or creates an anonymous function</p>
 </td>
@@ -96,7 +96,7 @@ in Elixir’s constructs.</p>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#&lt;&lt;&gt;&gt;/1">&lt;&lt;args&gt;&gt;</a></td>
+  <td class="summary_signature"><a href="#\&lt;\&lt;\&gt;\&gt;/1">\&lt;\&lt;args\&gt;\&gt;</a></td>
   
     <td class="summary_synopsis"><p>Defines a new bitstring</p>
 </td>
@@ -287,23 +287,23 @@ dispatches and compile time assertions.</p>
 function in a module:</p>
 <pre><code>defmodule User do
   def __struct__ do
-    %{name: &quot;john&quot;, age: 27}
+    %{name: \&quot;john\&quot;, age: 27}
   end
 end</code></pre>
 <p>In practice though, structs are usually defined with the
 <a href="Kernel.html#defstruct/1"><code class="inline">Kernel.defstruct/1</code></a> macro:</p>
 <pre><code>defmodule User do
-  defstruct name: &quot;john&quot;, age: 27
+  defstruct name: \&quot;john\&quot;, age: 27
 end</code></pre>
 <p>Now a struct can be created as follows:</p>
 <pre><code>%User{}</code></pre>
 <p>Underneath a struct is just a map with a <code class="inline">__struct__</code> field
 pointing to the <code class="inline">User</code> module:</p>
-<pre><code>%User{} == %{__struct__: User, name: &quot;john&quot;, age: 27}</code></pre>
+<pre><code>%User{} == %{__struct__: User, name: \&quot;john\&quot;, age: 27}</code></pre>
 <p>A struct also validates that the given keys are part of the defined
 struct. The example below will fail because there is no key
 <code class="inline">:full_name</code> in the <code class="inline">User</code> struct:</p>
-<pre><code>%User{full_name: &quot;john doe&quot;}</code></pre>
+<pre><code>%User{full_name: \&quot;john doe\&quot;}</code></pre>
 <p>Note that a struct specifies a minimum set of keys required
 for operations. Other keys can be added to structs via the
 regular map operations:</p>
@@ -323,7 +323,7 @@ structs dynamically.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L165" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L165" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -340,15 +340,15 @@ structs dynamically.</p>
     <p>Creates a map.</p>
 <p>Maps are key-value stores where keys are compared
 using the match operator (<code class="inline">===</code>). Maps can be created with
-the <code class="inline">%{}</code> special form where keys are associated via <code class="inline">=&gt;</code>:</p>
-<pre><code>%{1 =&gt; 2}</code></pre>
+the <code class="inline">%{}</code> special form where keys are associated via <code class="inline">=\&gt;</code>:</p>
+<pre><code>%{1 =\&gt; 2}</code></pre>
 <p>Maps also support the keyword notation, as other special forms,
 as long as they are at the end of the argument list:</p>
 <pre><code>%{hello: :world, with: :keywords}
-%{:hello =&gt; :world, with: :keywords}</code></pre>
+%{:hello =\&gt; :world, with: :keywords}</code></pre>
 <p>If a map has duplicated keys, the last key will always have
 higher precedence:</p>
-<pre><code>iex&gt; %{a: :b, a: :c}
+<pre><code>iex\&gt; %{a: :b, a: :c}
 %{a: :c}</code></pre>
 <p>Conveniences for manipulating maps can be found in the
 <a href="Map.html"><code class="inline">Map</code></a> module.</p>
@@ -356,36 +356,36 @@ higher precedence:</p>
 <p>Besides the access functions available in the <a href="Map.html"><code class="inline">Map</code></a> module,
 like <a href="Map.html#get/3"><code class="inline">Map.get/3</code></a> and <a href="Map.html#fetch/2"><code class="inline">Map.fetch/2</code></a>, a map can be accessed using the
 <code class="inline">.</code> operator:</p>
-<pre><code>iex&gt; map = %{a: :b}
-iex&gt; map.a
+<pre><code>iex\&gt; map = %{a: :b}
+iex\&gt; map.a
 :b</code></pre>
 <p>Note that the <code class="inline">.</code> operator expects the field to exist in the map.
 If not, an <a href="ArgumentError.html"><code class="inline">ArgumentError</code></a> is raised.</p>
 <h2>Update syntax</h2>
 <p>Maps also support an update syntax:</p>
-<pre><code>iex&gt; map = %{:a =&gt; :b}
-iex&gt; %{map | :a =&gt; :c}
-%{:a =&gt; :c}</code></pre>
+<pre><code>iex\&gt; map = %{:a =\&gt; :b}
+iex\&gt; %{map | :a =\&gt; :c}
+%{:a =\&gt; :c}</code></pre>
 <p>Notice the update syntax requires the given keys to exist.
 Trying to update a key that does not exist will raise an <a href="ArgumentError.html"><code class="inline">ArgumentError</code></a>.</p>
 <h2>AST representation</h2>
-<p>Regardless if <code class="inline">=&gt;</code> or the keywords syntax is used, Maps are
+<p>Regardless if <code class="inline">=\&gt;</code> or the keywords syntax is used, Maps are
 always represented internally as a list of two-items tuples
 for simplicity:</p>
-<pre><code>iex&gt; quote do: %{:a =&gt; :b, c: :d}
+<pre><code>iex\&gt; quote do: %{:a =\&gt; :b, c: :d}
 {:%{}, [], [{:a, :b}, {:c, :d}]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L103" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L103" class="view_source">Source</a>
   
 </section>
 <section class="detail">
-  <div class="detail_header" id="&amp;/1">
-    <span class="signature"><strong>&amp;expr</strong></span>
+  <div class="detail_header" id="\&amp;/1">
+    <span class="signature"><strong>\&amp;expr</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(macro)</span>
-      <a href="#&amp;/1" class="detail_link" title="Link to this macro">#</a>
+      <a href="#\&amp;/1" class="detail_link" title="Link to this macro">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -395,53 +395,53 @@ for simplicity:</p>
 <h2>Capture</h2>
 <p>The capture operator is most commonly used to capture a
 function with given name and arity from a module:</p>
-<pre><code>iex&gt; fun = &amp;Kernel.is_atom/1
-iex&gt; fun.(:atom)
+<pre><code>iex\&gt; fun = \&amp;Kernel.is_atom/1
+iex\&gt; fun.(:atom)
 true
-iex&gt; fun.(&quot;string&quot;)
+iex\&gt; fun.(\&quot;string\&quot;)
 false</code></pre>
 <p>In the example above, we captured <a href="Kernel.html#is_atom/1"><code class="inline">Kernel.is_atom/1</code></a> as an
 anonymous function and then invoked it.</p>
 <p>The capture operator can also be used to capture local functions,
 including private ones, and imported functions by omitting the
 module name:</p>
-<pre><code>&amp;local_function/1</code></pre>
+<pre><code>\&amp;local_function/1</code></pre>
 <h2>Anonymous functions</h2>
 <p>The capture operator can also be used to partially apply
-functions, where <code class="inline">&amp;1</code>, <code class="inline">&amp;2</code> and so on can be used as value
+functions, where <code class="inline">\&amp;1</code>, <code class="inline">\&amp;2</code> and so on can be used as value
 placeholders. For example:</p>
-<pre><code>iex&gt; double = &amp;(&amp;1 * 2)
-iex&gt; double.(2)
+<pre><code>iex\&gt; double = \&amp;(\&amp;1 * 2)
+iex\&gt; double.(2)
 4</code></pre>
-<p>In other words, <code class="inline">&amp;(&amp;1 * 2)</code> is equivalent to <code class="inline">fn x -&gt; x * 2 end</code>.
+<p>In other words, <code class="inline">\&amp;(\&amp;1 * 2)</code> is equivalent to <code class="inline">fn x -\&gt; x * 2 end</code>.
 Another example using a local function:</p>
-<pre><code>iex&gt; fun = &amp;is_atom(&amp;1)
-iex&gt; fun.(:atom)
+<pre><code>iex\&gt; fun = \&amp;is_atom(\&amp;1)
+iex\&gt; fun.(:atom)
 true</code></pre>
-<p>The <code class="inline">&amp;</code> operator can be used with more complex expressions:</p>
-<pre><code>iex&gt; fun = &amp;(&amp;1 + &amp;2 + &amp;3)
-iex&gt; fun.(1, 2, 3)
+<p>The <code class="inline">\&amp;</code> operator can be used with more complex expressions:</p>
+<pre><code>iex\&gt; fun = \&amp;(\&amp;1 + \&amp;2 + \&amp;3)
+iex\&gt; fun.(1, 2, 3)
 6</code></pre>
 <p>As well as with lists and tuples:</p>
-<pre><code>iex&gt; fun = &amp;{&amp;1, &amp;2}
-iex&gt; fun.(1, 2)
+<pre><code>iex\&gt; fun = \&amp;{\&amp;1, \&amp;2}
+iex\&gt; fun.(1, 2)
 {1, 2}
 
-iex&gt; fun = &amp;[&amp;1|&amp;2]
-iex&gt; fun.(1, 2)
+iex\&gt; fun = \&amp;[\&amp;1|\&amp;2]
+iex\&gt; fun.(1, 2)
 [1|2]</code></pre>
 <p>The only restrictions when creating anonymous functions is that at
 least one placeholder must be present, i.e. it must contain at least
-<code class="inline">&amp;1</code>:</p>
+<code class="inline">\&amp;1</code>:</p>
 <pre><code># No placeholder fails to compile
-&amp;var
+\&amp;var
 
 # Block expressions are also not supported
-&amp;(foo(&amp;1, &amp;2); &amp;3 + &amp;4)</code></pre>
+\&amp;(foo(\&amp;1, \&amp;2); \&amp;3 + \&amp;4)</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1298" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1298" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -457,12 +457,12 @@ least one placeholder must be present, i.e. it must contain at least
   <section class="docstring">
     <p>Defines a remote call or an alias.</p>
 <p>The dot (<code class="inline">.</code>) in Elixir can be used for remote calls:</p>
-<pre><code>iex&gt; String.downcase(&quot;FOO&quot;)
-&quot;foo&quot;</code></pre>
+<pre><code>iex\&gt; String.downcase(\&quot;FOO\&quot;)
+\&quot;foo\&quot;</code></pre>
 <p>In this example above, we have used <code class="inline">.</code> to invoke <code class="inline">downcase</code> in the
 <a href="String.html"><code class="inline">String</code></a> alias, passing “FOO” as argument. We can also use the dot
 for creating aliases:</p>
-<pre><code>iex&gt; Hello.World
+<pre><code>iex\&gt; Hello.World
 Hello.World</code></pre>
 <p>This time, we have joined two aliases, defining the final alias
 <code class="inline">Hello.World</code>.</p>
@@ -471,21 +471,21 @@ Hello.World</code></pre>
 an alias, a word starting with lowercase or underscore, any valid language
 operator or any name wrapped in single- or double-quotes. Those are all valid
 examples:</p>
-<pre><code>iex&gt; Kernel.Sample
+<pre><code>iex\&gt; Kernel.Sample
 Kernel.Sample
 
-iex&gt; Kernel.length([1,2,3])
+iex\&gt; Kernel.length([1,2,3])
 3
 
-iex&gt; Kernel.+(1, 2)
+iex\&gt; Kernel.+(1, 2)
 3
 
-iex&gt; Kernel.&quot;length&quot;([1,2,3])
+iex\&gt; Kernel.\&quot;length\&quot;([1,2,3])
 3
 
-iex&gt; Kernel.'+'(1, 2)
+iex\&gt; Kernel.'+'(1, 2)
 3</code></pre>
-<p>Note that <code class="inline">Kernel.&quot;HELLO&quot;</code> will be treated as a remote call and not an alias.
+<p>Note that <code class="inline">Kernel.\&quot;HELLO\&quot;</code> will be treated as a remote call and not an alias.
 This choice was done so every time single- or double-quotes are used, we have
 a remote call regardless of the quote contents. This decision is also reflected
 in the quoted expressions discussed below.</p>
@@ -493,8 +493,8 @@ in the quoted expressions discussed below.</p>
 <p>When <code class="inline">.</code> is used, the quoted expression may take two distinct
 forms. When the right side starts with a lowercase letter (or
 underscore):</p>
-<pre><code>iex&gt; quote do: String.downcase(&quot;FOO&quot;)
-{{:., [], [{:__aliases__, [alias: false], [:String]}, :downcase]}, [], [&quot;FOO&quot;]}</code></pre>
+<pre><code>iex\&gt; quote do: String.downcase(\&quot;FOO\&quot;)
+{{:., [], [{:__aliases__, [alias: false], [:String]}, :downcase]}, [], [\&quot;FOO\&quot;]}</code></pre>
 <p>Notice we have an inner tuple, containing the atom <code class="inline">:.</code> representing
 the dot as first element:</p>
 <pre><code>{:., [], [{:__aliases__, [alias: false], [:String]}, :downcase]}</code></pre>
@@ -503,39 +503,39 @@ with the name as first argument, some keyword list as metadata as second,
 and the number of arguments as third. In this case, the arguments is the
 alias <a href="String.html"><code class="inline">String</code></a> and the atom <code class="inline">:downcase</code>. The second argument is <strong>always</strong>
 an atom:</p>
-<pre><code>iex&gt; quote do: String.&quot;downcase&quot;(&quot;FOO&quot;)
-{{:., [], [{:__aliases__, [alias: false], [:String]}, :downcase]}, [], [&quot;FOO&quot;]}</code></pre>
+<pre><code>iex\&gt; quote do: String.\&quot;downcase\&quot;(\&quot;FOO\&quot;)
+{{:., [], [{:__aliases__, [alias: false], [:String]}, :downcase]}, [], [\&quot;FOO\&quot;]}</code></pre>
 <p>The tuple containing <code class="inline">:.</code> is wrapped in another tuple, which actually
-represents the function call, and has <code class="inline">&quot;FOO&quot;</code> as argument.</p>
+represents the function call, and has <code class="inline">\&quot;FOO\&quot;</code> as argument.</p>
 <p>When the right side is an alias (i.e. starts with uppercase), we get instead:</p>
-<pre><code>iex&gt; quote do: Hello.World
+<pre><code>iex\&gt; quote do: Hello.World
 {:__aliases__, [alias: false], [:Hello, :World]}</code></pre>
 <p>We got into more details about aliases in the <code class="inline">__aliases__</code> special form
 documentation.</p>
 <h2>Unquoting</h2>
 <p>We can also use unquote to generate a remote call in a quoted expression:</p>
-<pre><code>iex&gt; x = :downcase
-iex&gt; quote do: String.unquote(x)(&quot;FOO&quot;)
-{{:., [], [{:__aliases__, [alias: false], [:String]}, :downcase]}, [], [&quot;FOO&quot;]}</code></pre>
-<p>Similar to <code class="inline">Kernel.&quot;HELLO&quot;</code>, <code class="inline">unquote(x)</code> will always generate a remote call,
+<pre><code>iex\&gt; x = :downcase
+iex\&gt; quote do: String.unquote(x)(\&quot;FOO\&quot;)
+{{:., [], [{:__aliases__, [alias: false], [:String]}, :downcase]}, [], [\&quot;FOO\&quot;]}</code></pre>
+<p>Similar to <code class="inline">Kernel.\&quot;HELLO\&quot;</code>, <code class="inline">unquote(x)</code> will always generate a remote call,
 independent of the value of <code class="inline">x</code>. To generate an alias via the quoted expression,
 one needs to rely on <a href="Module.html#concat/2"><code class="inline">Module.concat/2</code></a>:</p>
-<pre><code>iex&gt; x = Sample
-iex&gt; quote do: Module.concat(String, unquote(x))
+<pre><code>iex\&gt; x = Sample
+iex\&gt; quote do: Module.concat(String, unquote(x))
 {{:., [], [{:__aliases__, [alias: false], [:Module]}, :concat]}, [],
  [{:__aliases__, [alias: false], [:String]}, Sample]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L410" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L410" class="view_source">Source</a>
   
 </section>
 <section class="detail">
-  <div class="detail_header" id="&lt;&lt;&gt;&gt;/1">
-    <span class="signature"><strong>&lt;&lt;args&gt;&gt;</strong></span>
+  <div class="detail_header" id="\&lt;\&lt;\&gt;\&gt;/1">
+    <span class="signature"><strong>\&lt;\&lt;args\&gt;\&gt;</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(macro)</span>
-      <a href="#&lt;&lt;&gt;&gt;/1" class="detail_link" title="Link to this macro">#</a>
+      <a href="#\&lt;\&lt;\&gt;\&gt;/1" class="detail_link" title="Link to this macro">#</a>
       <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
     </div>
   </div>
@@ -543,66 +543,66 @@ iex&gt; quote do: Module.concat(String, unquote(x))
   <section class="docstring">
     <p>Defines a new bitstring.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; &lt;&lt; 1, 2, 3 &gt;&gt;
-&lt;&lt; 1, 2, 3 &gt;&gt;</code></pre>
+<pre><code>iex\&gt; \&lt;\&lt; 1, 2, 3 \&gt;\&gt;
+\&lt;\&lt; 1, 2, 3 \&gt;\&gt;</code></pre>
 <h2>Bitstring types</h2>
 <p>A bitstring is made of many segments. Each segment has a
 type, which defaults to integer:</p>
-<pre><code>iex&gt; &lt;&lt;1, 2, 3&gt;&gt;
-&lt;&lt;1, 2, 3&gt;&gt;</code></pre>
+<pre><code>iex\&gt; \&lt;\&lt;1, 2, 3\&gt;\&gt;
+\&lt;\&lt;1, 2, 3\&gt;\&gt;</code></pre>
 <p>Elixir also accepts by default the segment to be a literal
 string or a literal char list, which are by expanded to integers:</p>
-<pre><code>iex&gt; &lt;&lt;0, &quot;foo&quot;&gt;&gt;
-&lt;&lt;0, 102, 111, 111&gt;&gt;</code></pre>
+<pre><code>iex\&gt; \&lt;\&lt;0, \&quot;foo\&quot;\&gt;\&gt;
+\&lt;\&lt;0, 102, 111, 111\&gt;\&gt;</code></pre>
 <p>Any other type needs to be explicitly tagged. For example,
 in order to store a float type in the binary, one has to do:</p>
-<pre><code>iex&gt; &lt;&lt;3.14 :: float&gt;&gt;
-&lt;&lt;64, 9, 30, 184, 81, 235, 133, 31&gt;&gt;</code></pre>
+<pre><code>iex\&gt; \&lt;\&lt;3.14 :: float\&gt;\&gt;
+\&lt;\&lt;64, 9, 30, 184, 81, 235, 133, 31\&gt;\&gt;</code></pre>
 <p>This also means that variables need to be explicitly tagged,
 otherwise Elixir defaults to integer:</p>
-<pre><code>iex&gt; rest = &quot;oo&quot;
-iex&gt; &lt;&lt;102, rest&gt;&gt;
+<pre><code>iex\&gt; rest = \&quot;oo\&quot;
+iex\&gt; \&lt;\&lt;102, rest\&gt;\&gt;
 ** (ArgumentError) argument error</code></pre>
 <p>We can solve this by explicitly tagging it as a binary:</p>
-<pre><code>&lt;&lt;102, rest :: binary&gt;&gt;</code></pre>
+<pre><code>\&lt;\&lt;102, rest :: binary\&gt;\&gt;</code></pre>
 <p>The type can be integer, float, bitstring/bits, binary/bytes,
 utf8, utf16 or utf32, e.g.:</p>
-<pre><code>&lt;&lt;102 :: float, rest :: binary&gt;&gt;</code></pre>
+<pre><code>\&lt;\&lt;102 :: float, rest :: binary\&gt;\&gt;</code></pre>
 <p>An integer can be any arbitrary precision integer. A float is an
 IEEE 754 binary32 or binary64 floating point number. A bitstring
 is an arbitrary series of bits. A binary is a special case of
 bitstring that has a total size divisible by 8.</p>
 <p>The utf8, utf16, and utf32 types are for unicode codepoints. They
 can also be applied to literal strings and char lists:</p>
-<pre><code>iex&gt; &lt;&lt;&quot;foo&quot; :: utf16&gt;&gt;
-&lt;&lt;0,102,0,111,0,111&gt;&gt;</code></pre>
+<pre><code>iex\&gt; \&lt;\&lt;\&quot;foo\&quot; :: utf16\&gt;\&gt;
+\&lt;\&lt;0,102,0,111,0,111\&gt;\&gt;</code></pre>
 <p>The bits type is an alias for bitstring. The bytes type is an
 alias for binary.</p>
 <p>The signedness can also be given as signed or unsigned. The
 signedness only matters for matching and relevant only for
 integers. If unspecified, it defaults to unsigned. Example:</p>
-<pre><code>iex&gt; &lt;&lt;-100 :: signed, _rest :: binary&gt;&gt; = &lt;&lt;-100, &quot;foo&quot;&gt;&gt;
-&lt;&lt;156,102,111,111&gt;&gt;</code></pre>
+<pre><code>iex\&gt; \&lt;\&lt;-100 :: signed, _rest :: binary\&gt;\&gt; = \&lt;\&lt;-100, \&quot;foo\&quot;\&gt;\&gt;
+\&lt;\&lt;156,102,111,111\&gt;\&gt;</code></pre>
 <p>This match would have failed if we did not specify that the
 value -100 is signed. If we’re matching into a variable instead
 of a value, the signedness won’t be checked; rather, the number
 will simply be interpreted as having the given (or implied)
 signedness, e.g.:</p>
-<pre><code>iex&gt; &lt;&lt;val, _rest :: binary&gt;&gt; = &lt;&lt;-100, &quot;foo&quot;&gt;&gt;
-iex&gt; val
+<pre><code>iex\&gt; \&lt;\&lt;val, _rest :: binary\&gt;\&gt; = \&lt;\&lt;-100, \&quot;foo\&quot;\&gt;\&gt;
+iex\&gt; val
 156</code></pre>
 <p>Here, <code class="inline">val</code> is interpreted as unsigned.</p>
 <p>The endianness of a segment can be big, little or native (the
 latter meaning it will be resolved at VM load time).</p>
 <p>Many options can be given by using <code class="inline">-</code> as separator, order is
 arbitrary. The following are all the same:</p>
-<pre><code>&lt;&lt;102 :: integer-native, rest :: binary&gt;&gt;
-&lt;&lt;102 :: native-integer, rest :: binary&gt;&gt;  
-&lt;&lt;102 :: unsigned-big-integer, rest :: binary&gt;&gt;
-&lt;&lt;102 :: unsigned-big-integer-size(8), rest :: binary&gt;&gt;
-&lt;&lt;102 :: unsigned-big-integer-8, rest :: binary&gt;&gt;
-&lt;&lt;102 :: 8-integer-big-unsigned, rest :: binary&gt;&gt;
-&lt;&lt;102, rest :: binary&gt;&gt;</code></pre>
+<pre><code>\&lt;\&lt;102 :: integer-native, rest :: binary\&gt;\&gt;
+\&lt;\&lt;102 :: native-integer, rest :: binary\&gt;\&gt;  
+\&lt;\&lt;102 :: unsigned-big-integer, rest :: binary\&gt;\&gt;
+\&lt;\&lt;102 :: unsigned-big-integer-size(8), rest :: binary\&gt;\&gt;
+\&lt;\&lt;102 :: unsigned-big-integer-8, rest :: binary\&gt;\&gt;
+\&lt;\&lt;102 :: 8-integer-big-unsigned, rest :: binary\&gt;\&gt;
+\&lt;\&lt;102, rest :: binary\&gt;\&gt;</code></pre>
 <p>And so on.</p>
 <p>Endianness only makes sense for integers and some UTF code
 point types (utf16 and utf32).</p>
@@ -614,28 +614,28 @@ and bitstrings is 1. For binaries, it is 8.</p>
 matches because the string “foo” takes 24 bits and we match it
 against a segment of 24 bits, 8 of which are taken by the integer
 102 and the remaining 16 bits are specified on the rest.</p>
-<pre><code>iex&gt; &lt;&lt;102, _rest :: size(16)&gt;&gt; = &quot;foo&quot;
-&quot;foo&quot;</code></pre>
+<pre><code>iex\&gt; \&lt;\&lt;102, _rest :: size(16)\&gt;\&gt; = \&quot;foo\&quot;
+\&quot;foo\&quot;</code></pre>
 <p>We can also match by specifying size and unit explicitly:</p>
-<pre><code>iex&gt; &lt;&lt;102, _rest :: size(2)-unit(8)&gt;&gt; = &quot;foo&quot;
-&quot;foo&quot;</code></pre>
+<pre><code>iex\&gt; \&lt;\&lt;102, _rest :: size(2)-unit(8)\&gt;\&gt; = \&quot;foo\&quot;
+\&quot;foo\&quot;</code></pre>
 <p>However, if we expect a size of 32, it won’t match:</p>
-<pre><code>iex&gt; &lt;&lt;102, _rest :: size(32)&gt;&gt; = &quot;foo&quot;
-** (MatchError) no match of right hand side value: &quot;foo&quot;</code></pre>
+<pre><code>iex\&gt; \&lt;\&lt;102, _rest :: size(32)\&gt;\&gt; = \&quot;foo\&quot;
+** (MatchError) no match of right hand side value: \&quot;foo\&quot;</code></pre>
 <p>Size and unit are not applicable to utf8, utf16, and utf32.</p>
 <p>The default size for integers is 8. For floats, it is 64. For
 binaries, it is the size of the binary. Only the last binary
 in a binary match can use the default size (all others must
 have their size specified explicitly).</p>
-<pre><code>iex&gt; &lt;&lt;3.14 :: float&gt;&gt;
-&lt;&lt;64, 9, 30, 184, 81, 235, 133, 31&gt;&gt;
-iex&gt; &lt;&lt;3.14 :: float-32&gt;&gt;
-&lt;&lt;64, 72, 245, 195&gt;&gt;</code></pre>
+<pre><code>iex\&gt; \&lt;\&lt;3.14 :: float\&gt;\&gt;
+\&lt;\&lt;64, 9, 30, 184, 81, 235, 133, 31\&gt;\&gt;
+iex\&gt; \&lt;\&lt;3.14 :: float-32\&gt;\&gt;
+\&lt;\&lt;64, 72, 245, 195\&gt;\&gt;</code></pre>
 <p>Size and unit can also be specified using a syntax shortcut
 when passing integer values:</p>
-<pre><code>&lt;&lt; x :: 8 &gt;&gt; == &lt;&lt; x :: size(8) &gt;&gt;
-&lt;&lt; x :: 8 * 4 &gt;&gt; == &lt;&lt; x :: size(8)-unit(4) &gt;&gt;
-&lt;&lt; x :: _ * 4 &gt;&gt; == &lt;&lt; x :: unit(4) &gt;&gt;</code></pre>
+<pre><code>\&lt;\&lt; x :: 8 \&gt;\&gt; == \&lt;\&lt; x :: size(8) \&gt;\&gt;
+\&lt;\&lt; x :: 8 * 4 \&gt;\&gt; == \&lt;\&lt; x :: size(8)-unit(4) \&gt;\&gt;
+\&lt;\&lt; x :: _ * 4 \&gt;\&gt; == \&lt;\&lt; x :: unit(4) \&gt;\&gt;</code></pre>
 <p>This syntax reflects the fact the effective size is given by
 multiplying the size by the unit.</p>
 <p>For floats, <code class="inline">size * unit</code> must result in 32 or 64, corresponding
@@ -643,7 +643,7 @@ to binary32 and binary64, respectively.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L311" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L311" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -660,26 +660,26 @@ to binary32 and binary64, respectively.</p>
     <p>Accesses an already bound variable in match clauses.</p>
 <h2>Examples</h2>
 <p>Elixir allows variables to be rebound via static single assignment:</p>
-<pre><code>iex&gt; x = 1
-iex&gt; x = 2
-iex&gt; x
+<pre><code>iex\&gt; x = 1
+iex\&gt; x = 2
+iex\&gt; x
 2</code></pre>
 <p>However, in some situations, it is useful to match against an existing
 value, instead of rebinding. This can be done with the <code class="inline">^</code> special form:</p>
-<pre><code>iex&gt; x = 1
-iex&gt; ^x = List.first([1])
-iex&gt; ^x = List.first([2])
+<pre><code>iex\&gt; x = 1
+iex\&gt; ^x = List.first([1])
+iex\&gt; ^x = List.first([2])
 ** (MatchError) no match of right hand side value: 2</code></pre>
 <p>Note that <code class="inline">^</code> always refers to the value of x prior to the match. The
 following example will match:</p>
-<pre><code>iex&gt; x = 0
-iex&gt; {x, ^x} = {1, 0}
-iex&gt; x
+<pre><code>iex\&gt; x = 0
+iex\&gt; {x, ^x} = {1, 0}
+iex\&gt; x
 1</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L642" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L642" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -699,7 +699,7 @@ set up aliases, the function and others.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L611" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L611" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -719,7 +719,7 @@ this macro is a convenient shortcut.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L603" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L603" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -739,7 +739,7 @@ line numbers, set up aliases, the current function and others.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L587" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L587" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -759,7 +759,7 @@ is a convenient shortcut.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L595" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L595" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -775,11 +775,11 @@ is a convenient shortcut.</p>
   <section class="docstring">
     <p>Internal special form to hold aliases information.</p>
 <p>It is usually compiled to an atom:</p>
-<pre><code>iex&gt; quote do: Foo.Bar
+<pre><code>iex\&gt; quote do: Foo.Bar
 {:__aliases__, [alias: false], [:Foo, :Bar]}</code></pre>
 <p>Elixir represents <code class="inline">Foo.Bar</code> as <code class="inline">__aliases__</code> so calls can be
 unambiguously identified by the operator <code class="inline">:.</code>. For example:</p>
-<pre><code>iex&gt; quote do: Foo.bar
+<pre><code>iex\&gt; quote do: Foo.bar
 {{:., [], [{:__aliases__, [alias: false], [:Foo]}, :bar]}, [], []}</code></pre>
 <p>Whenever an expression iterator sees a <code class="inline">:.</code> as the tuple key,
 it can be sure that it represents a call and the second argument
@@ -792,7 +792,7 @@ in the list is an atom.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1328" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1328" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -810,12 +810,12 @@ in the list is an atom.</p>
 <p>This is the special form used whenever we have a block
 of expressions in Elixir. This special form is private
 and should not be invoked directly:</p>
-<pre><code>iex&gt; quote do: (1; 2; 3)
+<pre><code>iex\&gt; quote do: (1; 2; 3)
 {:__block__, [], [1, 2, 3]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1229" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1229" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -840,8 +840,8 @@ as <a href="Keyword.html"><code class="inline">Keyword</code></a>. So now, any r
 automatically replaced by <code class="inline">MyKeyword</code>.</p>
 <p>In case one wants to access the original <a href="Keyword.html"><code class="inline">Keyword</code></a>, it can be done
 by accessing <code class="inline">Elixir</code>:</p>
-<pre><code>Keyword.values   #=&gt; uses MyKeyword.values
-Elixir.Keyword.values #=&gt; uses Keyword.values</code></pre>
+<pre><code>Keyword.values   #=\&gt; uses MyKeyword.values
+Elixir.Keyword.values #=\&gt; uses Keyword.values</code></pre>
 <p>Notice that calling <code class="inline">alias</code> without the <code class="inline">as:</code> option automatically
 sets an alias based on the last part of the module. For example:</p>
 <pre><code>alias Foo.Bar.Baz</code></pre>
@@ -862,7 +862,7 @@ setting the <code class="inline">:warn</code> option to true or false.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L460" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L460" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -879,9 +879,9 @@ setting the <code class="inline">:warn</code> option to true or false.</p>
     <p>Matches the given expression against the given clauses.</p>
 <h2>Examples</h2>
 <pre><code>case thing do
-  {:selector, i, value} when is_integer(i) -&gt;
+  {:selector, i, value} when is_integer(i) -\&gt;
     value
-  value -&gt;
+  value -\&gt;
     value
 end</code></pre>
 <p>In the example above, we match <code class="inline">thing</code> against each clause “head”
@@ -891,21 +891,21 @@ that matches. If no clause matches, an error is raised.</p>
 <p>Notice that variables bound in a clause “head” do not leak to the
 outer context:</p>
 <pre><code>case data do
-  {:ok, value} -&gt; value
-  :error -&gt; nil
+  {:ok, value} -\&gt; value
+  :error -\&gt; nil
 end
 
-value #=&gt; unbound variable value</code></pre>
+value #=\&gt; unbound variable value</code></pre>
 <p>However, variables explicitly bound in the clause “body” are
 accessible from the outer context:</p>
 <pre><code>value = 7
 
 case lucky? do
-  false -&gt; value = 13
-  true  -&gt; true
+  false -\&gt; value = 13
+  true  -\&gt; true
 end
 
-value #=&gt; 7 or 13</code></pre>
+value #=\&gt; 7 or 13</code></pre>
 <p>In the example above, value is going to be <code class="inline">7</code> or <code class="inline">13</code> depending on
 the value of <code class="inline">lucky?</code>. In case <code class="inline">value</code> has no previous value before
 case, clauses that do not explicitly bind a value have the variable
@@ -913,7 +913,7 @@ bound to nil.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1381" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1381" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -932,17 +932,17 @@ evaluates to truth value.</p>
 <p>Raises an error if all conditions evaluate to to nil or false.</p>
 <h2>Examples</h2>
 <pre><code>cond do
-  1 + 1 == 1 -&gt;
-    &quot;This will never match&quot;
-  2 * 2 != 4 -&gt;
-    &quot;Nor this&quot;
-  true -&gt;
-    &quot;This will&quot;
+  1 + 1 == 1 -\&gt;
+    \&quot;This will never match\&quot;
+  2 * 2 != 4 -\&gt;
+    \&quot;Nor this\&quot;
+  true -\&gt;
+    \&quot;This will\&quot;
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1401" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1401" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -960,13 +960,13 @@ end</strong></span>
   <section class="docstring">
     <p>Defines an anonymous function.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; add = fn a, b -&gt; a + b end
-iex&gt; add.(1, 2)
+<pre><code>iex\&gt; add = fn a, b -\&gt; a + b end
+iex\&gt; add.(1, 2)
 3</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1216" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1216" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -983,31 +983,31 @@ iex&gt; add.(1, 2)
     <p>Comprehensions allow you to quickly build a data structure from
 an enumerable or a bitstring.</p>
 <p>Let’s start with an example:</p>
-<pre><code>iex&gt; for n &lt;- [1, 2, 3, 4], do: n * 2
+<pre><code>iex\&gt; for n \&lt;- [1, 2, 3, 4], do: n * 2
 [2, 4, 6, 8]</code></pre>
 <p>A comprehension accepts many generators and filters. Enumerable
-generators are defined using <code class="inline">&lt;-</code>:</p>
+generators are defined using <code class="inline">\&lt;-</code>:</p>
 <pre><code># A list generator:
-iex&gt; for n &lt;- [1, 2, 3, 4], do: n * 2
+iex\&gt; for n \&lt;- [1, 2, 3, 4], do: n * 2
 [2, 4, 6, 8]
 
 # A comprehension with two generators
-iex&gt; for x &lt;- [1, 2], y &lt;- [2, 3], do: x*y
+iex\&gt; for x \&lt;- [1, 2], y \&lt;- [2, 3], do: x*y
 [2, 3, 4, 6]</code></pre>
 <p>Filters can also be given:</p>
 <pre><code># A comprehension with a generator and a filter
-iex&gt; for n &lt;- [1, 2, 3, 4, 5, 6], rem(n, 2) == 0, do: n
+iex\&gt; for n \&lt;- [1, 2, 3, 4, 5, 6], rem(n, 2) == 0, do: n
 [2, 4, 6]</code></pre>
 <p>Note generators can also be used to filter as it removes any value
-that doesn’t match the left side of <code class="inline">&lt;-</code>:</p>
-<pre><code>iex&gt; for {:user, name} &lt;- [user: &quot;john&quot;, admin: &quot;john&quot;, user: &quot;meg&quot;] do
-...&gt;   String.upcase(name)
-...&gt; end
-[&quot;JOHN&quot;, &quot;MEG&quot;]</code></pre>
+that doesn’t match the left side of <code class="inline">\&lt;-</code>:</p>
+<pre><code>iex\&gt; for {:user, name} \&lt;- [user: \&quot;john\&quot;, admin: \&quot;john\&quot;, user: \&quot;meg\&quot;] do
+...\&gt;   String.upcase(name)
+...\&gt; end
+[\&quot;JOHN\&quot;, \&quot;MEG\&quot;]</code></pre>
 <p>Bitstring generators are also supported and are very useful when you
 need to organize bitstring streams:</p>
-<pre><code>iex&gt; pixels = &lt;&lt;213, 45, 132, 64, 76, 32, 76, 0, 0, 234, 32, 15&gt;&gt;
-iex&gt; for &lt;&lt;r::8, g::8, b::8 &lt;- pixels &gt;&gt;, do: {r, g, b}
+<pre><code>iex\&gt; pixels = \&lt;\&lt;213, 45, 132, 64, 76, 32, 76, 0, 0, 234, 32, 15\&gt;\&gt;
+iex\&gt; for \&lt;\&lt;r::8, g::8, b::8 \&lt;- pixels \&gt;\&gt;, do: {r, g, b}
 [{213,45,132},{64,76,32},{76,0,0},{234,32,15}]</code></pre>
 <p>Variable assignments inside the comprehension, be it in generators,
 filters or inside the block, are not reflected outside of the
@@ -1019,17 +1019,17 @@ always a list. The returned result can be configured by passing an
 the <a href="Collectable.html"><code class="inline">Collectable</code></a> protocol.</p>
 <p>For example, we can use bitstring generators with the <code class="inline">:into</code> option
 to easily remove all spaces in a string:</p>
-<pre><code>iex&gt; for &lt;&lt;c &lt;- &quot; hello world &quot;&gt;&gt;, c != ?\s, into: &quot;&quot;, do: &lt;&lt;c&gt;&gt;
-&quot;helloworld&quot;</code></pre>
+<pre><code>iex\&gt; for \&lt;\&lt;c \&lt;- \&quot; hello world \&quot;\&gt;\&gt;, c != ?\s, into: \&quot;\&quot;, do: \&lt;\&lt;c\&gt;\&gt;
+\&quot;helloworld\&quot;</code></pre>
 <p>The <a href="IO.html"><code class="inline">IO</code></a> module provides streams, that are both <a href="Enumerable.html"><code class="inline">Enumerable</code></a> and
 <a href="Collectable.html"><code class="inline">Collectable</code></a>, here is an upcase echo server using comprehensions:</p>
-<pre><code>for line &lt;- IO.stream(:stdio, :line), into: IO.stream(:stdio, :line) do
+<pre><code>for line \&lt;- IO.stream(:stdio, :line), into: IO.stream(:stdio, :line) do
   String.upcase(line)
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1204" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1204" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1050,8 +1050,8 @@ others modules without using the qualified name.</p>
 <p>If you are using several functions from a given module, you can
 import those functions and reference them as local functions,
 for example:</p>
-<pre><code>iex&gt; import List
-iex&gt; flatten([1, [2], 3])
+<pre><code>iex\&gt; import List
+iex\&gt; flatten([1, [2], 3])
 [1,2,3]</code></pre>
 <h2>Selector</h2>
 <p>By default, Elixir imports functions and macros from the given
@@ -1109,7 +1109,7 @@ errors are emitted lazily, not eagerly.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L579" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L579" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1126,7 +1126,7 @@ errors are emitted lazily, not eagerly.</p>
     <p>Gets the representation of any expression.</p>
 <h2>Examples</h2>
 <pre><code>quote do: sum(1, 2, 3)
-#=&gt; {:sum, [], [1, 2, 3]}</code></pre>
+#=\&gt; {:sum, [], [1, 2, 3]}</code></pre>
 <h2>Explanation</h2>
 <p>Any Elixir code can be represented using Elixir data structures.
 The building block of Elixir macros is a tuple with three elements,
@@ -1163,12 +1163,12 @@ given, <code class="inline">unquote</code> is automatically disabled.
 <h2>Quote literals</h2>
 <p>Besides the tuple described above, Elixir has a few literals that
 when quoted return themselves. They are:</p>
-<pre><code>:sum         #=&gt; Atoms
-1            #=&gt; Integers
-2.0          #=&gt; Floats
-[1, 2]       #=&gt; Lists
-&quot;strings&quot;    #=&gt; Strings
-{key, value} #=&gt; Tuples with two elements</code></pre>
+<pre><code>:sum         #=\&gt; Atoms
+1            #=\&gt; Integers
+2.0          #=\&gt; Floats
+[1, 2]       #=\&gt; Lists
+\&quot;strings\&quot;    #=\&gt; Strings
+{key, value} #=\&gt; Tuples with two elements</code></pre>
 <h2>Quote and macros</h2>
 <p><code class="inline">quote</code> is commonly used with macros for code generation. As an exercise,
 let’s define a macro that multiplies a number by itself (squared). Note
@@ -1184,18 +1184,18 @@ on the important aspects of quotes and macros:</p>
 end</code></pre>
 <p>We can invoke it as:</p>
 <pre><code>import Math
-IO.puts &quot;Got #{squared(5)}&quot;</code></pre>
+IO.puts \&quot;Got #{squared(5)}\&quot;</code></pre>
 <p>At first, there is nothing in this example that actually reveals it is a
 macro. But what is happening is that, at compilation time, <code class="inline">squared(5)</code>
 becomes <code class="inline">5 * 5</code>. The argument <code class="inline">5</code> is duplicated in the produced code, we
 can see this behaviour in practice though because our macro actually has
 a bug:</p>
 <pre><code>import Math
-my_number = fn -&gt;
-  IO.puts &quot;Returning 5&quot;
+my_number = fn -\&gt;
+  IO.puts \&quot;Returning 5\&quot;
   5
 end
-IO.puts &quot;Got #{squared(my_number.())}&quot;</code></pre>
+IO.puts \&quot;Got #{squared(my_number.())}\&quot;</code></pre>
 <p>The example above will print:</p>
 <pre><code>Returning 5
 Returning 5
@@ -1244,7 +1244,7 @@ end</code></pre>
 <p>When we call:</p>
 <pre><code>import Math
 squared(5)
-x #=&gt; ** (RuntimeError) undefined function or variable: x</code></pre>
+x #=\&gt; ** (RuntimeError) undefined function or variable: x</code></pre>
 <p>We can see that <code class="inline">x</code> did not leak to the user context. This happens
 because Elixir macros are hygienic, a topic we will discuss at length
 in the next sections as well.</p>
@@ -1260,7 +1260,7 @@ require Hygiene
 
 a = 10
 Hygiene.no_interference
-a #=&gt; 10</code></pre>
+a #=\&gt; 10</code></pre>
 <p>In the example above, <code class="inline">a</code> returns 10 even if the macro
 is apparently setting it to 1 because variables defined
 in the macro does not affect the context the macro is executed in.
@@ -1276,7 +1276,7 @@ require NoHygiene
 
 a = 10
 NoHygiene.interference
-a #=&gt; 1</code></pre>
+a #=\&gt; 1</code></pre>
 <p>Note that you cannot even access variables defined in the same
 module unless you explicitly give it a context:</p>
 <pre><code>defmodule Hygiene do
@@ -1295,7 +1295,7 @@ end
 
 Hygiene.write
 Hygiene.read
-#=&gt; ** (RuntimeError) undefined function or variable: a</code></pre>
+#=\&gt; ** (RuntimeError) undefined function or variable: a</code></pre>
 <p>For such, you can explicitly pass the current module scope as
 argument:</p>
 <pre><code>defmodule ContextHygiene do
@@ -1314,7 +1314,7 @@ end
 
 ContextHygiene.write
 ContextHygiene.read
-#=&gt; 1</code></pre>
+#=\&gt; 1</code></pre>
 <h2>Hygiene in aliases</h2>
 <p>Aliases inside quote are hygienic by default.
 Consider the following example:</p>
@@ -1327,7 +1327,7 @@ Consider the following example:</p>
 end
 
 require Hygiene
-Hygiene.no_interference #=&gt; #HashDict&lt;[]&gt;</code></pre>
+Hygiene.no_interference #=\&gt; #HashDict\&lt;[]\&gt;</code></pre>
 <p>Notice that, even though the alias <code class="inline">D</code> is not available
 in the context the macro is expanded, the code above works
 because <code class="inline">D</code> still expands to <a href="HashDict.html"><code class="inline">HashDict</code></a>.</p>
@@ -1343,7 +1343,7 @@ end
 
 require Hygiene
 alias SomethingElse, as: D
-Hygiene.no_interference #=&gt; #HashDict&lt;[]&gt;</code></pre>
+Hygiene.no_interference #=\&gt; #HashDict\&lt;[]\&gt;</code></pre>
 <p>In some cases, you want to access an alias or a module defined
 in the caller. For such, you can use the <code class="inline">alias!</code> macro:</p>
 <pre><code>defmodule Hygiene do
@@ -1361,15 +1361,15 @@ end
 
 defmodule Parent do
   defmodule Nested do
-    def hello, do: &quot;world&quot;
+    def hello, do: \&quot;world\&quot;
   end
 
   require Hygiene
   Hygiene.no_interference
-  #=&gt; ** (UndefinedFunctionError) ...
+  #=\&gt; ** (UndefinedFunctionError) ...
 
   Hygiene.interference
-  #=&gt; &quot;world&quot;
+  #=\&gt; \&quot;world\&quot;
 end</code></pre>
 <h2>Hygiene in imports</h2>
 <p>Similar to aliases, imports in Elixir are hygienic. Consider the
@@ -1377,7 +1377,7 @@ following code:</p>
 <pre><code>defmodule Hygiene do
   defmacrop get_size do
     quote do
-      size(&quot;hello&quot;)
+      size(\&quot;hello\&quot;)
     end
   end
 
@@ -1387,7 +1387,7 @@ following code:</p>
   end
 end
 
-Hygiene.return_size #=&gt; 5</code></pre>
+Hygiene.return_size #=\&gt; 5</code></pre>
 <p>Notice how <code class="inline">return_size</code> returns 5 even though the <code class="inline">size/1</code>
 function is not imported. In fact, even if <code class="inline">return_size</code> imported
 a function from another module, it wouldn’t affect the function
@@ -1398,7 +1398,7 @@ result:</p>
 end</code></pre>
 <p>Calling this new <code class="inline">return_size</code> will still return 5 as result.</p>
 <p>Elixir is smart enough to delay the resolution to the latest
-moment possible. So, if you call <code class="inline">size(&quot;hello&quot;)</code> inside quote,
+moment possible. So, if you call <code class="inline">size(\&quot;hello\&quot;)</code> inside quote,
 but no <code class="inline">size/1</code> function is available, it is then expanded in
 the caller:</p>
 <pre><code>defmodule Lazy do
@@ -1417,14 +1417,14 @@ the caller:</p>
   end
 end
 
-Lazy.return_size #=&gt; 2</code></pre>
+Lazy.return_size #=\&gt; 2</code></pre>
 <h2>Stacktrace information</h2>
 <p>When defining functions via macros, developers have the option of
 choosing if runtime errors will be reported from the caller or from
 inside the quote. Let’s see an example:</p>
 <pre><code># adder.ex
 defmodule Adder do
-  @doc &quot;Defines a function that adds two numbers&quot;
+  @doc \&quot;Defines a function that adds two numbers\&quot;
   defmacro defadd do
     quote location: :keep do
       def add(a, b), do: a + b
@@ -1447,14 +1447,14 @@ only definitions inside the quote.</p>
 unquote fragments. Unquote fragments provide an easy way to generate
 functions on the fly. Consider this example:</p>
 <pre><code>kv = [foo: 1, bar: 2]
-Enum.each kv, fn {k, v} -&gt;
+Enum.each kv, fn {k, v} -\&gt;
   def unquote(k)(), do: unquote(v)
 end</code></pre>
 <p>In the example above, we have generated the functions <code class="inline">foo/0</code> and
 <code class="inline">bar/0</code> dynamically. Now, imagine that, we want to convert this
 functionality into a macro:</p>
 <pre><code>defmacro defkv(kv) do
-  Enum.map kv, fn {k, v} -&gt;
+  Enum.map kv, fn {k, v} -\&gt;
     quote do
       def unquote(k)(), do: unquote(v)
     end
@@ -1474,7 +1474,7 @@ assuming a particular shape in the macro. We can work around it
 by unquoting the variable inside the quoted expression:</p>
 <pre><code>defmacro defkv(kv) do
   quote do
-    Enum.each unquote(kv), fn {k, v} -&gt;
+    Enum.each unquote(kv), fn {k, v} -\&gt;
       def unquote(k)(), do: unquote(v)
     end
   end
@@ -1492,7 +1492,7 @@ can automatically disable unquoting while still injecting the
 desired variables into the tree:</p>
 <pre><code>defmacro defkv(kv) do
   quote bind_quoted: [kv: kv] do
-    Enum.each kv, fn {k, v} -&gt;
+    Enum.each kv, fn {k, v} -\&gt;
       def unquote(k)(), do: unquote(v)
     end
   end
@@ -1502,7 +1502,7 @@ one desires to inject a value into the quote.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1098" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1098" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1522,25 +1522,25 @@ in the current process mailbox.</p>
 until a message arrives or waits until a given timeout value.</p>
 <h2>Examples</h2>
 <pre><code>receive do
-  {:selector, i, value} when is_integer(i) -&gt;
+  {:selector, i, value} when is_integer(i) -\&gt;
     value
-  value when is_atom(value) -&gt;
+  value when is_atom(value) -\&gt;
     value
-  _ -&gt;
-    IO.puts :stderr, &quot;Unexpected message received&quot;
+  _ -\&gt;
+    IO.puts :stderr, \&quot;Unexpected message received\&quot;
 end</code></pre>
 <p>An optional after clause can be given in case the message was not
 received after the specified period of time:</p>
 <pre><code>receive do
-  {:selector, i, value} when is_integer(i) -&gt;
+  {:selector, i, value} when is_integer(i) -\&gt;
     value
-  value when is_atom(value) -&gt;
+  value when is_atom(value) -\&gt;
     value
-  _ -&gt;
-    IO.puts :stderr, &quot;Unexpected message received&quot;
+  _ -\&gt;
+    IO.puts :stderr, \&quot;Unexpected message received\&quot;
 after
-  5000 -&gt;
-    IO.puts :stderr, &quot;No message in 5 seconds&quot;
+  5000 -\&gt;
+    IO.puts :stderr, \&quot;No message in 5 seconds\&quot;
 end</code></pre>
 <p>The <code class="inline">after</code> clause can be specified even if there are no match clauses.
 There are two special cases for the timeout value given to <code class="inline">after</code></p>
@@ -1558,7 +1558,7 @@ special macro. For more information, check the docs for <a href="#case/2"><code 
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1671" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1671" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1591,7 +1591,7 @@ up an alias. Please check <code class="inline">alias</code> for more information
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L488" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L488" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1610,7 +1610,7 @@ See <code class="inline">Kernel.defoverridable</code> for more information and d
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1334" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1334" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1630,16 +1630,16 @@ or throw that may have happened.</p>
 <pre><code>try do
   do_something_that_may_fail(some_arg)
 rescue
-  ArgumentError -&gt;
-    IO.puts &quot;Invalid argument given&quot;
+  ArgumentError -\&gt;
+    IO.puts \&quot;Invalid argument given\&quot;
 catch
-  value -&gt;
-    IO.puts &quot;caught #{value}&quot;
+  value -\&gt;
+    IO.puts \&quot;caught #{value}\&quot;
 else
-  value -&gt;
-    IO.puts &quot;Success! The result was #{value}&quot;
+  value -\&gt;
+    IO.puts \&quot;Success! The result was #{value}\&quot;
 after
-  IO.puts &quot;This is printed regardless if it failed or succeed&quot;
+  IO.puts \&quot;This is printed regardless if it failed or succeed\&quot;
 end</code></pre>
 <p>The rescue clause is used to handle exceptions, while the catch
 clause can be used to catch thrown values. The else clause can
@@ -1655,34 +1655,34 @@ expressions:</p>
 <pre><code>try do
   UndefinedModule.undefined_function
 rescue
-  UndefinedFunctionError -&gt; nil
+  UndefinedFunctionError -\&gt; nil
 end
 
 try do
   UndefinedModule.undefined_function
 rescue
-  [UndefinedFunctionError] -&gt; nil
+  [UndefinedFunctionError] -\&gt; nil
 end
 
 # rescue and bind to x
 try do
   UndefinedModule.undefined_function
 rescue
-  x in [UndefinedFunctionError] -&gt; nil
+  x in [UndefinedFunctionError] -\&gt; nil
 end
 
 # rescue all and bind to x
 try do
   UndefinedModule.undefined_function
 rescue
-  x -&gt; nil
+  x -\&gt; nil
 end</code></pre>
 <h2>Erlang errors</h2>
 <p>Erlang errors are transformed into Elixir ones during rescue:</p>
 <pre><code>try do
   :erlang.error(:badarg)
 rescue
-  ArgumentError -&gt; :ok
+  ArgumentError -\&gt; :ok
 end</code></pre>
 <p>The most common Erlang errors will be transformed into their
 Elixir counter-part. Those which are not will be transformed
@@ -1690,7 +1690,7 @@ into <a href="ErlangError.html"><code class="inline">ErlangError</code></a>:</p>
 <pre><code>try do
   :erlang.error(:unknown)
 rescue
-  ErlangError -&gt; :ok
+  ErlangError -\&gt; :ok
 end</code></pre>
 <p>In fact, ErlangError can be used to rescue any error that is
 not an Elixir error proper. For example, it can be used to rescue
@@ -1698,21 +1698,21 @@ the earlier <code class="inline">:badarg</code> error too, prior to transformati
 <pre><code>try do
   :erlang.error(:badarg)
 rescue
-  ErlangError -&gt; :ok
+  ErlangError -\&gt; :ok
 end</code></pre>
 <h2>Catching throws and exits</h2>
 <p>The catch clause can be used to catch throws values and exits.</p>
 <pre><code>try do
   exit(:shutdown)
 catch
-  :exit, :shutdown -&gt; IO.puts &quot;Exited with shutdown reason&quot;
+  :exit, :shutdown -\&gt; IO.puts \&quot;Exited with shutdown reason\&quot;
 end
 
 try do
   throw(:sample)
 catch
-  :throw, :sample -&gt;
-    IO.puts &quot;sample thrown&quot;
+  :throw, :sample -\&gt;
+    IO.puts \&quot;sample thrown\&quot;
 end</code></pre>
 <p>catch values also support <code class="inline">:error</code>, as in Erlang, although it is
 commonly avoided in favor of raise/rescue control mechanisms.</p>
@@ -1723,12 +1723,12 @@ matched on:</p>
 try do
   1 / x
 rescue
-  ArithmeticError -&gt;
+  ArithmeticError -\&gt;
     :infinity
 else
-  y when y &lt; 1 and y &gt; -1 -&gt;
+  y when y \&lt; 1 and y \&gt; -1 -\&gt;
     :small
-  _ -&gt;
+  _ -\&gt;
     :large
 end</code></pre>
 <p>If an else clause is not present the result of the expression will
@@ -1738,7 +1738,7 @@ be return, if no exceptions are raised:</p>
   try do
     1 / x
   rescue
-    ArithmeticError -&gt;
+    ArithmeticError -\&gt;
       :infinity
   end</code></pre>
 <p>However when an else clause is present but the result of the expression
@@ -1750,15 +1750,15 @@ try do
     1 / x
   rescue
     # The TryClauseError can not be rescued here:
-    TryClauseError -&gt;
+    TryClauseError -\&gt;
       :error_a
   else
-    0 -&gt;
+    0 -\&gt;
       :small
   end
 rescue
   # The TryClauseError is rescued here:
-  TryClauseError -&gt;
+  TryClauseError -\&gt;
     :error_b
 end</code></pre>
 <p>Similarly an exception inside an else clause is not caught or rescued
@@ -1768,15 +1768,15 @@ inside the same try:</p>
     nil
   catch
     # The exit(1) call below can not be caught here:
-    :exit, _ -&gt;
+    :exit, _ -\&gt;
       :exit_a
   else
-    _ -&gt;
+    _ -\&gt;
       exit(1)
   end
 catch
   # The exit is caught here:
-  :exit, _ -&gt;
+  :exit, _ -\&gt;
     :exit_b
 end</code></pre>
 <p>This means the VM no longer needs to keep the stacktrace once inside
@@ -1792,10 +1792,10 @@ be accessed externally. For instance:</p>
   do_something_that_may_fail(same_arg)
   :ok
 catch
-  _, _ -&gt; :failed
+  _, _ -\&gt; :failed
 end
 
-x #=&gt; unbound variable `x`</code></pre>
+x #=\&gt; unbound variable `x`</code></pre>
 <p>In the example above, <code class="inline">x</code> cannot be accessed since it was defined
 inside the <code class="inline">try</code> clause. A common practice to address this issue
 is to return the variables defined inside <code class="inline">try</code>:</p>
@@ -1805,12 +1805,12 @@ is to return the variables defined inside <code class="inline">try</code>:</p>
     do_something_that_may_fail(same_arg)
     x
   catch
-    _, _ -&gt; :failed
+    _, _ -\&gt; :failed
   end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1622" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1622" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1836,11 +1836,11 @@ quote do: sum(1, value, 3)</code></pre>
 <p>Which is not the expected result. For this, we use unquote:</p>
 <pre><code>value = 13
 quote do: sum(1, unquote(value), 3)
-#=&gt; {:sum, [], [1, 13, 3]}</code></pre>
+#=\&gt; {:sum, [], [1, 13, 3]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1123" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1123" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1859,11 +1859,11 @@ to unquote.</p>
 <h2>Examples</h2>
 <pre><code>values = [2, 3, 4]
 quote do: sum(1, unquote_splicing(values), 5)
-#=&gt; {:sum, [], [1, 2, 3, 4, 5]}</code></pre>
+#=\&gt; {:sum, [], [1, 2, 3, 4, 5]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L1136" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L1136" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1886,15 +1886,15 @@ as a call to the special form <code class="inline">:{}</code>.</p>
 also available in <a href="Kernel.html"><code class="inline">Kernel</code></a>, namely <a href="Kernel.html#elem/2"><code class="inline">Kernel.elem/2</code></a>,
 <a href="Kernel.html#put_elem/3"><code class="inline">Kernel.put_elem/3</code></a> and <a href="Kernel.html#tuple_size/1"><code class="inline">Kernel.tuple_size/1</code></a>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; {1, 2, 3}
+<pre><code>iex\&gt; {1, 2, 3}
 {1, 2, 3}
 
-iex&gt; quote do: {1, 2, 3}
+iex\&gt; quote do: {1, 2, 3}
 {:{}, [], [1,2,3]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/kernel/special_forms.ex#L43" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/kernel/special_forms.ex#L43" class="view_source">Source</a>
   
 </section>
 

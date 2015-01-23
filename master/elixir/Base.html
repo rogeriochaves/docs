@@ -122,7 +122,7 @@ according to <a href="http://tools.ietf.org/html/rfc4648">RFC 4648</a>.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L1" class="view_source">Source</a>
       
 
       
@@ -271,18 +271,18 @@ safe alphabet</p>
 <code class="inline">:lower</code> for lower case characters. <code class="inline">:mixed</code> can be given for mixed case
 characters.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.decode16(&quot;666F6F626172&quot;)
-{:ok, &quot;foobar&quot;}
+<pre><code>iex\&gt; Base.decode16(\&quot;666F6F626172\&quot;)
+{:ok, \&quot;foobar\&quot;}
 
-iex&gt; Base.decode16(&quot;666f6f626172&quot;, case: :lower)
-{:ok, &quot;foobar&quot;}
+iex\&gt; Base.decode16(\&quot;666f6f626172\&quot;, case: :lower)
+{:ok, \&quot;foobar\&quot;}
 
-iex&gt; Base.decode16(&quot;666f6F626172&quot;, case: :mixed)
-{:ok, &quot;foobar&quot;}</code></pre>
+iex\&gt; Base.decode16(\&quot;666f6F626172\&quot;, case: :mixed)
+{:ok, \&quot;foobar\&quot;}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L188" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L188" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -310,18 +310,18 @@ characters.</p>
 <p>An <a href="ArgumentError.html"><code class="inline">ArgumentError</code></a> exception is raised if the padding is incorrect or
 a non-alphabet character is present in the string.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.decode16!(&quot;666F6F626172&quot;)
-&quot;foobar&quot;
+<pre><code>iex\&gt; Base.decode16!(\&quot;666F6F626172\&quot;)
+\&quot;foobar\&quot;
 
-iex&gt; Base.decode16!(&quot;666f6f626172&quot;, case: :lower)
-&quot;foobar&quot;
+iex\&gt; Base.decode16!(\&quot;666f6f626172\&quot;, case: :lower)
+\&quot;foobar\&quot;
 
-iex&gt; Base.decode16!(&quot;666f6F626172&quot;, case: :mixed)
-&quot;foobar&quot;</code></pre>
+iex\&gt; Base.decode16!(\&quot;666f6F626172\&quot;, case: :mixed)
+\&quot;foobar\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L219" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L219" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -347,18 +347,18 @@ iex&gt; Base.decode16!(&quot;666f6F626172&quot;, case: :mixed)
 <code class="inline">:lower</code> for lower case characters. <code class="inline">:mixed</code> can be given for mixed case
 characters.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.decode32(&quot;MZXW6YTBOI======&quot;)
-{:ok, &quot;foobar&quot;}
+<pre><code>iex\&gt; Base.decode32(\&quot;MZXW6YTBOI======\&quot;)
+{:ok, \&quot;foobar\&quot;}
 
-iex&gt; Base.decode32(&quot;mzxw6ytboi======&quot;, case: :lower)
-{:ok, &quot;foobar&quot;}
+iex\&gt; Base.decode32(\&quot;mzxw6ytboi======\&quot;, case: :lower)
+{:ok, \&quot;foobar\&quot;}
 
-iex&gt; Base.decode32(&quot;mzXW6ytBOi======&quot;, case: :mixed)
-{:ok, &quot;foobar&quot;}</code></pre>
+iex\&gt; Base.decode32(\&quot;mzXW6ytBOi======\&quot;, case: :mixed)
+{:ok, \&quot;foobar\&quot;}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L366" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L366" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -386,18 +386,18 @@ characters.</p>
 <p>An <a href="ArgumentError.html"><code class="inline">ArgumentError</code></a> exception is raised if the padding is incorrect or
 a non-alphabet character is present in the string.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.decode32!(&quot;MZXW6YTBOI======&quot;)
-&quot;foobar&quot;
+<pre><code>iex\&gt; Base.decode32!(\&quot;MZXW6YTBOI======\&quot;)
+\&quot;foobar\&quot;
 
-iex&gt; Base.decode32!(&quot;mzxw6ytboi======&quot;, case: :lower)
-&quot;foobar&quot;
+iex\&gt; Base.decode32!(\&quot;mzxw6ytboi======\&quot;, case: :lower)
+\&quot;foobar\&quot;
 
-iex&gt; Base.decode32!(&quot;mzXW6ytBOi======&quot;, case: :mixed)
-&quot;foobar&quot;</code></pre>
+iex\&gt; Base.decode32!(\&quot;mzXW6ytBOi======\&quot;, case: :mixed)
+\&quot;foobar\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L397" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L397" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -420,12 +420,12 @@ iex&gt; Base.decode32!(&quot;mzXW6ytBOi======&quot;, case: :mixed)
   <section class="docstring">
     <p>Decodes a base 64 encoded string into a binary string.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.decode64(&quot;Zm9vYmFy&quot;)
-{:ok, &quot;foobar&quot;}</code></pre>
+<pre><code>iex\&gt; Base.decode64(\&quot;Zm9vYmFy\&quot;)
+{:ok, \&quot;foobar\&quot;}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L248" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L248" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -451,12 +451,12 @@ iex&gt; Base.decode32!(&quot;mzXW6ytBOi======&quot;, case: :mixed)
 <p>An <a href="ArgumentError.html"><code class="inline">ArgumentError</code></a> exception is raised if the padding is incorrect or
 a non-alphabet character is present in the string.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.decode64!(&quot;Zm9vYmFy&quot;)
-&quot;foobar&quot;</code></pre>
+<pre><code>iex\&gt; Base.decode64!(\&quot;Zm9vYmFy\&quot;)
+\&quot;foobar\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L269" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L269" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -481,15 +481,15 @@ a non-alphabet character is present in the string.</p>
 <p>Accepts an atom <code class="inline">:upper</code> (default) for encoding to upper case characters or
 <code class="inline">:lower</code> for lower case characters.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.encode16(&quot;foobar&quot;)
-&quot;666F6F626172&quot;
+<pre><code>iex\&gt; Base.encode16(\&quot;foobar\&quot;)
+\&quot;666F6F626172\&quot;
 
-iex&gt; Base.encode16(&quot;foobar&quot;, case: :lower)
-&quot;666f6f626172&quot;</code></pre>
+iex\&gt; Base.encode16(\&quot;foobar\&quot;, case: :lower)
+\&quot;666f6f626172\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L161" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L161" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -514,15 +514,15 @@ iex&gt; Base.encode16(&quot;foobar&quot;, case: :lower)
 <p>Accepts an atom <code class="inline">:upper</code> (default) for encoding to upper case characters or
 <code class="inline">:lower</code> for lower case characters.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.encode32(&quot;foobar&quot;)
-&quot;MZXW6YTBOI======&quot;
+<pre><code>iex\&gt; Base.encode32(\&quot;foobar\&quot;)
+\&quot;MZXW6YTBOI======\&quot;
 
-iex&gt; Base.encode32(&quot;foobar&quot;, case: :lower)
-&quot;mzxw6ytboi======&quot;</code></pre>
+iex\&gt; Base.encode32(\&quot;foobar\&quot;, case: :lower)
+\&quot;mzxw6ytboi======\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L340" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L340" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -545,12 +545,12 @@ iex&gt; Base.encode32(&quot;foobar&quot;, case: :lower)
   <section class="docstring">
     <p>Encodes a binary string into a base 64 encoded string.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.encode64(&quot;foobar&quot;)
-&quot;Zm9vYmFy&quot;</code></pre>
+<pre><code>iex\&gt; Base.encode64(\&quot;foobar\&quot;)
+\&quot;Zm9vYmFy\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L234" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L234" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -577,18 +577,18 @@ into a binary string.</p>
 <code class="inline">:lower</code> for lower case characters. <code class="inline">:mixed</code> can be given for mixed case
 characters.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.hex_decode32(&quot;CPNMUOJ1E8======&quot;)
-{:ok, &quot;foobar&quot;}
+<pre><code>iex\&gt; Base.hex_decode32(\&quot;CPNMUOJ1E8======\&quot;)
+{:ok, \&quot;foobar\&quot;}
 
-iex&gt; Base.hex_decode32(&quot;cpnmuoj1e8======&quot;, case: :lower)
-{:ok, &quot;foobar&quot;}
+iex\&gt; Base.hex_decode32(\&quot;cpnmuoj1e8======\&quot;, case: :lower)
+{:ok, \&quot;foobar\&quot;}
 
-iex&gt; Base.hex_decode32(&quot;cpnMuOJ1E8======&quot;, case: :mixed)
-{:ok, &quot;foobar&quot;}</code></pre>
+iex\&gt; Base.hex_decode32(\&quot;cpnMuOJ1E8======\&quot;, case: :mixed)
+{:ok, \&quot;foobar\&quot;}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L447" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L447" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -617,18 +617,18 @@ characters.</p>
 <p>An <a href="ArgumentError.html"><code class="inline">ArgumentError</code></a> exception is raised if the padding is incorrect or
 a non-alphabet character is present in the string.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.hex_decode32!(&quot;CPNMUOJ1E8======&quot;)
-&quot;foobar&quot;
+<pre><code>iex\&gt; Base.hex_decode32!(\&quot;CPNMUOJ1E8======\&quot;)
+\&quot;foobar\&quot;
 
-iex&gt; Base.hex_decode32!(&quot;cpnmuoj1e8======&quot;, case: :lower)
-&quot;foobar&quot;
+iex\&gt; Base.hex_decode32!(\&quot;cpnmuoj1e8======\&quot;, case: :lower)
+\&quot;foobar\&quot;
 
-iex&gt; Base.hex_decode32!(&quot;cpnMuOJ1E8======&quot;, case: :mixed)
-&quot;foobar&quot;</code></pre>
+iex\&gt; Base.hex_decode32!(\&quot;cpnMuOJ1E8======\&quot;, case: :mixed)
+\&quot;foobar\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L479" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L479" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -654,15 +654,15 @@ extended hexadecimal alphabet.</p>
 <p>Accepts an atom <code class="inline">:upper</code> (default) for encoding to upper case characters or
 <code class="inline">:lower</code> for lower case characters.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.hex_encode32(&quot;foobar&quot;)
-&quot;CPNMUOJ1E8======&quot;
+<pre><code>iex\&gt; Base.hex_encode32(\&quot;foobar\&quot;)
+\&quot;CPNMUOJ1E8======\&quot;
 
-iex&gt; Base.hex_encode32(&quot;foobar&quot;, case: :lower)
-&quot;cpnmuoj1e8======&quot;</code></pre>
+iex\&gt; Base.hex_encode32(\&quot;foobar\&quot;, case: :lower)
+\&quot;cpnmuoj1e8======\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L420" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L420" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -686,12 +686,12 @@ iex&gt; Base.hex_encode32(&quot;foobar&quot;, case: :lower)
     <p>Decodes a base 64 encoded string with URL and filename safe alphabet
 into a binary string.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.url_decode64(&quot;_3_-_A==&quot;)
-{:ok, &lt;&lt;255,127,254,252&gt;&gt;}</code></pre>
+<pre><code>iex\&gt; Base.url_decode64(\&quot;_3_-_A==\&quot;)
+{:ok, \&lt;\&lt;255,127,254,252\&gt;\&gt;}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L299" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L299" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -717,12 +717,12 @@ into a binary string.</p>
 <p>An <a href="ArgumentError.html"><code class="inline">ArgumentError</code></a> exception is raised if the padding is incorrect or
 a non-alphabet character is present in the string.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.url_decode64!(&quot;_3_-_A==&quot;)
-&lt;&lt;255,127,254,252&gt;&gt;</code></pre>
+<pre><code>iex\&gt; Base.url_decode64!(\&quot;_3_-_A==\&quot;)
+\&lt;\&lt;255,127,254,252\&gt;\&gt;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L319" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L319" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -746,12 +746,12 @@ a non-alphabet character is present in the string.</p>
     <p>Encodes a binary string into a base 64 encoded string with URL and filename
 safe alphabet.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Base.url_encode64(&lt;&lt;255,127,254,252&gt;&gt;)
-&quot;_3_-_A==&quot;</code></pre>
+<pre><code>iex\&gt; Base.url_encode64(\&lt;\&lt;255,127,254,252\&gt;\&gt;)
+\&quot;_3_-_A==\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/base.ex#L284" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/base.ex#L284" class="view_source">Source</a>
   
 </section>
 

@@ -49,10 +49,10 @@
 <pre><code>use Mix.Config
 
 config :plug,
-  key1: &quot;value1&quot;,
-  key2: &quot;value2&quot;
+  key1: \&quot;value1\&quot;,
+  key2: \&quot;value2\&quot;
 
-import_config &quot;#{Mix.env}.exs&quot;</code></pre>
+import_config \&quot;#{Mix.env}.exs\&quot;</code></pre>
 <p>All <code class="inline">config/*</code> macros, including <a href="#import_config/1"><code class="inline">import_config/1</code></a>, are used
 to help define such configuration files.</p>
 <p>Furthermore, this module provides functions like <a href="#read!/1"><code class="inline">read!/1</code></a>,
@@ -63,7 +63,7 @@ in general.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/config.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/config.ex#L1" class="view_source">Source</a>
       
 
       
@@ -151,15 +151,15 @@ the configured applications environment</p>
 with the values in the second one having higher preference
 than the first in case of conflicts.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Mix.Config.merge([app: [k: :v1]], [app: [k: :v2]])
+<pre><code>iex\&gt; Mix.Config.merge([app: [k: :v1]], [app: [k: :v2]])
 [app: [k: :v2]]
 
-iex&gt; Mix.Config.merge([app1: []], [app2: []])
+iex\&gt; Mix.Config.merge([app1: []], [app2: []])
 [app1: [], app2: []]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/config.ex#L205" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/config.ex#L205" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -178,7 +178,7 @@ the configured applications environment.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/config.ex#L160" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/config.ex#L160" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -196,7 +196,7 @@ the configured applications environment.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/config.ex#L129" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/config.ex#L129" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -214,7 +214,7 @@ the configured applications environment.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/config.ex#L148" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/config.ex#L148" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -232,7 +232,7 @@ the configured applications environment.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/config.ex#L170" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/config.ex#L170" class="view_source">Source</a>
   
 </section>
 
@@ -271,7 +271,7 @@ config :lager,
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/config.ex#L64" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/config.ex#L64" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -302,7 +302,7 @@ config :ecto, Repo,
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/config.ex#L94" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/config.ex#L94" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -321,13 +321,13 @@ config :ecto, Repo,
 current configuration file is on.</p>
 <h2>Examples</h2>
 <p>This is often used to emulate configuration across environments:</p>
-<pre><code>import_config &quot;#{Mix.env}.exs&quot;</code></pre>
+<pre><code>import_config \&quot;#{Mix.env}.exs\&quot;</code></pre>
 <p>Or to import files from children in umbrella projects:</p>
-<pre><code>import_config &quot;../apps/*/config/config.exs&quot;</code></pre>
+<pre><code>import_config \&quot;../apps/*/config/config.exs\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/config.ex#L119" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/config.ex#L119" class="view_source">Source</a>
   
 </section>
 

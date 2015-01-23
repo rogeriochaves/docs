@@ -57,7 +57,7 @@ that require it (like <code class="inline">wildcard/1</code> and <a href="#expan
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L1" class="view_source">Source</a>
       
 
       
@@ -242,20 +242,20 @@ remove a specific extension which might, or might not, be there</p>
     <p>Converts the given path to an absolute one. Unlike
 <a href="#expand/1"><code class="inline">expand/1</code></a>, no attempt is made to resolve <code class="inline">..</code>, <code class="inline">.</code> or <code class="inline">~</code>.</p>
 <h2>Unix examples</h2>
-<pre><code>Path.absname(&quot;foo&quot;)
-#=&gt; &quot;/usr/local/foo&quot;
+<pre><code>Path.absname(\&quot;foo\&quot;)
+#=\&gt; \&quot;/usr/local/foo\&quot;
 
-Path.absname(&quot;../x&quot;)
-#=&gt; &quot;/usr/local/../x&quot;</code></pre>
+Path.absname(\&quot;../x\&quot;)
+#=\&gt; \&quot;/usr/local/../x\&quot;</code></pre>
 <h2>Windows</h2>
-<pre><code>Path.absname(&quot;foo&quot;).
-&quot;D:/usr/local/foo&quot;
-Path.absname(&quot;../x&quot;).
-&quot;D:/usr/local/../x&quot;</code></pre>
+<pre><code>Path.absname(\&quot;foo\&quot;).
+\&quot;D:/usr/local/foo\&quot;
+Path.absname(\&quot;../x\&quot;).
+\&quot;D:/usr/local/../x\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L39" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L39" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -281,15 +281,15 @@ an absolute path, <code class="inline">relative_to</code> is ignored. See also <
 <p>Unlike <a href="#expand/2"><code class="inline">expand/2</code></a>, no attempt is made to
 resolve <code class="inline">..</code>, <code class="inline">.</code> or <code class="inline">~</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Path.absname(&quot;foo&quot;, &quot;bar&quot;)
-&quot;bar/foo&quot;
+<pre><code>iex\&gt; Path.absname(\&quot;foo\&quot;, \&quot;bar\&quot;)
+\&quot;bar/foo\&quot;
 
-iex&gt; Path.absname(&quot;../x&quot;, &quot;bar&quot;)
-&quot;bar/../x&quot;</code></pre>
+iex\&gt; Path.absname(\&quot;../x\&quot;, \&quot;bar\&quot;)
+\&quot;bar/../x\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L60" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L60" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -313,18 +313,18 @@ iex&gt; Path.absname(&quot;../x&quot;, &quot;bar&quot;)
     <p>Returns the last component of the path or the path
 itself if it does not contain any directory separators.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Path.basename(&quot;foo&quot;)
-&quot;foo&quot;
+<pre><code>iex\&gt; Path.basename(\&quot;foo\&quot;)
+\&quot;foo\&quot;
 
-iex&gt; Path.basename(&quot;foo/bar&quot;)
-&quot;bar&quot;
+iex\&gt; Path.basename(\&quot;foo/bar\&quot;)
+\&quot;bar\&quot;
 
-iex&gt; Path.basename(&quot;/&quot;)
-&quot;&quot;</code></pre>
+iex\&gt; Path.basename(\&quot;/\&quot;)
+\&quot;\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L335" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L335" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -349,18 +349,18 @@ iex&gt; Path.basename(&quot;/&quot;)
 stripped. This function should be used to remove a specific
 extension which may, or may not, be there.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Path.basename(&quot;~/foo/bar.ex&quot;, &quot;.ex&quot;)
-&quot;bar&quot;
+<pre><code>iex\&gt; Path.basename(\&quot;~/foo/bar.ex\&quot;, \&quot;.ex\&quot;)
+\&quot;bar\&quot;
 
-iex&gt; Path.basename(&quot;~/foo/bar.exs&quot;, &quot;.ex&quot;)
-&quot;bar.exs&quot;
+iex\&gt; Path.basename(\&quot;~/foo/bar.exs\&quot;, \&quot;.ex\&quot;)
+\&quot;bar.exs\&quot;
 
-iex&gt; Path.basename(&quot;~/foo/bar.old.ex&quot;, &quot;.ex&quot;)
-&quot;bar.old&quot;</code></pre>
+iex\&gt; Path.basename(\&quot;~/foo/bar.old.ex\&quot;, \&quot;.ex\&quot;)
+\&quot;bar.old\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L357" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L357" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -383,14 +383,14 @@ iex&gt; Path.basename(&quot;~/foo/bar.old.ex&quot;, &quot;.ex&quot;)
   <section class="docstring">
     <p>Returns the directory component of <code class="inline">path</code>.</p>
 <h2>Examples</h2>
-<pre><code>Path.dirname(&quot;/foo/bar.ex&quot;)
-#=&gt; &quot;/foo&quot;
-Path.dirname(&quot;/foo/bar/baz.ex&quot;)
-#=&gt; &quot;/foo/bar&quot;</code></pre>
+<pre><code>Path.dirname(\&quot;/foo/bar.ex\&quot;)
+#=\&gt; \&quot;/foo\&quot;
+Path.dirname(\&quot;/foo/bar/baz.ex\&quot;)
+#=\&gt; \&quot;/foo/bar\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L373" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L373" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -414,12 +414,12 @@ Path.dirname(&quot;/foo/bar/baz.ex&quot;)
     <p>Converts the path to an absolute one and expands
 any <code class="inline">.</code> and <code class="inline">..</code> characters and a leading <code class="inline">~</code>.</p>
 <h2>Examples</h2>
-<pre><code>Path.expand(&quot;/foo/bar/../bar&quot;)
-&quot;/foo/bar&quot;</code></pre>
+<pre><code>Path.expand(\&quot;/foo/bar/../bar\&quot;)
+\&quot;/foo/bar\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L138" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L138" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -448,17 +448,17 @@ an absolute one.</p>
 <p>The second argument is first expanded to an absolute path.</p>
 <h2>Examples</h2>
 <pre><code># Assuming that the absolute path to baz is /quux/baz
-Path.expand(&quot;foo/bar/../bar&quot;, &quot;baz&quot;)
-#=&gt; &quot;/quux/baz/foo/bar&quot;
+Path.expand(\&quot;foo/bar/../bar\&quot;, \&quot;baz\&quot;)
+#=\&gt; \&quot;/quux/baz/foo/bar\&quot;
 
-Path.expand(&quot;foo/bar/../bar&quot;, &quot;/baz&quot;)
-&quot;/baz/foo/bar&quot;
-Path.expand(&quot;/foo/bar/../bar&quot;, &quot;/baz&quot;)
-&quot;/foo/bar&quot;</code></pre>
+Path.expand(\&quot;foo/bar/../bar\&quot;, \&quot;/baz\&quot;)
+\&quot;/baz/foo/bar\&quot;
+Path.expand(\&quot;/foo/bar/../bar\&quot;, \&quot;/baz\&quot;)
+\&quot;/foo/bar\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L165" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L165" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -481,15 +481,15 @@ Path.expand(&quot;/foo/bar/../bar&quot;, &quot;/baz&quot;)
   <section class="docstring">
     <p>Returns the extension of the last component of <code class="inline">path</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Path.extname(&quot;foo.erl&quot;)
-&quot;.erl&quot;
+<pre><code>iex\&gt; Path.extname(\&quot;foo.erl\&quot;)
+\&quot;.erl\&quot;
 
-iex&gt; Path.extname(&quot;~/foo/bar&quot;)
-&quot;&quot;</code></pre>
+iex\&gt; Path.extname(\&quot;~/foo/bar\&quot;)
+\&quot;\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L390" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L390" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -514,18 +514,18 @@ iex&gt; Path.extname(&quot;~/foo/bar&quot;)
 <p>This function should be used to convert a list of strings to a path.
 Note that any trailing slash is removed on join.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Path.join([&quot;~&quot;, &quot;foo&quot;])
-&quot;~/foo&quot;
+<pre><code>iex\&gt; Path.join([\&quot;~\&quot;, \&quot;foo\&quot;])
+\&quot;~/foo\&quot;
 
-iex&gt; Path.join([&quot;foo&quot;])
-&quot;foo&quot;
+iex\&gt; Path.join([\&quot;foo\&quot;])
+\&quot;foo\&quot;
 
-iex&gt; Path.join([&quot;/&quot;, &quot;foo&quot;, &quot;bar/&quot;])
-&quot;/foo/bar&quot;</code></pre>
+iex\&gt; Path.join([\&quot;/\&quot;, \&quot;foo\&quot;, \&quot;bar/\&quot;])
+\&quot;/foo/bar\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L448" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L448" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -550,12 +550,12 @@ iex&gt; Path.join([&quot;/&quot;, &quot;foo&quot;, &quot;bar/&quot;])
 <p>The right path will always be expanded to its relative format
 and any trailing slash is removed on join.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Path.join(&quot;foo&quot;, &quot;bar&quot;)
-&quot;foo/bar&quot;</code></pre>
+<pre><code>iex\&gt; Path.join(\&quot;foo\&quot;, \&quot;bar\&quot;)
+\&quot;foo/bar\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L466" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L466" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -578,18 +578,18 @@ and any trailing slash is removed on join.</p>
   <section class="docstring">
     <p>Forces the path to be a relative path.</p>
 <h2>Unix examples</h2>
-<pre><code>Path.relative(&quot;/usr/local/bin&quot;)   #=&gt; &quot;usr/local/bin&quot;
-Path.relative(&quot;usr/local/bin&quot;)    #=&gt; &quot;usr/local/bin&quot;
-Path.relative(&quot;../usr/local/bin&quot;) #=&gt; &quot;../usr/local/bin&quot;</code></pre>
+<pre><code>Path.relative(\&quot;/usr/local/bin\&quot;)   #=\&gt; \&quot;usr/local/bin\&quot;
+Path.relative(\&quot;usr/local/bin\&quot;)    #=\&gt; \&quot;usr/local/bin\&quot;
+Path.relative(\&quot;../usr/local/bin\&quot;) #=\&gt; \&quot;../usr/local/bin\&quot;</code></pre>
 <h2>Windows examples</h2>
-<pre><code>Path.relative(&quot;D:/usr/local/bin&quot;) #=&gt; &quot;usr/local/bin&quot;
-Path.relative(&quot;usr/local/bin&quot;)    #=&gt; &quot;usr/local/bin&quot;
-Path.relative(&quot;D:bar.ex&quot;)         #=&gt; &quot;bar.ex&quot;
-Path.relative(&quot;/bar/foo.ex&quot;)      #=&gt; &quot;bar/foo.ex&quot;</code></pre>
+<pre><code>Path.relative(\&quot;D:/usr/local/bin\&quot;) #=\&gt; \&quot;usr/local/bin\&quot;
+Path.relative(\&quot;usr/local/bin\&quot;)    #=\&gt; \&quot;usr/local/bin\&quot;
+Path.relative(\&quot;D:bar.ex\&quot;)         #=\&gt; \&quot;bar.ex\&quot;
+Path.relative(\&quot;/bar/foo.ex\&quot;)      #=\&gt; \&quot;bar/foo.ex\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L211" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L211" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -617,18 +617,18 @@ no symlinks in between the paths.</p>
 <p>In case a direct relative path cannot be found, it returns
 the original path.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Path.relative_to(&quot;/usr/local/foo&quot;, &quot;/usr/local&quot;)
-&quot;foo&quot;
+<pre><code>iex\&gt; Path.relative_to(\&quot;/usr/local/foo\&quot;, \&quot;/usr/local\&quot;)
+\&quot;foo\&quot;
 
-iex&gt; Path.relative_to(&quot;/usr/local/foo&quot;, &quot;/&quot;)
-&quot;usr/local/foo&quot;
+iex\&gt; Path.relative_to(\&quot;/usr/local/foo\&quot;, \&quot;/\&quot;)
+\&quot;usr/local/foo\&quot;
 
-iex&gt; Path.relative_to(&quot;/usr/local/foo&quot;, &quot;/etc&quot;)
-&quot;/usr/local/foo&quot;</code></pre>
+iex\&gt; Path.relative_to(\&quot;/usr/local/foo\&quot;, \&quot;/etc\&quot;)
+\&quot;/usr/local/foo\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L288" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L288" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -655,7 +655,7 @@ cannot be retrieved, returns the full path.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L311" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L311" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -678,15 +678,15 @@ cannot be retrieved, returns the full path.</p>
   <section class="docstring">
     <p>Returns the <code class="inline">path</code> with the <code class="inline">extension</code> stripped.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Path.rootname(&quot;/foo/bar&quot;)
-&quot;/foo/bar&quot;
+<pre><code>iex\&gt; Path.rootname(\&quot;/foo/bar\&quot;)
+\&quot;/foo/bar\&quot;
 
-iex&gt; Path.rootname(&quot;/foo/bar.ex&quot;)
-&quot;/foo/bar&quot;</code></pre>
+iex\&gt; Path.rootname(\&quot;/foo/bar.ex\&quot;)
+\&quot;/foo/bar\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L407" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L407" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -710,15 +710,15 @@ iex&gt; Path.rootname(&quot;/foo/bar.ex&quot;)
     <p>Returns the <code class="inline">path</code> with the <code class="inline">extension</code> stripped. This function should be used to
 remove a specific extension which might, or might not, be there.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Path.rootname(&quot;/foo/bar.erl&quot;, &quot;.erl&quot;)
-&quot;/foo/bar&quot;
+<pre><code>iex\&gt; Path.rootname(\&quot;/foo/bar.erl\&quot;, \&quot;.erl\&quot;)
+\&quot;/foo/bar\&quot;
 
-iex&gt; Path.rootname(&quot;/foo/bar.erl&quot;, &quot;.ex&quot;)
-&quot;/foo/bar.erl&quot;</code></pre>
+iex\&gt; Path.rootname(\&quot;/foo/bar.erl\&quot;, \&quot;.ex\&quot;)
+\&quot;/foo/bar.erl\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L425" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L425" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -745,18 +745,18 @@ iex&gt; Path.rootname(&quot;/foo/bar.erl&quot;, &quot;.ex&quot;)
 and the driver letter, if there is one, is always returned
 in lowercase.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Path.split(&quot;&quot;)
+<pre><code>iex\&gt; Path.split(\&quot;\&quot;)
  []
 
- iex&gt; Path.split(&quot;foo&quot;)
- [&quot;foo&quot;]
+ iex\&gt; Path.split(\&quot;foo\&quot;)
+ [\&quot;foo\&quot;]
 
- iex&gt; Path.split(&quot;/foo/bar&quot;)
- [&quot;/&quot;, &quot;foo&quot;, &quot;bar&quot;]</code></pre>
+ iex\&gt; Path.split(\&quot;/foo/bar\&quot;)
+ [\&quot;/\&quot;, \&quot;foo\&quot;, \&quot;bar\&quot;]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L510" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L510" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -779,20 +779,20 @@ in lowercase.</p>
   <section class="docstring">
     <p>Returns the path type.</p>
 <h2>Unix examples</h2>
-<pre><code>Path.type(&quot;/&quot;)                #=&gt; :absolute
-Path.type(&quot;/usr/local/bin&quot;)   #=&gt; :absolute
-Path.type(&quot;usr/local/bin&quot;)    #=&gt; :relative
-Path.type(&quot;../usr/local/bin&quot;) #=&gt; :relative
-Path.type(&quot;~/file&quot;)           #=&gt; :relative</code></pre>
+<pre><code>Path.type(\&quot;/\&quot;)                #=\&gt; :absolute
+Path.type(\&quot;/usr/local/bin\&quot;)   #=\&gt; :absolute
+Path.type(\&quot;usr/local/bin\&quot;)    #=\&gt; :relative
+Path.type(\&quot;../usr/local/bin\&quot;) #=\&gt; :relative
+Path.type(\&quot;~/file\&quot;)           #=\&gt; :relative</code></pre>
 <h2>Windows examples</h2>
-<pre><code>Path.type(&quot;D:/usr/local/bin&quot;) #=&gt; :absolute
-Path.type(&quot;usr/local/bin&quot;)    #=&gt; :relative
-Path.type(&quot;D:bar.ex&quot;)         #=&gt; :volumerelative
-Path.type(&quot;/bar/foo.ex&quot;)      #=&gt; :volumerelative</code></pre>
+<pre><code>Path.type(\&quot;D:/usr/local/bin\&quot;) #=\&gt; :absolute
+Path.type(\&quot;usr/local/bin\&quot;)    #=\&gt; :relative
+Path.type(\&quot;D:bar.ex\&quot;)         #=\&gt; :volumerelative
+Path.type(\&quot;/bar/foo.ex\&quot;)      #=\&gt; :volumerelative</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L189" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L189" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -834,13 +834,13 @@ with a dot <code class="inline">.</code> unless <code class="inline">match_dot: 
 <p>Imagine you have a directory called <code class="inline">projects</code> with three Elixir projects
 inside of it: <code class="inline">elixir</code>, <code class="inline">ex_doc</code> and <code class="inline">dynamo</code>. You can find all <code class="inline">.beam</code> files
 inside the <code class="inline">ebin</code> directory of each project as follows:</p>
-<pre><code>Path.wildcard(&quot;projects/*/ebin/**/*.beam&quot;)</code></pre>
+<pre><code>Path.wildcard(\&quot;projects/*/ebin/**/*.beam\&quot;)</code></pre>
 <p>If you want to search for both <code class="inline">.beam</code> and <code class="inline">.app</code> files, you could do:</p>
-<pre><code>Path.wildcard(&quot;projects/*/ebin/**/*.{beam,app}&quot;)</code></pre>
+<pre><code>Path.wildcard(\&quot;projects/*/ebin/**/*.{beam,app}\&quot;)</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/path.ex#L588" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/path.ex#L588" class="view_source">Source</a>
   
 </section>
 

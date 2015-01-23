@@ -50,7 +50,7 @@
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L3" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L3" class="view_source">Source</a>
       
 
       
@@ -125,7 +125,7 @@ using an accumulator</p>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#to_string/2">to_string(tree, fun \\ fn _ast, string -&gt; string end)</a></td>
+  <td class="summary_signature"><a href="#to_string/2">to_string(tree, fun \\ fn _ast, string -\&gt; string end)</a></td>
   
     <td class="summary_synopsis"><p>Converts the given expression to a binary</p>
 </td>
@@ -242,24 +242,24 @@ by the atoms <code class="inline">var</code> and <code class="inline">context</c
 function name and argument list.</p>
 <p>Returns <code class="inline">:error</code> when an invalid call syntax is provided.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Macro.decompose_call(quote do: foo)
+<pre><code>iex\&gt; Macro.decompose_call(quote do: foo)
 {:foo, []}
 
-iex&gt; Macro.decompose_call(quote do: foo())
+iex\&gt; Macro.decompose_call(quote do: foo())
 {:foo, []}
 
-iex&gt; Macro.decompose_call(quote do: foo(1, 2, 3))
+iex\&gt; Macro.decompose_call(quote do: foo(1, 2, 3))
 {:foo, [1, 2, 3]}
 
-iex&gt; Macro.decompose_call(quote do: Elixir.M.foo(1, 2, 3))
+iex\&gt; Macro.decompose_call(quote do: Elixir.M.foo(1, 2, 3))
 {{:__aliases__, [], [:Elixir, :M]}, :foo, [1, 2, 3]}
 
-iex&gt; Macro.decompose_call(quote do: 42)
+iex\&gt; Macro.decompose_call(quote do: 42)
 :error</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L272" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L272" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -286,18 +286,18 @@ into a syntax tree.</p>
 which leaves <code class="inline">unquote</code> statements unescaped, effectively
 unquoting the contents on escape.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Macro.escape(:foo)
+<pre><code>iex\&gt; Macro.escape(:foo)
 :foo
 
-iex&gt; Macro.escape({:a, :b, :c})
+iex\&gt; Macro.escape({:a, :b, :c})
 {:{}, [], [:a, :b, :c]}
 
-iex&gt; Macro.escape({:unquote, [], [1]}, unquote: true)
+iex\&gt; Macro.escape({:unquote, [], [1]}, unquote: true)
 1</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L306" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L306" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -318,7 +318,7 @@ be expanded.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L944" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L944" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -399,7 +399,7 @@ end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L826" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L826" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -424,7 +424,7 @@ end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L76" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L76" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -449,7 +449,7 @@ end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L207" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L207" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -475,7 +475,7 @@ using an accumulator.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L216" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L216" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -500,7 +500,7 @@ using an accumulator.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L154" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L154" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -526,12 +526,12 @@ using an accumulator.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L163" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L163" class="view_source">Source</a>
   
 </section>
 <section class="detail">
   <div class="detail_header" id="to_string/2">
-    <span class="signature"><strong>to_string(tree, fun \\ fn _ast, string -&gt; string end)</strong></span>
+    <span class="signature"><strong>to_string(tree, fun \\ fn _ast, string -\&gt; string end)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
       <a href="#to_string/2" class="detail_link" title="Link to this function">#</a>
@@ -549,12 +549,12 @@ using an accumulator.</p>
   <section class="docstring">
     <p>Converts the given expression to a binary.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Macro.to_string(quote do: foo.bar(1, 2, 3))
-&quot;foo.bar(1, 2, 3)&quot;</code></pre>
+<pre><code>iex\&gt; Macro.to_string(quote do: foo.bar(1, 2, 3))
+\&quot;foo.bar(1, 2, 3)\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L453" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L453" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -586,14 +586,14 @@ can be given as hexadecimals via <code class="inline">\xNN</code> and <code clas
 (like <code class="inline">~r</code>, <code class="inline">~s</code> and others) which receive a raw, unescaped
 string.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Macro.unescape_string(&quot;example\\n&quot;)
-&quot;example\n&quot;</code></pre>
+<pre><code>iex\&gt; Macro.unescape_string(\&quot;example\\n\&quot;)
+\&quot;example\n\&quot;</code></pre>
 <p>In the example above, we pass a string with <code class="inline">\n</code> escaped
 and return a version with it unescaped.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L368" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L368" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -640,11 +640,11 @@ not escaped and <code class="inline">\</code> is kept in the char list.</p>
 for <code class="inline">?x</code>.</p>
 <h2>Examples</h2>
 <p>Using the <code class="inline">unescape_map</code> function defined above is easy:</p>
-<pre><code>Macro.unescape_string &quot;example\\n&quot;, &amp;unescape_map(&amp;1)</code></pre>
+<pre><code>Macro.unescape_string \&quot;example\\n\&quot;, \&amp;unescape_map(\&amp;1)</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L412" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L412" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -675,7 +675,7 @@ for examples.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L428" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L428" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -701,7 +701,7 @@ for examples.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L438" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L438" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -727,7 +727,7 @@ for examples.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L60" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L60" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -753,14 +753,14 @@ for examples.</p>
 information like lines and hygienic counters from the expression
 for either storage or comparison.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; quoted = quote line: 10, do: sample()
+<pre><code>iex\&gt; quoted = quote line: 10, do: sample()
 {:sample, [line: 10], []}
-iex&gt; Macro.update_meta(quoted, &amp;Keyword.delete(&amp;1, :line))
+iex\&gt; Macro.update_meta(quoted, \&amp;Keyword.delete(\&amp;1, :line))
 {:sample, [], []}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L115" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L115" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -787,7 +787,7 @@ quoted expression.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L317" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L317" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -814,16 +814,16 @@ by the atoms <code class="inline">var</code> and <code class="inline">context</c
 <p>In order to build a variable, a context is expected.
 Most of the times, in order to preserve hygiene, the
 context must be <code class="inline">__MODULE__</code>:</p>
-<pre><code>iex&gt; Macro.var(:foo, __MODULE__)
+<pre><code>iex\&gt; Macro.var(:foo, __MODULE__)
 {:foo, [], __MODULE__}</code></pre>
 <p>However, if there is a need to access the user variable,
 nil can be given:</p>
-<pre><code>iex&gt; Macro.var(:foo, nil)
+<pre><code>iex\&gt; Macro.var(:foo, nil)
 {:foo, [], nil}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/macro.ex#L146" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/macro.ex#L146" class="view_source">Source</a>
   
 </section>
 

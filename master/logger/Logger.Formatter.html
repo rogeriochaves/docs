@@ -62,7 +62,7 @@ serves as template for log messages, for example:</p>
 </li>
 <li><code class="inline">$node</code>     - the node that prints the message
 </li>
-<li><code class="inline">$metadata</code> - user controlled data presented in <code class="inline">&quot;key=val key2=val2&quot;</code> format
+<li><code class="inline">$metadata</code> - user controlled data presented in <code class="inline">\&quot;key=val key2=val2\&quot;</code> format
 </li>
 <li><code class="inline">$levelpad</code> - set to a single space if level is 4 characters long,
 otherwise set to the empty space. Used to align the message after level.
@@ -85,7 +85,7 @@ value.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/logger/lib/logger/formatter.ex#L3" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/logger/lib/logger/formatter.ex#L3" class="view_source">Source</a>
       
 
       
@@ -157,12 +157,12 @@ metadata listdict and returns a properly formatted string</p>
 pass <code class="inline">nil</code>, it defaults to: <code class="inline">$time $metadata [$level] $levelpad$message\n</code></p>
 <p>If you would like to make your own custom formatter simply pass
 <code class="inline">{module, function}</code> to <a href="#compile/1"><code class="inline">compile/1</code></a> and the rest is handled.</p>
-<pre><code>iex&gt; Logger.Formatter.compile(&quot;$time $metadata [$level] $message\n&quot;)
-[:time, &quot; &quot;, :metadata, &quot; [&quot;, :level, &quot;] &quot;, :message, &quot;\n&quot;]</code></pre>
+<pre><code>iex\&gt; Logger.Formatter.compile(\&quot;$time $metadata [$level] $message\n\&quot;)
+[:time, \&quot; \&quot;, :metadata, \&quot; [\&quot;, :level, \&quot;] \&quot;, :message, \&quot;\n\&quot;]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/logger/lib/logger/formatter.ex#L64" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/logger/lib/logger/formatter.ex#L64" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -188,7 +188,7 @@ metadata listdict and returns a properly formatted string.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/logger/lib/logger/formatter.ex#L88" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/logger/lib/logger/formatter.ex#L88" class="view_source">Source</a>
   
 </section>
 

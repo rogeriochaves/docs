@@ -49,7 +49,7 @@
 action throughout their life-cycle, often with little or no
 communication with other processes. The most common use case
 for tasks is to compute a value asynchronously:</p>
-<pre><code>task = Task.async(fn -&gt; do_some_work() end)
+<pre><code>task = Task.async(fn -\&gt; do_some_work() end)
 res  = do_some_other_work()
 res + Task.await(task)</code></pre>
 <p>Tasks spawned with <code class="inline">async</code> can be awaited on by its caller
@@ -71,12 +71,12 @@ trapped by the caller).</p>
 <h2>Supervised tasks</h2>
 <p>It is also possible to spawn a task inside a supervision tree
 with <a href="#start_link/1"><code class="inline">start_link/1</code></a> and <a href="#start_link/3"><code class="inline">start_link/3</code></a>:</p>
-<pre><code>Task.start_link(fn -&gt; IO.puts &quot;ok&quot; end)</code></pre>
+<pre><code>Task.start_link(fn -\&gt; IO.puts \&quot;ok\&quot; end)</code></pre>
 <p>Such tasks can be mounted in your supervision tree as:</p>
 <pre><code>import Supervisor.Spec
 
 children = [
-  worker(Task, [fn -&gt; IO.puts &quot;ok&quot; end])
+  worker(Task, [fn -\&gt; IO.puts \&quot;ok\&quot; end])
 ]</code></pre>
 <p>Since these tasks are supervised and not directly linked to
 the caller, they cannot be awaited on. Note <a href="#start_link/1"><code class="inline">start_link/1</code></a>,
@@ -113,7 +113,7 @@ supervisor.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/task.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/task.ex#L1" class="view_source">Source</a>
       
 
       
@@ -233,7 +233,7 @@ or a tuple containing the process and node names</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/task.ex#L102" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/task.ex#L102" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -264,7 +264,7 @@ where <code class="inline">ref</code> is the monitoring reference held by the ta
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/task.ex#L159" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/task.ex#L159" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -291,7 +291,7 @@ module, function and arguments.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/task.ex#L170" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/task.ex#L170" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -319,7 +319,7 @@ exit with the same reason as the task.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/task.ex#L194" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/task.ex#L194" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -354,7 +354,7 @@ to see if incoming messages are from any of the tasks.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/task.ex#L227" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/task.ex#L227" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -382,7 +382,7 @@ be linked to the current process.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/task.ex#L130" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/task.ex#L130" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -410,7 +410,7 @@ be linked to the current process.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/task.ex#L142" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/task.ex#L142" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -435,7 +435,7 @@ be linked to the current process.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/task.ex#L110" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/task.ex#L110" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -460,7 +460,7 @@ be linked to the current process.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/task.ex#L118" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/task.ex#L118" class="view_source">Source</a>
   
 </section>
 

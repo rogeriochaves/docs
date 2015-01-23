@@ -50,9 +50,9 @@
   import ExUnit.CaptureIO
 
   test :example do
-    assert capture_io(fn -&gt;
-      IO.puts &quot;a&quot;
-    end) == &quot;a\n&quot;
+    assert capture_io(fn -\&gt;
+      IO.puts \&quot;a\&quot;
+    end) == \&quot;a\n\&quot;
   end
 end</code></pre>
 
@@ -60,7 +60,7 @@ end</code></pre>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/capture_io.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/capture_io.ex#L1" class="view_source">Source</a>
       
 
       
@@ -115,27 +115,27 @@ captured.</p>
 <p>A developer can set a string as an input. The default
 input is <code class="inline">:eof</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; capture_io(fn -&gt; IO.write &quot;john&quot; end) == &quot;john&quot;
+<pre><code>iex\&gt; capture_io(fn -\&gt; IO.write \&quot;john\&quot; end) == \&quot;john\&quot;
 true
 
-iex&gt; capture_io(:stderr, fn -&gt; IO.write(:stderr, &quot;john&quot;) end) == &quot;john&quot;
+iex\&gt; capture_io(:stderr, fn -\&gt; IO.write(:stderr, \&quot;john\&quot;) end) == \&quot;john\&quot;
 true
 
-iex&gt; capture_io(&quot;this is input&quot;, fn -&gt;
-...&gt;   input = IO.gets &quot;&gt;&quot;
-...&gt;   IO.write input
-...&gt; end) == &quot;&gt;this is input&quot;
+iex\&gt; capture_io(\&quot;this is input\&quot;, fn -\&gt;
+...\&gt;   input = IO.gets \&quot;\&gt;\&quot;
+...\&gt;   IO.write input
+...\&gt; end) == \&quot;\&gt;this is input\&quot;
 true
 
-iex&gt; capture_io([input: &quot;this is input&quot;, capture_prompt: false], fn -&gt;
-...&gt;   input = IO.gets &quot;&gt;&quot;
-...&gt;   IO.write input
-...&gt; end) == &quot;this is input&quot;
+iex\&gt; capture_io([input: \&quot;this is input\&quot;, capture_prompt: false], fn -\&gt;
+...\&gt;   input = IO.gets \&quot;\&gt;\&quot;
+...\&gt;   IO.write input
+...\&gt; end) == \&quot;this is input\&quot;
 true</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/capture_io.ex#L62" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/capture_io.ex#L62" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -152,7 +152,7 @@ true</code></pre>
     
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/capture_io.ex#L66" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/capture_io.ex#L66" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -169,7 +169,7 @@ true</code></pre>
     
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/capture_io.ex#L78" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/capture_io.ex#L78" class="view_source">Source</a>
   
 </section>
 

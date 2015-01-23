@@ -51,7 +51,7 @@
 
   def project do
     [app: :my_app,
-     version: &quot;0.6.0&quot;]
+     version: \&quot;0.6.0\&quot;]
   end
 end</code></pre>
 <p>After being defined, the configuration for this project can be read
@@ -74,7 +74,7 @@ etc.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L1" class="view_source">Source</a>
       
 
       
@@ -195,11 +195,11 @@ etc.</p>
 <p>The returned path will be expanded.</p>
 <h2>Examples</h2>
 <pre><code>Mix.Project.app_path
-#=&gt; &quot;/path/to/project/_build/shared/lib/app&quot;</code></pre>
+#=\&gt; \&quot;/path/to/project/_build/shared/lib/app\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L278" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L278" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -217,17 +217,17 @@ etc.</p>
 <p>The returned path will be expanded.</p>
 <h2>Examples</h2>
 <pre><code>Mix.Project.build_path
-#=&gt; &quot;/path/to/project/_build/shared&quot;</code></pre>
+#=\&gt; \&quot;/path/to/project/_build/shared\&quot;</code></pre>
 <p>If :build_per_environment is set to true (the default), it
 will create a new build per environment:</p>
 <pre><code>Mix.env
-#=&gt; :dev
+#=\&gt; :dev
 Mix.Project.build_path
-#=&gt; &quot;/path/to/project/_build/dev&quot;</code></pre>
+#=\&gt; \&quot;/path/to/project/_build/dev\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L240" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L240" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -250,7 +250,7 @@ Mix.Project.build_path
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L314" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L314" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -268,11 +268,11 @@ Mix.Project.build_path
 <p>The returned path will be expanded.</p>
 <h2>Examples</h2>
 <pre><code>Mix.Project.compile_path
-#=&gt; &quot;/path/to/project/_build/shared/lib/app/ebin&quot;</code></pre>
+#=\&gt; \&quot;/path/to/project/_build/shared/lib/app/ebin\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L302" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L302" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -299,7 +299,7 @@ compilation directories) and not your application runtime.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L133" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L133" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -321,7 +321,7 @@ all config files in the <code class="inline">config</code> directory.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L149" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L149" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -339,11 +339,11 @@ all config files in the <code class="inline">config</code> directory.</p>
 <p>The returned path will be expanded.</p>
 <h2>Examples</h2>
 <pre><code>Mix.Project.deps_path
-#=&gt; &quot;/path/to/project/deps&quot;</code></pre>
+#=\&gt; \&quot;/path/to/project/deps\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L217" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L217" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -366,7 +366,7 @@ requirement of the current task, you should call
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L98" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L98" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -389,7 +389,7 @@ is available.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L114" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L114" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -412,7 +412,7 @@ the project configuration.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L182" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L182" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -430,7 +430,7 @@ the project configuration.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L339" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L339" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -451,11 +451,11 @@ in future releases.</p>
 <p>The returned path will be expanded.</p>
 <h2>Examples</h2>
 <pre><code>Mix.Project.manifest_path
-#=&gt; &quot;/path/to/project/_build/shared/lib/app&quot;</code></pre>
+#=\&gt; \&quot;/path/to/project/_build/shared/lib/app\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L263" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L263" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -473,7 +473,7 @@ in future releases.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/project.ex#L168" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/project.ex#L168" class="view_source">Source</a>
   
 </section>
 

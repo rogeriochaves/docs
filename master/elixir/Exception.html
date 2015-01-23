@@ -59,7 +59,7 @@ format exceptions as in the current Elixir version being used.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L1" class="view_source">Source</a>
       
 
       
@@ -206,7 +206,7 @@ to Elixir exceptions</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L37" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L37" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -235,7 +235,7 @@ to generate the final format.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L132" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L132" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -268,7 +268,7 @@ an empty stacktrace, <code class="inline">[]</code>, must be used.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L101" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L101" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -297,7 +297,7 @@ and stacktrace.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L156" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L156" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -314,12 +314,12 @@ and stacktrace.</p>
     <p>Receives an anonymous function and arity and formats it as
 shown in stacktraces. The arity may also be a list of arguments.</p>
 <h2>Examples</h2>
-<pre><code>Exception.format_fa(fn -&gt; end, 1)
-#=&gt; &quot;#Function&lt;...&gt;/1&quot;</code></pre>
+<pre><code>Exception.format_fa(fn -\&gt; end, 1)
+#=\&gt; \&quot;#Function\&lt;...\&gt;/1\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L391" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L391" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -336,18 +336,18 @@ shown in stacktraces. The arity may also be a list of arguments.</p>
     <p>Formats the given file and line as shown in stacktraces.
 If any of the values are nil, they are omitted.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Exception.format_file_line(&quot;foo&quot;, 1)
-&quot;foo:1:&quot;
+<pre><code>iex\&gt; Exception.format_file_line(\&quot;foo\&quot;, 1)
+\&quot;foo:1:\&quot;
 
-iex&gt; Exception.format_file_line(&quot;foo&quot;, nil)
-&quot;foo:&quot;
+iex\&gt; Exception.format_file_line(\&quot;foo\&quot;, nil)
+\&quot;foo:\&quot;
 
-iex&gt; Exception.format_file_line(nil, nil)
-&quot;&quot;</code></pre>
+iex\&gt; Exception.format_file_line(nil, nil)
+\&quot;\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L455" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L455" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -365,21 +365,21 @@ iex&gt; Exception.format_file_line(nil, nil)
 as shown in stacktraces. The arity may also be a list
 of arguments.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Exception.format_mfa Foo, :bar, 1
-&quot;Foo.bar/1&quot;
+<pre><code>iex\&gt; Exception.format_mfa Foo, :bar, 1
+\&quot;Foo.bar/1\&quot;
 
-iex&gt; Exception.format_mfa Foo, :bar, []
-&quot;Foo.bar()&quot;
+iex\&gt; Exception.format_mfa Foo, :bar, []
+\&quot;Foo.bar()\&quot;
 
-iex&gt; Exception.format_mfa nil, :bar, []
-&quot;nil.bar()&quot;</code></pre>
+iex\&gt; Exception.format_mfa nil, :bar, []
+\&quot;nil.bar()\&quot;</code></pre>
 <p>Anonymous functions are reported as -func/arity-anonfn-count-,
 where func is the name of the enclosing function. Convert to
 “anonymous fn in func/arity”</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L415" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L415" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -399,7 +399,7 @@ is retrieved from <a href="Process.html#info/2"><code class="inline">Process.inf
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L370" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L370" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -424,7 +424,7 @@ is retrieved from <a href="Process.html#info/2"><code class="inline">Process.inf
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L332" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L332" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -442,7 +442,7 @@ is retrieved from <a href="Process.html#info/2"><code class="inline">Process.inf
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L43" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L43" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -479,7 +479,7 @@ an empty stacktrace, <code class="inline">[]</code>, must be used.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/exception.ex#L73" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/exception.ex#L73" class="view_source">Source</a>
   
 </section>
 

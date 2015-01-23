@@ -50,12 +50,12 @@ In order to do that, one needs to invoke the <code class="inline">doctest/1</cod
 from their test case and write their examples according
 to some guidelines.</p>
 <p>The syntax for examples is as follows. Every new test starts
-on a new line, with an <code class="inline">iex&gt;</code> prefix. Multiline expressions
+on a new line, with an <code class="inline">iex\&gt;</code> prefix. Multiline expressions
 can be employed if the following lines start with either
-<code class="inline">...&gt;</code> (recommended) or <code class="inline">iex&gt;</code> prefix.</p>
-<p>The expected result should start at the next line after <code class="inline">iex&gt;</code>
-or <code class="inline">...&gt;</code> line(s) and is terminated either by a newline, new
-<code class="inline">iex&gt;</code> prefix or end of the string literal.</p>
+<code class="inline">...\&gt;</code> (recommended) or <code class="inline">iex\&gt;</code> prefix.</p>
+<p>The expected result should start at the next line after <code class="inline">iex\&gt;</code>
+or <code class="inline">...\&gt;</code> line(s) and is terminated either by a newline, new
+<code class="inline">iex\&gt;</code> prefix or end of the string literal.</p>
 <h2>Examples</h2>
 <p>Currently, the only way to run doctests is to include them into
 an ExUnit case with a <code class="inline">doctest</code> macro:</p>
@@ -67,28 +67,28 @@ end</code></pre>
 macros defined in <code class="inline">MyModule</code>, parsing their documentation in
 search of code examples.</p>
 <p>A very basic example is:</p>
-<pre><code>iex&gt; 1+1
+<pre><code>iex\&gt; 1+1
 2</code></pre>
 <p>Expressions on multiple lines are also supported:</p>
-<pre><code>iex&gt; Enum.map [1, 2, 3], fn(x) -&gt;
-...&gt;   x * 2
-...&gt; end
+<pre><code>iex\&gt; Enum.map [1, 2, 3], fn(x) -\&gt;
+...\&gt;   x * 2
+...\&gt; end
 [2,4,6]</code></pre>
 <p>Multiple results can be checked within the same test:</p>
-<pre><code>iex&gt; a = 1
+<pre><code>iex\&gt; a = 1
 1
-iex&gt; a + 1
+iex\&gt; a + 1
 2</code></pre>
 <p>If you want to keep any two tests separate,
 add an empty line between them:</p>
-<pre><code>iex&gt; a = 1
+<pre><code>iex\&gt; a = 1
 1
 
-iex&gt; a + 1  # will fail with a &quot;function a/0 undefined&quot; error
+iex\&gt; a + 1  # will fail with a \&quot;function a/0 undefined\&quot; error
 2</code></pre>
 <p>Similarly to iex you can use numbers in your “prompts”:</p>
-<pre><code>iex(1)&gt; [1+2,
-...(1)&gt;  3]
+<pre><code>iex(1)\&gt; [1+2,
+...(1)\&gt;  3]
 [3,3]</code></pre>
 <p>This is useful in two use cases:</p>
 <ul>
@@ -102,20 +102,20 @@ iex&gt; a + 1  # will fail with a &quot;function a/0 undefined&quot; error
 <h2>Opaque types</h2>
 <p>Some types internal structure are kept hidden and instead show a
 user-friendly structure when inspecting the value. The idiom in
-Elixir is to print those data types as <code class="inline">#Name&lt;...&gt;</code>. Doctest will
+Elixir is to print those data types as <code class="inline">#Name\&lt;...\&gt;</code>. Doctest will
 test these values by doing a string compare.</p>
-<pre><code>iex&gt; Enum.into([a: 10, b: 20], HashDict.new)
-#HashDict&lt;[b: 20, a: 10]&gt;</code></pre>
+<pre><code>iex\&gt; Enum.into([a: 10, b: 20], HashDict.new)
+#HashDict\&lt;[b: 20, a: 10]\&gt;</code></pre>
 <p>The above example will be tested with the following match:
-<code class="inline">&quot;#HashDict&lt;[b: 20, a: 10]&gt;&quot; = inspect(Enum.into([a: 10, b: 20], HashDict.new))</code>.</p>
+<code class="inline">\&quot;#HashDict\&lt;[b: 20, a: 10]\&gt;\&quot; = inspect(Enum.into([a: 10, b: 20], HashDict.new))</code>.</p>
 <h2>Exceptions</h2>
 <p>You can also showcase expressions raising an exception, for example:</p>
-<pre><code>iex(1)&gt; String.to_atom((fn() -&gt; 1 end).())
+<pre><code>iex(1)\&gt; String.to_atom((fn() -\&gt; 1 end).())
 ** (ArgumentError) argument error</code></pre>
 <p>What DocTest will be looking for is a line starting with <code class="inline">** (</code> and it
 will parse it accordingly to extract the exception name and message.
 At this moment, the exception parser would make the parser treat the next
-line as a start of a completely new expression (if it is prefixed with <code class="inline">iex&gt;</code>)
+line as a start of a completely new expression (if it is prefixed with <code class="inline">iex\&gt;</code>)
 or a no-op line with documentation. Thus, multiline messages are not
 supported.</p>
 <h2>When not to use doctest</h2>
@@ -130,7 +130,7 @@ suite run.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/doc_test.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/doc_test.ex#L1" class="view_source">Source</a>
       
 
       
@@ -188,7 +188,7 @@ should be set to <code class="inline">false</code> and a full <code class="inlin
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/ex_unit/lib/ex_unit/doc_test.ex#L144" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/ex_unit/lib/ex_unit/doc_test.ex#L144" class="view_source">Source</a>
   
 </section>
 

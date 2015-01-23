@@ -77,19 +77,19 @@ end
 {:ok, pid} = GenEvent.start_link()
 
 GenEvent.add_handler(pid, LoggerHandler, [])
-#=&gt; :ok
+#=\&gt; :ok
 
 GenEvent.notify(pid, {:log, 1})
-#=&gt; :ok
+#=\&gt; :ok
 
 GenEvent.notify(pid, {:log, 2})
-#=&gt; :ok
+#=\&gt; :ok
 
 GenEvent.call(pid, LoggerHandler, :messages)
-#=&gt; [1, 2]
+#=\&gt; [1, 2]
 
 GenEvent.call(pid, LoggerHandler, :messages)
-#=&gt; []</code></pre>
+#=\&gt; []</code></pre>
 <p>We start a new event manager by calling <code class="inline">GenEvent.start_link/0</code>.
 Notifications can be sent to the event manager which will then
 invoke <code class="inline">handle_event/2</code> for each registered handler.</p>
@@ -186,7 +186,7 @@ Here are some examples:</p>
 _ = Enum.drop(stream, 10)
 
 # Print all remaining events
-for event &lt;- stream do
+for event \&lt;- stream do
   IO.inspect event
 end</code></pre>
 <h2>Learn more and compatibility</h2>
@@ -215,7 +215,7 @@ the <a href="GenServer.html"><code class="inline">GenServer</code></a> module.</
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L1" class="view_source">Source</a>
       
 
       
@@ -405,7 +405,7 @@ to Elixir’s GenEvent and does not work with Erlang ones.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L425" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L425" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -438,7 +438,7 @@ function returns <code class="inline">{:error, :already_present}</code>.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L316" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L316" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -499,7 +499,7 @@ module (it is not backwards compatible with Erlang’s <code class="inline">:gen
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L361" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L361" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -530,7 +530,7 @@ If the specified event handler is not installed, the function returns
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L441" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L441" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -560,7 +560,7 @@ event manager does not exist, unless it is specified as an atom.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L376" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L376" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -588,7 +588,7 @@ installed, the function returns <code class="inline">{:error, :not_found}</code>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L460" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L460" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -614,7 +614,7 @@ installed, the function returns <code class="inline">{:error, :not_found}</code>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L262" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L262" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -649,7 +649,7 @@ process exits with <code class="inline">:normal</code> reason.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L252" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L252" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -676,7 +676,7 @@ for each installed event handler.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L510" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L510" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -711,7 +711,7 @@ with Erlang ones.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L295" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L295" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -746,7 +746,7 @@ function returns <code class="inline">:ok</code>.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L481" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L481" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -772,7 +772,7 @@ function returns <code class="inline">:ok</code>.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L491" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L491" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -800,7 +800,7 @@ invokes the <code class="inline">handle_event/2</code> on each installed event h
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L410" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L410" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -825,7 +825,7 @@ invokes the <code class="inline">handle_event/2</code> on each installed event h
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/gen_event.ex#L499" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/gen_event.ex#L499" class="view_source">Source</a>
   
 </section>
 

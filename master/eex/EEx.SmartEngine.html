@@ -46,8 +46,8 @@
 <p>It includes assigns (like <code class="inline">@foo</code>) and possibly other
 conveniences in the future.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; EEx.eval_string(&quot;&lt;%= @foo %&gt;&quot;, assigns: [foo: 1])
-&quot;1&quot;</code></pre>
+<pre><code>iex\&gt; EEx.eval_string(\&quot;\&lt;%= @foo %\&gt;\&quot;, assigns: [foo: 1])
+\&quot;1\&quot;</code></pre>
 <p>In the example above, we can access the value <code class="inline">foo</code> under
 the binding <code class="inline">assigns</code> using <code class="inline">@foo</code>. This is useful because
 a template, after being compiled, can receive different
@@ -55,22 +55,22 @@ assigns and would not require recompilation for each
 variable set.</p>
 <p>Assigns can also be used when compiled to a function:</p>
 <pre><code># sample.eex
-&lt;%= @a + @b %&gt;
+\&lt;%= @a + @b %\&gt;
 
 # sample.ex
 defmodule Sample do
   require EEx
-  EEx.function_from_file :def, :sample, &quot;sample.eex&quot;, [:assigns]
+  EEx.function_from_file :def, :sample, \&quot;sample.eex\&quot;, [:assigns]
 end
 
 # iex
-Sample.sample(a: 1, b: 2) #=&gt; &quot;3&quot;</code></pre>
+Sample.sample(a: 1, b: 2) #=\&gt; \&quot;3\&quot;</code></pre>
 
         </section>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/smart_engine.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/smart_engine.ex#L1" class="view_source">Source</a>
       
 
       
@@ -121,7 +121,7 @@ Sample.sample(a: 1, b: 2) #=&gt; &quot;3&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/smart_engine.ex#L35" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/smart_engine.ex#L35" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -139,7 +139,7 @@ Sample.sample(a: 1, b: 2) #=&gt; &quot;3&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/smart_engine.ex#L35" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/smart_engine.ex#L35" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -157,7 +157,7 @@ Sample.sample(a: 1, b: 2) #=&gt; &quot;3&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/smart_engine.ex#L35" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/smart_engine.ex#L35" class="view_source">Source</a>
   
 </section>
 

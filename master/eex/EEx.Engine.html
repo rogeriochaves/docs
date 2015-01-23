@@ -58,9 +58,9 @@ the text and must return a new quoted expression.</p>
 </li>
 <li><p><code class="inline">handle_expr(buffer, marker, expr)</code> - it receives the buffer,
 the marker, the expr and must return a new quoted expression.</p>
-<p>The marker is what follows exactly after <code class="inline">&lt;%</code>. For example,
-<code class="inline">&lt;% foo %&gt;</code> has an empty marker, but <code class="inline">&lt;%= foo %&gt;</code> has <code class="inline">&quot;=&quot;</code>
-as marker. The allowed markers so far are: <code class="inline">&quot;&quot;</code> and <code class="inline">&quot;=&quot;</code>.</p>
+<p>The marker is what follows exactly after <code class="inline">\&lt;%</code>. For example,
+<code class="inline">\&lt;% foo %\&gt;</code> has an empty marker, but <code class="inline">\&lt;%= foo %\&gt;</code> has <code class="inline">\&quot;=\&quot;</code>
+as marker. The allowed markers so far are: <code class="inline">\&quot;\&quot;</code> and <code class="inline">\&quot;=\&quot;</code>.</p>
 <p>Read <a href="#handle_expr/3"><code class="inline">handle_expr/3</code></a> below for more information about the markers
 implemented by default by this engine.</p>
 </li>
@@ -72,7 +72,7 @@ default implementations for the functions above.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/engine.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/engine.ex#L1" class="view_source">Source</a>
       
 
       
@@ -131,13 +131,13 @@ given expression</p>
 <p>This can be added to any custom engine by invoking
 <code class="inline">handle_assign/3</code> with <code class="inline">Macro.prewalk/1</code>:</p>
 <pre><code>def handle_expr(buffer, token, expr) do
-  expr = Macro.prewalk(expr, &amp;EEx.Engine.handle_assign/1)
+  expr = Macro.prewalk(expr, \&amp;EEx.Engine.handle_assign/1)
   EEx.Engine.handle_expr(buffer, token, expr)
 end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/engine.ex#L67" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/engine.ex#L67" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -156,7 +156,7 @@ given expression.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/engine.ex#L80" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/engine.ex#L80" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -171,13 +171,13 @@ given expression.</p>
   
   <section class="docstring">
     <p>Implements expressions according to the markers.</p>
-<pre><code>&lt;% Elixir expression - inline with output %&gt;
-&lt;%= Elixir expression - replace with result %&gt;</code></pre>
+<pre><code>\&lt;% Elixir expression - inline with output %\&gt;
+\&lt;%= Elixir expression - replace with result %\&gt;</code></pre>
 <p>All other markers are not implemented by this engine.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/engine.ex#L99" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/engine.ex#L99" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -195,7 +195,7 @@ given expression.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/engine.ex#L87" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/engine.ex#L87" class="view_source">Source</a>
   
 </section>
 
@@ -228,7 +228,7 @@ given expression.</p>
     
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/engine.ex#L30" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/engine.ex#L30" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -252,7 +252,7 @@ given expression.</p>
     
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/engine.ex#L32" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/engine.ex#L32" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -276,7 +276,7 @@ given expression.</p>
     
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/eex/lib/eex/engine.ex#L31" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/eex/lib/eex/engine.ex#L31" class="view_source">Source</a>
   
 </section>
 

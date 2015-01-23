@@ -48,7 +48,7 @@
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/float.ex#L3" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/float.ex#L3" class="view_source">Source</a>
       
 
       
@@ -147,18 +147,18 @@ an arbitrary number of fractional digits (between 0 and 15).</p>
 <p>This function always returns floats. One may use <a href="Kernel.html#trunc/1"><code class="inline">Kernel.trunc/1</code></a> to
 truncate the result to an integer afterwards.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Float.ceil(34.25)
+<pre><code>iex\&gt; Float.ceil(34.25)
 35.0
 
-iex&gt; Float.ceil(-56.5)
+iex\&gt; Float.ceil(-56.5)
 -56.0
 
-iex&gt; Float.ceil(34.253, 2)
+iex\&gt; Float.ceil(34.253, 2)
 34.26</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/float.ex#L120" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/float.ex#L120" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -185,18 +185,18 @@ to an arbitrary number of fractional digits (between 0 and 15).</p>
 <p>This function always returns floats. One may use <a href="Kernel.html#trunc/1"><code class="inline">Kernel.trunc/1</code></a> to
 truncate the result to an integer afterwards.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Float.floor(34.25)
+<pre><code>iex\&gt; Float.floor(34.25)
 34.0
 
-iex&gt; Float.floor(-56.5)
+iex\&gt; Float.floor(-56.5)
 -57.0
 
-iex&gt; Float.floor(34.253, 2)
+iex\&gt; Float.floor(34.253, 2)
 34.25</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/float.ex#L90" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/float.ex#L90" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -223,21 +223,21 @@ Otherwise <code class="inline">:error</code>.</p>
 <p>If a float formatted string wants to be directly converted to float,
 `String.to_float/1” can be used instead.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Float.parse(&quot;34&quot;)
-{34.0,&quot;&quot;}
+<pre><code>iex\&gt; Float.parse(\&quot;34\&quot;)
+{34.0,\&quot;\&quot;}
 
-iex&gt; Float.parse(&quot;34.25&quot;)
-{34.25,&quot;&quot;}
+iex\&gt; Float.parse(\&quot;34.25\&quot;)
+{34.25,\&quot;\&quot;}
 
-iex&gt; Float.parse(&quot;56.5xyz&quot;)
-{56.5,&quot;xyz&quot;}
+iex\&gt; Float.parse(\&quot;56.5xyz\&quot;)
+{56.5,\&quot;xyz\&quot;}
 
-iex&gt; Float.parse(&quot;pi&quot;)
+iex\&gt; Float.parse(\&quot;pi\&quot;)
 :error</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/float.ex#L33" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/float.ex#L33" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -264,21 +264,21 @@ iex&gt; Float.parse(&quot;pi&quot;)
 if you want a function that accepts both floats and integers and always
 returns an integer.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Float.round(5.5674, 3)
+<pre><code>iex\&gt; Float.round(5.5674, 3)
 5.567
 
-iex&gt; Float.round(5.5675, 3)
+iex\&gt; Float.round(5.5675, 3)
 5.568
 
-iex&gt; Float.round(-5.5674, 3)
+iex\&gt; Float.round(-5.5674, 3)
 -5.567
 
-iex&gt; Float.round(-5.5675, 3)
+iex\&gt; Float.round(-5.5675, 3)
 -5.568</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/float.ex#L152" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/float.ex#L152" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -302,12 +302,12 @@ iex&gt; Float.round(-5.5675, 3)
     <p>Returns a char list which corresponds to the text representation of the given float.</p>
 <p>Inlined by the compiler.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Float.to_char_list(7.0)
+<pre><code>iex\&gt; Float.to_char_list(7.0)
 '7.00000000000000000000e+00'</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/float.ex#L174" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/float.ex#L174" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -341,12 +341,12 @@ of <code class="inline">float</code>.</p>
 </li>
 </ul>
 <h2>Examples</h2>
-<pre><code>iex&gt; Float.to_char_list 7.1, [decimals: 2, compact: true]
+<pre><code>iex\&gt; Float.to_char_list 7.1, [decimals: 2, compact: true]
 '7.1'</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/float.ex#L196" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/float.ex#L196" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -371,12 +371,12 @@ of <code class="inline">float</code>.</p>
 of <code class="inline">some_float</code>.</p>
 <p>Inlined by the compiler.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Float.to_string(7.0)
-&quot;7.00000000000000000000e+00&quot;</code></pre>
+<pre><code>iex\&gt; Float.to_string(7.0)
+\&quot;7.00000000000000000000e+00\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/float.ex#L213" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/float.ex#L213" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -410,12 +410,12 @@ of <code class="inline">float</code>.</p>
 </li>
 </ul>
 <h2>Examples</h2>
-<pre><code>iex&gt; Float.to_string 7.1, [decimals: 2, compact: true]
-&quot;7.1&quot;</code></pre>
+<pre><code>iex\&gt; Float.to_string 7.1, [decimals: 2, compact: true]
+\&quot;7.1\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/float.ex#L235" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/float.ex#L235" class="view_source">Source</a>
   
 </section>
 

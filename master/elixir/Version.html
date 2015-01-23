@@ -53,9 +53,9 @@ generated after parsing via <a href="Version.html#parse/1"><code class="inline">
 <p>In a nutshell, a version is given by three numbers:</p>
 <pre><code>MAJOR.MINOR.PATCH</code></pre>
 <p>Pre-releases are supported by appending <code class="inline">-[0-9A-Za-z-\.]</code>:</p>
-<pre><code>&quot;1.0.0-alpha.3&quot;</code></pre>
+<pre><code>\&quot;1.0.0-alpha.3\&quot;</code></pre>
 <p>Build information can be added by appending <code class="inline">+[0-9A-Za-z-\.]</code>:</p>
-<pre><code>&quot;1.0.0-alpha.3+20130417140000&quot;</code></pre>
+<pre><code>\&quot;1.0.0-alpha.3+20130417140000\&quot;</code></pre>
 <h2>Struct</h2>
 <p>The version is represented by the Version struct and it has its
 fields named according to Semver: <code class="inline">:major</code>, <code class="inline">:minor</code>, <code class="inline">:patch</code>,
@@ -63,25 +63,25 @@ fields named according to Semver: <code class="inline">:major</code>, <code clas
 <h2>Requirements</h2>
 <p>Requirements allow you to specify which versions of a given
 dependency you are willing to work against. It supports common
-operators like <code class="inline">&gt;=</code>, <code class="inline">&lt;=</code>, <code class="inline">&gt;</code>, <code class="inline">==</code> and friends that
+operators like <code class="inline">\&gt;=</code>, <code class="inline">\&lt;=</code>, <code class="inline">\&gt;</code>, <code class="inline">==</code> and friends that
 work as one would expect:</p>
 <pre><code># Only version 2.0.0
-&quot;== 2.0.0&quot;
+\&quot;== 2.0.0\&quot;
 
 # Anything later than 2.0.0
-&quot;&gt; 2.0.0&quot;</code></pre>
+\&quot;\&gt; 2.0.0\&quot;</code></pre>
 <p>Requirements also support <code class="inline">and</code> and <code class="inline">or</code> for complex conditions:</p>
 <pre><code># 2.0.0 and later until 2.1.0
-&quot;&gt;= 2.0.0 and &lt; 2.1.0&quot;</code></pre>
+\&quot;\&gt;= 2.0.0 and \&lt; 2.1.0\&quot;</code></pre>
 <p>Since the example above is such a common requirement, it can
 be expressed as:</p>
-<pre><code>&quot;~&gt; 2.0.0&quot;</code></pre>
+<pre><code>\&quot;~\&gt; 2.0.0\&quot;</code></pre>
 
         </section>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/version.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/version.ex#L1" class="view_source">Source</a>
       
 
       
@@ -209,18 +209,18 @@ is returned</p>
 <p>Raises a <a href="Version.InvalidVersionError.html"><code class="inline">Version.InvalidVersionError</code></a> exception if <code class="inline">version</code> is not parseable.
 If given an already parsed version this function won’t raise.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Version.compare(&quot;2.0.1-alpha1&quot;, &quot;2.0.0&quot;)
+<pre><code>iex\&gt; Version.compare(\&quot;2.0.1-alpha1\&quot;, \&quot;2.0.0\&quot;)
 :gt
 
-iex&gt; Version.compare(&quot;2.0.1+build0&quot;, &quot;2.0.1&quot;)
+iex\&gt; Version.compare(\&quot;2.0.1+build0\&quot;, \&quot;2.0.1\&quot;)
 :eq
 
-iex&gt; Version.compare(&quot;invalid&quot;, &quot;2.0.1&quot;)
+iex\&gt; Version.compare(\&quot;invalid\&quot;, \&quot;2.0.1\&quot;)
 ** (Version.InvalidVersionError) invalid</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/version.ex#L151" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/version.ex#L151" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -248,21 +248,21 @@ parseable, or <a href="Version.InvalidVersionError.html"><code class="inline">Ve
 If given an already parsed version and requirement this function won’t
 raise.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Version.match?(&quot;2.0.0&quot;, &quot;&gt;1.0.0&quot;)
+<pre><code>iex\&gt; Version.match?(\&quot;2.0.0\&quot;, \&quot;\&gt;1.0.0\&quot;)
 true
 
-iex&gt; Version.match?(&quot;2.0.0&quot;, &quot;==1.0.0&quot;)
+iex\&gt; Version.match?(\&quot;2.0.0\&quot;, \&quot;==1.0.0\&quot;)
 false
 
-iex&gt; Version.match?(&quot;foo&quot;, &quot;==1.0.0&quot;)
+iex\&gt; Version.match?(\&quot;foo\&quot;, \&quot;==1.0.0\&quot;)
 ** (Version.InvalidVersionError) foo
 
-iex&gt; Version.match?(&quot;2.0.0&quot;, &quot;== ==1.0.0&quot;)
+iex\&gt; Version.match?(\&quot;2.0.0\&quot;, \&quot;== ==1.0.0\&quot;)
 ** (Version.InvalidRequirementError) == ==1.0.0</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/version.ex#L116" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/version.ex#L116" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -285,16 +285,16 @@ iex&gt; Version.match?(&quot;2.0.0&quot;, &quot;== ==1.0.0&quot;)
   <section class="docstring">
     <p>Parses a version string into a <a href="Version.html"><code class="inline">Version</code></a>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; {:ok, version} = Version.parse(&quot;2.0.1-alpha1&quot;)
-iex&gt; version
-#Version&lt;2.0.1-alpha1&gt;
+<pre><code>iex\&gt; {:ok, version} = Version.parse(\&quot;2.0.1-alpha1\&quot;)
+iex\&gt; version
+#Version\&lt;2.0.1-alpha1\&gt;
 
-iex&gt; Version.parse(&quot;2.0-alpha1&quot;)
+iex\&gt; Version.parse(\&quot;2.0-alpha1\&quot;)
 :error</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/version.ex#L181" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/version.ex#L181" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -317,16 +317,16 @@ iex&gt; Version.parse(&quot;2.0-alpha1&quot;)
   <section class="docstring">
     <p>Parses a version requirement string into a <code class="inline">Version.Requirement</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; {:ok, req} = Version.parse_requirement(&quot;== 2.0.1&quot;)
-iex&gt; req
-#Version.Requirement&lt;== 2.0.1&gt;
+<pre><code>iex\&gt; {:ok, req} = Version.parse_requirement(\&quot;== 2.0.1\&quot;)
+iex\&gt; req
+#Version.Requirement\&lt;== 2.0.1\&gt;
 
-iex&gt; Version.parse_requirement(&quot;== == 2.0.1&quot;)
+iex\&gt; Version.parse_requirement(\&quot;== == 2.0.1\&quot;)
 :error</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/version.ex#L206" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/version.ex#L206" class="view_source">Source</a>
   
 </section>
 

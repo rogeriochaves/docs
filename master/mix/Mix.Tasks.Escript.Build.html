@@ -91,13 +91,13 @@ before being embedded into the escript.</p>
 <p>Defaults to <code class="inline">true</code> for Elixir projects.</p>
 </li>
 <li><p><code class="inline">:shebang</code> - shebang interpreter directive used to execute the escript.
-Defaults to <code class="inline">&quot;#! /usr/bin/env escript\n&quot;</code>.</p>
+Defaults to <code class="inline">\&quot;#! /usr/bin/env escript\n\&quot;</code>.</p>
 </li>
 <li><p><code class="inline">:comment</code> - comment line to follow shebang directive in the escript.
-Defaults to <code class="inline">&quot;&quot;</code>.</p>
+Defaults to <code class="inline">\&quot;\&quot;</code>.</p>
 </li>
 <li><code class="inline">:emu_args</code> - emulator arguments to embed in the escript file.
-Defaults to <code class="inline">&quot;&quot;</code>.
+Defaults to <code class="inline">\&quot;\&quot;</code>.
 </li>
 </ul>
 <p>There is one project-level option that affects how the escript is generated:</p>
@@ -112,7 +112,7 @@ config used during build.
 <pre><code>defmodule MyApp.Mixfile do
   def project do
     [app: :myapp,
-     version: &quot;0.0.1&quot;,
+     version: \&quot;0.0.1\&quot;,
      escript: escript]
   end
 
@@ -125,7 +125,7 @@ end</code></pre>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/tasks/escript.build.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/tasks/escript.build.ex#L1" class="view_source">Source</a>
       
 
       
@@ -169,7 +169,7 @@ end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/mix/lib/mix/tasks/escript.build.ex#L93" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/mix/lib/mix/tasks/escript.build.ex#L93" class="view_source">Source</a>
   
 </section>
 

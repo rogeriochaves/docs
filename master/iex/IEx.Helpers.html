@@ -104,14 +104,14 @@ followed by a dot, then press tab to trigger autocomplete. For example:</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L1" class="view_source">Source</a>
       
 
       
         <h2 id="summary">Summary<span class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></span></h2>
         <table class="summary">
           <tr>
-  <td class="summary_signature"><a href="#c/2">c(files, path \\ &quot;.&quot;)</a></td>
+  <td class="summary_signature"><a href="#c/2">c(files, path \\ \&quot;.\&quot;)</a></td>
   
     <td class="summary_synopsis"><p>Compiles the given files</p>
 </td>
@@ -170,7 +170,7 @@ old version was properly purged before)</p>
   
 </tr>
 <tr>
-  <td class="summary_signature"><a href="#ls/1">ls(path \\ &quot;.&quot;)</a></td>
+  <td class="summary_signature"><a href="#ls/1">ls(path \\ \&quot;.\&quot;)</a></td>
   
     <td class="summary_synopsis"><p>Produces a simple list of a directory’s contents</p>
 </td>
@@ -237,7 +237,7 @@ their results</p>
           <h2>Functions</h2>
           <section class="detail">
   <div class="detail_header" id="c/2">
-    <span class="signature"><strong>c(files, path \\ &quot;.&quot;)</strong></span>
+    <span class="signature"><strong>c(files, path \\ \&quot;.\&quot;)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
       <a href="#c/2" class="detail_link" title="Link to this function">#</a>
@@ -253,15 +253,15 @@ one file, there is no need to wrap it in a list.</p>
 <p>It returns the name of the compiled modules.</p>
 <p>If you want to recompile an existing module, check <a href="#r/1"><code class="inline">r/1</code></a> instead.</p>
 <h2>Examples</h2>
-<pre><code>c [&quot;foo.ex&quot;, &quot;bar.ex&quot;], &quot;ebin&quot;
-#=&gt; [Foo,Bar]
+<pre><code>c [\&quot;foo.ex\&quot;, \&quot;bar.ex\&quot;], \&quot;ebin\&quot;
+#=\&gt; [Foo,Bar]
 
-c &quot;baz.ex&quot;
-#=&gt; [Baz]</code></pre>
+c \&quot;baz.ex\&quot;
+#=\&gt; [Baz]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L72" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L72" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -279,7 +279,7 @@ c &quot;baz.ex&quot;
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L348" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L348" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -300,7 +300,7 @@ unavailable on Windows machines.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L107" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L107" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -318,7 +318,7 @@ unavailable on Windows machines.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L315" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L315" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -336,7 +336,7 @@ unavailable on Windows machines.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L119" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L119" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -358,12 +358,12 @@ to load it.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L307" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L307" class="view_source">Source</a>
   
 </section>
 <section class="detail">
   <div class="detail_header" id="ls/1">
-    <span class="signature"><strong>ls(path \\ &quot;.&quot;)</strong></span>
+    <span class="signature"><strong>ls(path \\ \&quot;.\&quot;)</strong></span>
     <div class="detail_header_links">
       <span class="detail_type">(function)</span>
       <a href="#ls/1" class="detail_link" title="Link to this function">#</a>
@@ -377,7 +377,7 @@ to load it.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L361" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L361" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -395,7 +395,7 @@ to load it.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L341" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L341" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -415,7 +415,7 @@ are recompiled and reloaded.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L274" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L274" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -434,7 +434,7 @@ are recompiled and reloaded.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L426" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L426" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -453,7 +453,7 @@ their results.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L248" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L248" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -473,7 +473,7 @@ For instance, v(-1) returns the result of the last evaluated expression.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L264" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L264" class="view_source">Source</a>
   
 </section>
 
@@ -498,7 +498,7 @@ For instance, v(-1) returns the result of the last evaluated expression.</p>
 or for the given function/arity pair.</p>
 <h2>Examples</h2>
 <pre><code>h(Enum)
-#=&gt; Prints documentation for Enum</code></pre>
+#=\&gt; Prints documentation for Enum</code></pre>
 <p>It also accepts functions in the format <code class="inline">fun/arity</code>
 and <code class="inline">module.fun/arity</code>, for example:</p>
 <pre><code>h receive/1
@@ -507,7 +507,7 @@ h Enum.all?</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L143" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L143" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -529,14 +529,14 @@ the shell.</p>
 value = 13
 
 # in the shell
-iex(1)&gt; import_file &quot;~/file.exs&quot;
+iex(1)\&gt; import_file \&quot;~/file.exs\&quot;
 13
-iex(2)&gt; value
+iex(2)\&gt; value
 13</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L450" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L450" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -560,7 +560,7 @@ s(is_atom/1)</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L218" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L218" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -582,7 +582,7 @@ t(Enum.t)</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex/helpers.ex#L188" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex/helpers.ex#L188" class="view_source">Source</a>
   
 </section>
 

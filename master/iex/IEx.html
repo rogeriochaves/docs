@@ -65,14 +65,14 @@ get more information.</p>
 <p>In this menu, developers are able to start new shells and
 alternate between them. Let’s give it a try:</p>
 <pre><code>User switch command
- --&gt; s 'Elixir.IEx'
- --&gt; c</code></pre>
+ --\&gt; s 'Elixir.IEx'
+ --\&gt; c</code></pre>
 <p>The command above will start a new shell and connect to it.
 Create a new variable called <code class="inline">hello</code> and assign some value to it:</p>
 <pre><code>hello = :world</code></pre>
 <p>Now, let’s roll back to the first shell:</p>
 <pre><code>User switch command
- --&gt; c 1</code></pre>
+ --\&gt; c 1</code></pre>
 <p>Now, try to access the <code class="inline">hello</code> variable again:</p>
 <pre><code>hello
 ** (UndefinedFunctionError) undefined function: hello/0</code></pre>
@@ -87,34 +87,34 @@ First of all, we can only connect to a shell if we give names
 both to the current shell and the shell we want to connect to.</p>
 <p>Let’s give it a try. First start a new shell:</p>
 <pre><code>$ iex --sname foo
-iex(foo@HOST)1&gt;</code></pre>
+iex(foo@HOST)1\&gt;</code></pre>
 <p>The string in between parenthesis in the prompt is the name
 of your node. We can retrieve it by calling the <code class="inline">node()</code>
 function:</p>
-<pre><code>iex(foo@HOST)1&gt; node()
-:&quot;foo@HOST&quot;
-iex(foo@HOST)2&gt; Node.alive?()
+<pre><code>iex(foo@HOST)1\&gt; node()
+:\&quot;foo@HOST\&quot;
+iex(foo@HOST)2\&gt; Node.alive?()
 true</code></pre>
 <p>For fun, let’s define a simple module in this shell too:</p>
-<pre><code>iex(foo@HOST)3&gt; defmodule Hello do
-...(foo@HOST)3&gt;   def world, do: &quot;it works!&quot;
-...(foo@HOST)3&gt; end</code></pre>
+<pre><code>iex(foo@HOST)3\&gt; defmodule Hello do
+...(foo@HOST)3\&gt;   def world, do: \&quot;it works!\&quot;
+...(foo@HOST)3\&gt; end</code></pre>
 <p>Now, let’s start another shell, giving it a name as well:</p>
 <pre><code>$ iex --sname bar
-iex(bar@HOST)1&gt;</code></pre>
+iex(bar@HOST)1\&gt;</code></pre>
 <p>If we try to dispatch to <code class="inline">Hello.world</code>, it won’t be available
 as it was defined only in the other shell:</p>
-<pre><code>iex(bar@HOST)1&gt; Hello.world
+<pre><code>iex(bar@HOST)1\&gt; Hello.world
 ** (UndefinedFunctionError) undefined function: Hello.world/0</code></pre>
 <p>However, we can connect to the other shell remotely. Open up
 the User Switch prompt (Ctrl+G) and type:</p>
 <pre><code>User switch command
- --&gt; r 'foo@HOST' 'Elixir.IEx'
- --&gt; c</code></pre>
+ --\&gt; r 'foo@HOST' 'Elixir.IEx'
+ --\&gt; c</code></pre>
 <p>Now we are connected into the remote node, as the prompt shows us,
 and we can access the information and modules defined over there:</p>
-<pre><code>rem(foo@macbook)1&gt; Hello.world
-&quot;it works&quot;</code></pre>
+<pre><code>rem(foo@macbook)1\&gt; Hello.world
+\&quot;it works\&quot;</code></pre>
 <p>In fact, connecting to remote shells is so common that we provide
 a shortcut via the command line as well:</p>
 <pre><code>$ iex --sname baz --remsh foo@HOST</code></pre>
@@ -138,10 +138,10 @@ loaded or variables that are bound in the .iex.exs file will be available in the
 shell after it has booted.</p>
 <p>Sample contents of a local .iex.exs file:</p>
 <pre><code># source another `.iex.exs` file
-import_file &quot;~/.iex.exs&quot;
+import_file \&quot;~/.iex.exs\&quot;
 
 # print something before the shell starts
-IO.puts &quot;hello world&quot;
+IO.puts \&quot;hello world\&quot;
 
 # bind a variable that'll be accessible in the shell
 value = 13</code></pre>
@@ -152,7 +152,7 @@ Erlang 17 [...]
 
 hello world
 Interactive Elixir - press Ctrl+C to exit (type h() ENTER for help)
-iex(1)&gt; value
+iex(1)\&gt; value
 13</code></pre>
 <p>It is possible to load another file by supplying the <code class="inline">--dot-iex</code>
 option to iex. See <code class="inline">iex --help</code>.</p>
@@ -170,7 +170,7 @@ $ iex
 Erlang 17 (erts-5.10.1) [...]
 
 Interactive Elixir - press Ctrl+C to exit (type h() ENTER for help)
-iex(1)&gt; [1, 2, 3, 4, 5]
+iex(1)\&gt; [1, 2, 3, 4, 5]
 [1,2,3,...]</code></pre>
 <h2>Expressions in IEx</h2>
 <p>As an interactive shell, IEx evaluates expressions. This has some
@@ -180,9 +180,9 @@ This means that any benchmarking done in the shell is going to have
 skewed results. So never run any profiling nor benchmarks in the shell.</p>
 <p>Second, IEx allows you to break an expression into many lines,
 since this is common in Elixir. For example:</p>
-<pre><code>iex(1)&gt; &quot;ab
-...(1)&gt; c&quot;
-&quot;ab\nc&quot;</code></pre>
+<pre><code>iex(1)\&gt; \&quot;ab
+...(1)\&gt; c\&quot;
+\&quot;ab\nc\&quot;</code></pre>
 <p>In the example above, the shell will be expecting more input until it
 finds the closing quote. Sometimes it is not obvious which character
 the shell is expecting, and the user may find themselves trapped in
@@ -191,18 +191,18 @@ than by exiting the shell.</p>
 <p>For such cases, there is a special break-trigger (<code class="inline">#iex:break</code>) that when
 encountered on a line by itself will force the shell to break out of any
 pending expression and return to its normal state:</p>
-<pre><code>iex(1)&gt; [&quot;ab
-...(1)&gt; c&quot;
-...(1)&gt; &quot;
-...(1)&gt; ]
-...(1)&gt; #iex:break
+<pre><code>iex(1)\&gt; [\&quot;ab
+...(1)\&gt; c\&quot;
+...(1)\&gt; \&quot;
+...(1)\&gt; ]
+...(1)\&gt; #iex:break
 ** (TokenMissingError) iex:1: incomplete expression</code></pre>
 
         </section>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex.ex#L1" class="view_source">Source</a>
       
 
       
@@ -295,7 +295,7 @@ pending expression and return to its normal state:</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex.ex#L314" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex.ex#L314" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -313,7 +313,7 @@ pending expression and return to its normal state:</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex.ex#L307" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex.ex#L307" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -332,7 +332,7 @@ pending expression and return to its normal state:</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex.ex#L331" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex.ex#L331" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -350,7 +350,7 @@ pending expression and return to its normal state:</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex.ex#L300" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex.ex#L300" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -436,7 +436,7 @@ when awaiting input.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex.ex#L275" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex.ex#L275" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -454,7 +454,7 @@ when awaiting input.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex.ex#L360" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex.ex#L360" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -472,7 +472,7 @@ when awaiting input.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex.ex#L322" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex.ex#L322" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -491,7 +491,7 @@ when awaiting input.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex.ex#L350" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex.ex#L350" class="view_source">Source</a>
   
 </section>
 
@@ -543,7 +543,7 @@ end</code></pre>
 your shell to pry the given environment. By allowing it,
 the shell will be reset and you gain access to all variables
 and the lexical scope from above:</p>
-<pre><code>pry(1)&gt; map([a,b,c], &amp;IO.inspect(&amp;1))
+<pre><code>pry(1)\&gt; map([a,b,c], \&amp;IO.inspect(\&amp;1))
 1
 2
 3</code></pre>
@@ -551,7 +551,7 @@ and the lexical scope from above:</p>
 blocking the caller during the evaluation cycle. The caller
 process can be freed by calling <code class="inline">respawn</code>, which starts a
 new IEx evaluation cycle, letting this one go:</p>
-<pre><code>pry(2)&gt; respawn
+<pre><code>pry(2)\&gt; respawn
 true
 
 Interactive Elixir - press Ctrl+C to exit (type h() ENTER for help)</code></pre>
@@ -560,7 +560,7 @@ affect the caller the environment (hence it is called <code class="inline">pry</
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/iex/lib/iex.ex#L422" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/iex/lib/iex.ex#L422" class="view_source">Source</a>
   
 </section>
 

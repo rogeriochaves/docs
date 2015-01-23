@@ -59,7 +59,7 @@ first argument.</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L1" class="view_source">Source</a>
       
 
       
@@ -312,15 +312,15 @@ If the argument is <code class="inline">nil</code>, returns an empty list</p>
 the item. If the item occurs more than once in the list, just
 the first occurrence is removed.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.delete([1, 2, 3], 1)
+<pre><code>iex\&gt; List.delete([1, 2, 3], 1)
 [2,3]
 
-iex&gt; List.delete([1, 2, 2, 3], 2)
+iex\&gt; List.delete([1, 2, 2, 3], 2)
 [1, 2, 3]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L36" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L36" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -345,18 +345,18 @@ iex&gt; List.delete([1, 2, 2, 3], 2)
 Negative indices indicate an offset from the end of the list.
 If <code class="inline">index</code> is out of bounds, the original <code class="inline">list</code> is returned.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.delete_at([1, 2, 3], 0)
+<pre><code>iex\&gt; List.delete_at([1, 2, 3], 0)
 [2, 3]
 
 iex List.delete_at([1, 2, 3], 10)
 [1, 2, 3]
 
-iex&gt; List.delete_at([1, 2, 3], -1)
+iex\&gt; List.delete_at([1, 2, 3], -1)
 [1, 2]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L432" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L432" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -379,15 +379,15 @@ iex&gt; List.delete_at([1, 2, 3], -1)
   <section class="docstring">
     <p>Duplicates the given element <code class="inline">n</code> times in a list.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.duplicate(&quot;hello&quot;, 3)
-[&quot;hello&quot;,&quot;hello&quot;,&quot;hello&quot;]
+<pre><code>iex\&gt; List.duplicate(\&quot;hello\&quot;, 3)
+[\&quot;hello\&quot;,\&quot;hello\&quot;,\&quot;hello\&quot;]
 
-iex&gt; List.duplicate([1, 2], 2)
+iex\&gt; List.duplicate([1, 2], 2)
 [[1,2],[1,2]]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L53" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L53" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -410,18 +410,18 @@ iex&gt; List.duplicate([1, 2], 2)
   <section class="docstring">
     <p>Returns the first element in <code class="inline">list</code> or <code class="inline">nil</code> if <code class="inline">list</code> is empty.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.first([])
+<pre><code>iex\&gt; List.first([])
 nil
 
-iex&gt; List.first([1])
+iex\&gt; List.first([1])
 1
 
-iex&gt; List.first([1, 2, 3])
+iex\&gt; List.first([1, 2, 3])
 1</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L136" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L136" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -444,12 +444,12 @@ iex&gt; List.first([1, 2, 3])
   <section class="docstring">
     <p>Flattens the given <code class="inline">list</code> of nested lists.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.flatten([1, [[2], 3]])
+<pre><code>iex\&gt; List.flatten([1, [[2], 3]])
 [1,2,3]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L67" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L67" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -474,12 +474,12 @@ iex&gt; List.first([1, 2, 3])
 The list <code class="inline">tail</code> will be added at the end of
 the flattened list.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.flatten([1, [[2], 3]], [4, 5])
+<pre><code>iex\&gt; List.flatten([1, [[2], 3]], [4, 5])
 [1,2,3,4,5]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L83" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L83" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -503,15 +503,15 @@ the flattened list.</p>
     <p>Folds (reduces) the given list from the left with
 a function. Requires an accumulator.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.foldl([5, 5], 10, fn (x, acc) -&gt; x + acc end)
+<pre><code>iex\&gt; List.foldl([5, 5], 10, fn (x, acc) -\&gt; x + acc end)
 20
 
-iex&gt; List.foldl([1, 2, 3, 4], 0, fn (x, acc) -&gt; x - acc end)
+iex\&gt; List.foldl([1, 2, 3, 4], 0, fn (x, acc) -\&gt; x - acc end)
 2</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L101" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L101" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -535,12 +535,12 @@ iex&gt; List.foldl([1, 2, 3, 4], 0, fn (x, acc) -&gt; x - acc end)
     <p>Folds (reduces) the given list from the right with
 a function. Requires an accumulator.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.foldr([1, 2, 3, 4], 0, fn (x, acc) -&gt; x - acc end)
+<pre><code>iex\&gt; List.foldr([1, 2, 3, 4], 0, fn (x, acc) -\&gt; x - acc end)
 -2</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L116" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L116" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -565,21 +565,21 @@ a function. Requires an accumulator.</p>
 Note that <code class="inline">index</code> is capped at the list length. Negative indices
 indicate an offset from the end of the list.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.insert_at([1, 2, 3, 4], 2, 0)
+<pre><code>iex\&gt; List.insert_at([1, 2, 3, 4], 2, 0)
 [1, 2, 0, 3, 4]
 
-iex&gt; List.insert_at([1, 2, 3], 10, 0)
+iex\&gt; List.insert_at([1, 2, 3], 10, 0)
 [1, 2, 3, 0]
 
-iex&gt; List.insert_at([1, 2, 3], -1, 0)
+iex\&gt; List.insert_at([1, 2, 3], -1, 0)
 [1, 2, 3, 0]
 
-iex&gt; List.insert_at([1, 2, 3], -10, 0)
+iex\&gt; List.insert_at([1, 2, 3], -10, 0)
 [0, 1, 2, 3]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L348" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L348" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -604,18 +604,18 @@ iex&gt; List.insert_at([1, 2, 3], -10, 0)
 where the item at <code class="inline">position</code> matches the
 given <code class="inline">key</code>. Returns the new list.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.keydelete([a: 1, b: 2], :a, 0)
+<pre><code>iex\&gt; List.keydelete([a: 1, b: 2], :a, 0)
 [b: 2]
 
-iex&gt; List.keydelete([a: 1, b: 2], 2, 1)
+iex\&gt; List.keydelete([a: 1, b: 2], 2, 1)
 [a: 1]
 
-iex&gt; List.keydelete([a: 1, b: 2], :c, 0)
+iex\&gt; List.keydelete([a: 1, b: 2], :c, 0)
 [a: 1, b: 2]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L273" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L273" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -640,18 +640,18 @@ iex&gt; List.keydelete([a: 1, b: 2], :c, 0)
 where the item at <code class="inline">position</code> in the tuple matches the
 given <code class="inline">key</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.keyfind([a: 1, b: 2], :a, 0)
+<pre><code>iex\&gt; List.keyfind([a: 1, b: 2], :a, 0)
 {:a, 1}
 
-iex&gt; List.keyfind([a: 1, b: 2], 2, 1)
+iex\&gt; List.keyfind([a: 1, b: 2], 2, 1)
 {:b, 2}
 
-iex&gt; List.keyfind([a: 1, b: 2], :c, 0)
+iex\&gt; List.keyfind([a: 1, b: 2], :c, 0)
 nil</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L177" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L177" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -676,18 +676,18 @@ nil</code></pre>
 a tuple where the item at <code class="inline">position</code> in the tuple matches
 the given <code class="inline">key</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.keymember?([a: 1, b: 2], :a, 0)
+<pre><code>iex\&gt; List.keymember?([a: 1, b: 2], :a, 0)
 true
 
-iex&gt; List.keymember?([a: 1, b: 2], 2, 1)
+iex\&gt; List.keymember?([a: 1, b: 2], 2, 1)
 true
 
-iex&gt; List.keymember?([a: 1, b: 2], :c, 0)
+iex\&gt; List.keymember?([a: 1, b: 2], :c, 0)
 false</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L199" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L199" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -711,12 +711,12 @@ false</code></pre>
     <p>Receives a list of tuples and replaces the item
 identified by <code class="inline">key</code> at <code class="inline">position</code> if it exists.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.keyreplace([a: 1, b: 2], :a, 0, {:a, 3})
+<pre><code>iex\&gt; List.keyreplace([a: 1, b: 2], :a, 0, {:a, 3})
 [a: 3, b: 2]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L214" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L214" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -740,15 +740,15 @@ identified by <code class="inline">key</code> at <code class="inline">position</
     <p>Receives a list of tuples and sorts the items
 at <code class="inline">position</code> of the tuples. The sort is stable.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.keysort([a: 5, b: 1, c: 3], 1)
+<pre><code>iex\&gt; List.keysort([a: 5, b: 1, c: 3], 1)
 [b: 1, c: 3, a: 5]
 
-iex&gt; List.keysort([a: 5, c: 1, b: 3], 0)
+iex\&gt; List.keysort([a: 5, c: 1, b: 3], 0)
 [a: 5, b: 3, c: 1]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L232" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L232" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -773,15 +773,15 @@ iex&gt; List.keysort([a: 5, c: 1, b: 3], 0)
 identified by <code class="inline">key</code> at <code class="inline">position</code>. If the item
 does not exist, it is added to the end of the list.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.keystore([a: 1, b: 2], :a, 0, {:a, 3})
+<pre><code>iex\&gt; List.keystore([a: 1, b: 2], :a, 0, {:a, 3})
 [a: 3, b: 2]
 
-iex&gt; List.keystore([a: 1, b: 2], :c, 0, {:c, 3})
+iex\&gt; List.keystore([a: 1, b: 2], :c, 0, {:c, 3})
 [a: 1, b: 2, c: 3]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L251" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L251" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -804,18 +804,18 @@ iex&gt; List.keystore([a: 1, b: 2], :c, 0, {:c, 3})
   <section class="docstring">
     <p>Returns the last element in <code class="inline">list</code> or <code class="inline">nil</code> if <code class="inline">list</code> is empty.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.last([])
+<pre><code>iex\&gt; List.last([])
 nil
 
-iex&gt; List.last([1])
+iex\&gt; List.last([1])
 1
 
-iex&gt; List.last([1, 2, 3])
+iex\&gt; List.last([1, 2, 3])
 3</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L155" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L155" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -840,21 +840,21 @@ iex&gt; List.last([1, 2, 3])
 Negative indices indicate an offset from the end of the list.
 If <code class="inline">index</code> is out of bounds, the original <code class="inline">list</code> is returned.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.replace_at([1, 2, 3], 0, 0)
+<pre><code>iex\&gt; List.replace_at([1, 2, 3], 0, 0)
 [0, 2, 3]
 
-iex&gt; List.replace_at([1, 2, 3], 10, 0)
+iex\&gt; List.replace_at([1, 2, 3], 10, 0)
 [1, 2, 3]
 
-iex&gt; List.replace_at([1, 2, 3], -1, 0)
+iex\&gt; List.replace_at([1, 2, 3], -1, 0)
 [1, 2, 0]
 
-iex&gt; List.replace_at([1, 2, 3], -10, 0)
+iex\&gt; List.replace_at([1, 2, 3], -10, 0)
 [1, 2, 3]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L377" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L377" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -880,12 +880,12 @@ iex&gt; List.replace_at([1, 2, 3], -10, 0)
 which contains Unicode codepoints greater than 0xFF.</p>
 <p>Inlined by the compiler.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.to_atom('elixir')
+<pre><code>iex\&gt; List.to_atom('elixir')
 :elixir</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L455" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L455" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -913,7 +913,7 @@ which contains Unicode codepoints greater than 0xFF.</p>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L468" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L468" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -937,12 +937,12 @@ which contains Unicode codepoints greater than 0xFF.</p>
     <p>Returns the float whose text representation is <code class="inline">char_list</code>.</p>
 <p>Inlined by the compiler.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.to_float('2.2017764e+0')
+<pre><code>iex\&gt; List.to_float('2.2017764e+0')
 2.2017764</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L484" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L484" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -966,12 +966,12 @@ which contains Unicode codepoints greater than 0xFF.</p>
     <p>Returns an integer whose text representation is <code class="inline">char_list</code>.</p>
 <p>Inlined by the compiler.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.to_integer('123')
+<pre><code>iex\&gt; List.to_integer('123')
 123</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L500" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L500" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -995,12 +995,12 @@ which contains Unicode codepoints greater than 0xFF.</p>
     <p>Returns an integer whose text representation is <code class="inline">char_list</code> in base <code class="inline">base</code>.</p>
 <p>Inlined by the compiler.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.to_integer('3FF', 16)
+<pre><code>iex\&gt; List.to_integer('3FF', 16)
 1023</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L516" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L516" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1027,15 +1027,15 @@ strings into a string.</p>
 UTF-8 codepoints. If you have a list of bytes, you must instead use
 <a href="http://erlang.org/doc/man/binary.html">the <code class="inline">:binary</code> module</a>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.to_string([0x00E6, 0x00DF])
-&quot;æß&quot;
+<pre><code>iex\&gt; List.to_string([0x00E6, 0x00DF])
+\&quot;æß\&quot;
 
-iex&gt; List.to_string([0x0061, &quot;bc&quot;])
-&quot;abc&quot;</code></pre>
+iex\&gt; List.to_string([0x0061, \&quot;bc\&quot;])
+\&quot;abc\&quot;</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L554" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L554" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1059,12 +1059,12 @@ iex&gt; List.to_string([0x0061, &quot;bc&quot;])
     <p>Converts a list to a tuple.</p>
 <p>Inlined by the compiler.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.to_tuple([:share, [:elixir, 163]])
+<pre><code>iex\&gt; List.to_tuple([:share, [:elixir, 163]])
 {:share, [:elixir, 163]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L532" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L532" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1089,21 +1089,21 @@ iex&gt; List.to_string([0x0061, &quot;bc&quot;])
 Negative indices indicate an offset from the end of the list.
 If <code class="inline">index</code> is out of bounds, the original <code class="inline">list</code> is returned.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.update_at([1, 2, 3], 0, &amp;(&amp;1 + 10))
+<pre><code>iex\&gt; List.update_at([1, 2, 3], 0, \&amp;(\&amp;1 + 10))
 [11, 2, 3]
 
-iex&gt; List.update_at([1, 2, 3], 10, &amp;(&amp;1 + 10))
+iex\&gt; List.update_at([1, 2, 3], 10, \&amp;(\&amp;1 + 10))
 [1, 2, 3]
 
-iex&gt; List.update_at([1, 2, 3], -1, &amp;(&amp;1 + 10))
+iex\&gt; List.update_at([1, 2, 3], -1, \&amp;(\&amp;1 + 10))
 [1, 2, 13]
 
-iex&gt; List.update_at([1, 2, 3], -10, &amp;(&amp;1 + 10))
+iex\&gt; List.update_at([1, 2, 3], -10, \&amp;(\&amp;1 + 10))
 [1, 2, 3]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L406" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L406" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1128,18 +1128,18 @@ iex&gt; List.update_at([1, 2, 3], -10, &amp;(&amp;1 + 10))
 If the argument is already a list, returns the list.
 If the argument is <code class="inline">nil</code>, returns an empty list.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.wrap(&quot;hello&quot;)
-[&quot;hello&quot;]
+<pre><code>iex\&gt; List.wrap(\&quot;hello\&quot;)
+[\&quot;hello\&quot;]
 
-iex&gt; List.wrap([1, 2, 3])
+iex\&gt; List.wrap([1, 2, 3])
 [1,2,3]
 
-iex&gt; List.wrap(nil)
+iex\&gt; List.wrap(nil)
 []</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L295" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L295" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1163,15 +1163,15 @@ iex&gt; List.wrap(nil)
     <p>Zips corresponding elements from each list in <code class="inline">list_of_lists</code>.</p>
 <p>The zipping finishes as soon as any list terminates.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; List.zip([[1, 2], [3, 4], [5, 6]])
+<pre><code>iex\&gt; List.zip([[1, 2], [3, 4], [5, 6]])
 [{1, 3, 5}, {2, 4, 6}]
 
-iex&gt; List.zip([[1, 2], [3], [5, 6]])
+iex\&gt; List.zip([[1, 2], [3], [5, 6]])
 [{1, 3, 5}]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/list.ex#L322" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/list.ex#L322" class="view_source">Source</a>
   
 </section>
 

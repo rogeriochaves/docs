@@ -67,7 +67,7 @@ in <a href="Enum.html"><code class="inline">Enum</code></a> and <a href="List.ht
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L1" class="view_source">Source</a>
       
 
       
@@ -322,18 +322,18 @@ keyword list</p>
 Use <a href="#delete_first/2"><code class="inline">delete_first/2</code></a> to delete just the first entry in case of
 duplicated keys.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.delete([a: 1, b: 2], :a)
+<pre><code>iex\&gt; Keyword.delete([a: 1, b: 2], :a)
 [b: 2]
 
-iex&gt; Keyword.delete([a: 1, b: 2, a: 3], :a)
+iex\&gt; Keyword.delete([a: 1, b: 2, a: 3], :a)
 [b: 2]
 
-iex&gt; Keyword.delete([b: 2], :a)
+iex\&gt; Keyword.delete([b: 2], :a)
 [b: 2]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L263" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L263" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -357,18 +357,18 @@ iex&gt; Keyword.delete([b: 2], :a)
     <p>Deletes the entries in the keyword list for a <code class="inline">key</code> with <code class="inline">value</code>.</p>
 <p>If no <code class="inline">key</code> with <code class="inline">value</code> exists, returns the keyword list unchanged.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.delete([a: 1, b: 2], :a, 1)
+<pre><code>iex\&gt; Keyword.delete([a: 1, b: 2], :a, 1)
 [b: 2]
 
-iex&gt; Keyword.delete([a: 1, b: 2, a: 3], :a, 3)
+iex\&gt; Keyword.delete([a: 1, b: 2, a: 3], :a, 3)
 [a: 1, b: 2]
 
-iex&gt; Keyword.delete([b: 2], :a, 5)
+iex\&gt; Keyword.delete([b: 2], :a, 5)
 [b: 2]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L239" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L239" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -392,15 +392,15 @@ iex&gt; Keyword.delete([b: 2], :a, 5)
     <p>Deletes the first entry in the keyword list for a specific <code class="inline">key</code>.</p>
 <p>If the <code class="inline">key</code> does not exist, returns the keyword list unchanged.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.delete_first([a: 1, b: 2, a: 3], :a)
+<pre><code>iex\&gt; Keyword.delete_first([a: 1, b: 2, a: 3], :a)
 [b: 2, a: 3]
 
-iex&gt; Keyword.delete_first([b: 2], :a)
+iex\&gt; Keyword.delete_first([b: 2], :a)
 [b: 2]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L282" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L282" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -417,17 +417,17 @@ iex&gt; Keyword.delete_first([b: 2], :a)
     <p>Drops the given keys from the keyword list.</p>
 <p>Duplicated keys are preserved in the new keyword list.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; d = [a: 1, b: 2, c: 3, d: 4]
-iex&gt; Keyword.drop(d, [:b, :d])
+<pre><code>iex\&gt; d = [a: 1, b: 2, c: 3, d: 4]
+iex\&gt; Keyword.drop(d, [:b, :d])
 [a: 1, c: 3]
 
-iex&gt; d = [a: 1, b: 2, b: 3, c: 3, d: 4, a: 5]
-iex&gt; Keyword.drop(d, [:b, :d])
+iex\&gt; d = [a: 1, b: 2, b: 3, c: 3, d: 4, a: 5]
+iex\&gt; Keyword.drop(d, [:b, :d])
 [a: 1, c: 3, a: 5]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L539" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L539" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -452,12 +452,12 @@ iex&gt; Keyword.drop(d, [:b, :d])
 <p>Two keywords are considered to be equal if they contain
 the same keys and those keys contain the same values.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.equal?([a: 1, b: 2], [b: 2, a: 1])
+<pre><code>iex\&gt; Keyword.equal?([a: 1, b: 2], [b: 2, a: 1])
 true</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L340" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L340" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -481,15 +481,15 @@ true</code></pre>
     <p>Fetches the value for a specific <code class="inline">key</code> and returns it in a tuple.</p>
 <p>If the <code class="inline">key</code> does not exist, returns <code class="inline">:error</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.fetch([a: 1], :a)
+<pre><code>iex\&gt; Keyword.fetch([a: 1], :a)
 {:ok, 1}
 
-iex&gt; Keyword.fetch([a: 1], :b)
+iex\&gt; Keyword.fetch([a: 1], :b)
 :error</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L140" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L140" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -513,15 +513,15 @@ iex&gt; Keyword.fetch([a: 1], :b)
     <p>Fetches the value for specific <code class="inline">key</code>. </p>
 <p>If <code class="inline">key</code> does not exist, a <a href="KeyError.html"><code class="inline">KeyError</code></a> is raised.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.fetch!([a: 1], :a)
+<pre><code>iex\&gt; Keyword.fetch!([a: 1], :a)
 1
 
-iex&gt; Keyword.fetch!([a: 1], :b)
+iex\&gt; Keyword.fetch!([a: 1], :b)
 ** (KeyError) key :b not found in: [a: 1]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L162" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L162" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -547,18 +547,18 @@ iex&gt; Keyword.fetch!([a: 1], :b)
 <p>If duplicated entries exist, the first one is returned.
 Use <a href="#get_values/2"><code class="inline">get_values/2</code></a> to retrieve all entries.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.get([a: 1], :a)
+<pre><code>iex\&gt; Keyword.get([a: 1], :a)
 1
 
-iex&gt; Keyword.get([a: 1], :b)
+iex\&gt; Keyword.get([a: 1], :b)
 nil
 
-iex&gt; Keyword.get([a: 1], :b, 3)
+iex\&gt; Keyword.get([a: 1], :b, 3)
 3</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L118" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L118" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -581,12 +581,12 @@ iex&gt; Keyword.get([a: 1], :b, 3)
   <section class="docstring">
     <p>Gets all values for a specific <code class="inline">key</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.get_values([a: 1, a: 2], :a)
+<pre><code>iex\&gt; Keyword.get_values([a: 1, a: 2], :a)
 [1,2]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L179" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L179" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -609,15 +609,15 @@ iex&gt; Keyword.get([a: 1], :b, 3)
   <section class="docstring">
     <p>Returns whether a given <code class="inline">key</code> exists in the given <code class="inline">keywords</code>.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.has_key?([a: 1], :a)
+<pre><code>iex\&gt; Keyword.has_key?([a: 1], :a)
 true
 
-iex&gt; Keyword.has_key?([a: 1], :b)
+iex\&gt; Keyword.has_key?([a: 1], :b)
 false</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L400" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L400" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -641,15 +641,15 @@ false</code></pre>
     <p>Returns all keys from the keyword list. </p>
 <p>Duplicated keys appear duplicated in the final list of keys.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.keys([a: 1, b: 2])
+<pre><code>iex\&gt; Keyword.keys([a: 1, b: 2])
 [:a,:b]
 
-iex&gt; Keyword.keys([a: 1, b: 2, a: 3])
+iex\&gt; Keyword.keys([a: 1, b: 2, a: 3])
 [:a,:b,:a]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L203" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L203" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -674,7 +674,7 @@ iex&gt; Keyword.keys([a: 1, b: 2, a: 3])
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L40" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L40" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -698,12 +698,12 @@ iex&gt; Keyword.keys([a: 1, b: 2, a: 3])
     <p>Merges two keyword lists into one. </p>
 <p>If they have duplicated keys, the one given in the second argument wins.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.merge([a: 1, b: 2], [a: 3, d: 4]) |&gt; Enum.sort
+<pre><code>iex\&gt; Keyword.merge([a: 1, b: 2], [a: 3, d: 4]) |\&gt; Enum.sort
 [a: 3, b: 2, d: 4]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L356" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L356" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -727,14 +727,14 @@ iex&gt; Keyword.keys([a: 1, b: 2, a: 3])
     <p>Merges two keyword lists into one. </p>
 <p>If they have duplicated keys, the given function is invoked to solve conflicts.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.merge([a: 1, b: 2], [a: 3, d: 4], fn (_k, v1, v2) -&gt;
-...&gt;  v1 + v2
-...&gt; end)
+<pre><code>iex\&gt; Keyword.merge([a: 1, b: 2], [a: 3, d: 4], fn (_k, v1, v2) -\&gt;
+...\&gt;  v1 + v2
+...\&gt; end)
 [a: 4, b: 2, d: 4]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L375" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L375" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -759,7 +759,7 @@ iex&gt; Keyword.keys([a: 1, b: 2, a: 3])
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L51" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L51" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -785,12 +785,12 @@ iex&gt; Keyword.keys([a: 1, b: 2, a: 3])
 Unlike <code class="inline">Enum.into(enumerable, [])</code>,
 <code class="inline">Keyword.new(enumerable)</code> guarantees the keys are unique.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.new([{:b, 1}, {:a, 2}])
+<pre><code>iex\&gt; Keyword.new([{:b, 1}, {:a, 2}])
 [a: 2, b: 1]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L69" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L69" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -816,12 +816,12 @@ Unlike <code class="inline">Enum.into(enumerable, [])</code>,
 Unlike <code class="inline">Enum.into(enumerable, [], fun)</code>,
 <code class="inline">Keyword.new(enumerable, fun)</code> guarantees the keys are unique.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.new([:a, :b], fn (x) -&gt; {x, x} end) |&gt; Enum.sort
+<pre><code>iex\&gt; Keyword.new([:a, :b], fn (x) -\&gt; {x, x} end) |\&gt; Enum.sort
 [a: :a, b: :b]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L89" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L89" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -840,24 +840,24 @@ list as well as the keyword list without <code class="inline">key</code>.</p>
 <p>All duplicated keys are removed. See <a href="#pop_first/3"><code class="inline">pop_first/3</code></a> for
 removing only the first entry.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.pop [a: 1], :a
+<pre><code>iex\&gt; Keyword.pop [a: 1], :a
 {1,[]}
 
-iex&gt; Keyword.pop [a: 1], :b
+iex\&gt; Keyword.pop [a: 1], :b
 {nil,[a: 1]}
 
-iex&gt; Keyword.pop [a: 1], :b, 3
+iex\&gt; Keyword.pop [a: 1], :b, 3
 {3,[a: 1]}
 
-iex&gt; Keyword.pop [a: 1], :b, 3
+iex\&gt; Keyword.pop [a: 1], :b, 3
 {3,[a: 1]}
 
-iex&gt; Keyword.pop [a: 1, a: 2], :a
+iex\&gt; Keyword.pop [a: 1, a: 2], :a
 {1,[]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L568" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L568" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -876,24 +876,24 @@ list as well as the keyword list without that particular occurrence
 of <code class="inline">key</code>.</p>
 <p>Duplicated keys are not removed.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.pop_first [a: 1], :a
+<pre><code>iex\&gt; Keyword.pop_first [a: 1], :a
 {1,[]}
 
-iex&gt; Keyword.pop_first [a: 1], :b
+iex\&gt; Keyword.pop_first [a: 1], :b
 {nil,[a: 1]}
 
-iex&gt; Keyword.pop_first [a: 1], :b, 3
+iex\&gt; Keyword.pop_first [a: 1], :b, 3
 {3,[a: 1]}
 
-iex&gt; Keyword.pop_first [a: 1], :b, 3
+iex\&gt; Keyword.pop_first [a: 1], :b, 3
 {3,[a: 1]}
 
-iex&gt; Keyword.pop_first [a: 1, a: 2], :a
+iex\&gt; Keyword.pop_first [a: 1, a: 2], :a
 {1,[a: 2]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L597" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L597" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -918,15 +918,15 @@ iex&gt; Keyword.pop_first [a: 1, a: 2], :a
 <p>If a previous value is already stored, all entries are
 removed and the value is overridden.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.put([a: 1, b: 2], :a, 3)
+<pre><code>iex\&gt; Keyword.put([a: 1, b: 2], :a, 3)
 [a: 3, b: 2]
 
-iex&gt; Keyword.put([a: 1, b: 2, a: 4], :a, 3)
+iex\&gt; Keyword.put([a: 1, b: 2, a: 4], :a, 3)
 [a: 3, b: 2]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L302" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L302" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -950,15 +950,15 @@ iex&gt; Keyword.put([a: 1, b: 2, a: 4], :a, 3)
     <p>Puts the given <code class="inline">value</code> under <code class="inline">key</code> unless the entry <code class="inline">key</code>
 already exists.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.put_new([a: 1], :b, 2)
+<pre><code>iex\&gt; Keyword.put_new([a: 1], :b, 2)
 [b: 2, a: 1]
 
-iex&gt; Keyword.put_new([a: 1, b: 2], :a, 3)
+iex\&gt; Keyword.put_new([a: 1, b: 2], :a, 3)
 [a: 1, b: 2]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L320" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L320" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -978,17 +978,17 @@ separate keyword list. </p>
 <p>Keys for which there are no entires in the keyword list are ignored.</p>
 <p>Entries with duplicated keys end up in the same keyword list.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; d = [a: 1, b: 2, c: 3, d: 4]
-iex&gt; Keyword.split(d, [:a, :c, :e])
+<pre><code>iex\&gt; d = [a: 1, b: 2, c: 3, d: 4]
+iex\&gt; Keyword.split(d, [:a, :c, :e])
 {[a: 1, c: 3], [b: 2, d: 4]}
 
-iex&gt; d = [a: 1, b: 2, c: 3, d: 4, a: 5]
-iex&gt; Keyword.split(d, [:a, :c, :e])
+iex\&gt; d = [a: 1, b: 2, c: 3, d: 4, a: 5]
+iex\&gt; Keyword.split(d, [:a, :c, :e])
 {[a: 1, c: 3, a: 5], [b: 2, d: 4]}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L489" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L489" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1006,17 +1006,17 @@ iex&gt; Keyword.split(d, [:a, :c, :e])
 keyword list.</p>
 <p>Duplicated keys are preserved in the new keyword list.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; d = [a: 1, b: 2, c: 3, d: 4]
-iex&gt; Keyword.take(d, [:a, :c, :e])
+<pre><code>iex\&gt; d = [a: 1, b: 2, c: 3, d: 4]
+iex\&gt; Keyword.take(d, [:a, :c, :e])
 [a: 1, c: 3]
 
-iex&gt; d = [a: 1, b: 2, c: 3, d: 4, a: 5]
-iex&gt; Keyword.take(d, [:a, :c, :e])
+iex\&gt; d = [a: 1, b: 2, c: 3, d: 4, a: 5]
+iex\&gt; Keyword.take(d, [:a, :c, :e])
 [a: 1, c: 3, a: 5]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L519" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L519" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1042,15 +1042,15 @@ iex&gt; Keyword.take(d, [:a, :c, :e])
 <p>If there are duplicated keys, they are all removed and only the first one
 is updated.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.update([a: 1], :a, 13, &amp;(&amp;1 * 2))
+<pre><code>iex\&gt; Keyword.update([a: 1], :a, 13, \&amp;(\&amp;1 * 2))
 [a: 2]
 
-iex&gt; Keyword.update([a: 1], :b, 11, &amp;(&amp;1 * 2))
+iex\&gt; Keyword.update([a: 1], :b, 11, \&amp;(\&amp;1 * 2))
 [a: 1, b: 11]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L456" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L456" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1076,15 +1076,15 @@ iex&gt; Keyword.update([a: 1], :b, 11, &amp;(&amp;1 * 2))
 <p>If there are duplicated keys, they are all removed and only the first one
 is updated.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.update!([a: 1], :a, &amp;(&amp;1 * 2))
+<pre><code>iex\&gt; Keyword.update!([a: 1], :a, \&amp;(\&amp;1 * 2))
 [a: 2]
 
-iex&gt; Keyword.update!([a: 1], :b, &amp;(&amp;1 * 2))
+iex\&gt; Keyword.update!([a: 1], :b, \&amp;(\&amp;1 * 2))
 ** (KeyError) key :b not found in: [a: 1]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L422" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L422" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -1107,12 +1107,12 @@ iex&gt; Keyword.update!([a: 1], :b, &amp;(&amp;1 * 2))
   <section class="docstring">
     <p>Returns all values from the keyword list.</p>
 <h2>Examples</h2>
-<pre><code>iex&gt; Keyword.values([a: 1, b: 2])
+<pre><code>iex\&gt; Keyword.values([a: 1, b: 2])
 [1,2]</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/keyword.ex#L217" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/keyword.ex#L217" class="view_source">Source</a>
   
 </section>
 

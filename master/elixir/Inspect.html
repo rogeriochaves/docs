@@ -61,15 +61,15 @@ implementation:</p>
   import Inspect.Algebra
 
   def inspect(dict, opts) do
-    concat [&quot;#HashSet&lt;&quot;, to_doc(HashSet.to_list(dict), opts), &quot;&gt;&quot;]
+    concat [\&quot;#HashSet\&lt;\&quot;, to_doc(HashSet.to_list(dict), opts), \&quot;\&gt;\&quot;]
   end
 end</code></pre>
 <p>The <code class="inline">concat</code> function comes from <a href="Inspect.Algebra.html"><code class="inline">Inspect.Algebra</code></a> and it
 concatenates algebra documents together. In the example above,
-it is concatenating the string <code class="inline">&quot;HashSet&lt;&quot;</code> (all strings are
+it is concatenating the string <code class="inline">\&quot;HashSet\&lt;\&quot;</code> (all strings are
 valid algebra documents that keep their formatting when pretty
 printed), the document returned by <a href="Inspect.Algebra.html#to_doc/2"><code class="inline">Inspect.Algebra.to_doc/2</code></a> and the
-other string <code class="inline">&quot;&gt;&quot;</code>.</p>
+other string <code class="inline">\&quot;\&gt;\&quot;</code>.</p>
 <p>Since regular strings are valid entities in an algebra document,
 an implementation of inspect may simply return a string,
 although that will devoid it of any pretty-printing.</p>
@@ -85,7 +85,7 @@ you can invoke it as:</p>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/inspect.ex#L4" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/inspect.ex#L4" class="view_source">Source</a>
       
 
       
@@ -129,7 +129,7 @@ you can invoke it as:</p>
     
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/26291179130268373c9e4a392d3e8f0d0d93380b/lib/elixir/lib/inspect.ex#L57" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/af9a69dadd9d68abcf9e01db86e8ffe180f937ce/lib/elixir/lib/inspect.ex#L57" class="view_source">Source</a>
   
 </section>
 
