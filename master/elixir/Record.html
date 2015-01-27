@@ -34,6 +34,8 @@
         
         
         
+          <li><a href="#functions_details">Functions</a></li>
+        
         
           <li><a href="#macros_details">Macros</a></li>
         
@@ -72,7 +74,7 @@ end</code></pre>
       
 
       
-        <a href="https://github.com/elixir-lang/elixir/blob/fcd63208d62caf8bc5edb861a55e47eeb66393ae/lib/elixir/lib/record.ex#L1" class="view_source">Source</a>
+        <a href="https://github.com/elixir-lang/elixir/blob/b5628f8857c292ca521f9efa57aa5a55d4b26ffb/lib/elixir/lib/record.ex#L1" class="view_source">Source</a>
       
 
       
@@ -119,6 +121,38 @@ end</code></pre>
 
       
 
+      
+        <section id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <section class="detail">
+  <div class="detail_header" id="extract/2">
+    <span class="signature"><strong>extract(name, opts)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#extract/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Extracts record information from an Erlang file.</p>
+<p>Returns a quoted expression containing the fields as a list
+of tuples. It expects the record name to be an atom and the
+library path to be a string at expansion time.</p>
+<h2>Examples</h2>
+<pre><code>iex\&gt; Record.extract(:file_info, from_lib: \&quot;kernel/include/file.hrl\&quot;)
+[size: :undefined, type: :undefined, access: :undefined, atime: :undefined,
+ mtime: :undefined, ctime: :undefined, mode: :undefined, links: :undefined,
+ major_device: :undefined, minor_device: :undefined, inode: :undefined,
+ uid: :undefined, gid: :undefined]</code></pre>
+
+  </section>
+  
+    <a href="https://github.com/elixir-lang/elixir/blob/b5628f8857c292ca521f9efa57aa5a55d4b26ffb/lib/elixir/lib/record.ex#L55" class="view_source">Source</a>
+  
+</section>
+
+        </section>
       
 
       
@@ -167,10 +201,25 @@ end
 
 require User
 User.user() #=\&gt; {User, nil}</code></pre>
+<h2>Defining extracted records with anonymous functions</h2>
+<p>If a record defines an anonymous function, an ArgumentError
+will occur if you attempt to create a record with it.
+This can occur unintentionally when defining a record after extracting
+it from an Erlang library that uses anonymous functions for defaults.</p>
+<pre><code>Record.defrecord :my_rec, Record.extract(...)
+#=\&gt; ** (ArgumentError) invalid value for record field fun_field,
+cannot escape #Function\&lt;12.90072148/2 in :erl_eval.expr/5\&gt;.</code></pre>
+<p>To work around this error, redefine the field with your own \&amp;M.f/a function,
+like so:</p>
+<pre><code>defmodule MyRec do
+  require Record
+  Record.defrecord :my_rec, Record.extract(...) |\&gt; Keyword.merge(fun_field: \&amp;__MODULE__.foo/2)
+  def foo(bar, baz), do: IO.inspect({bar, baz})
+end</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/fcd63208d62caf8bc5edb861a55e47eeb66393ae/lib/elixir/lib/record.ex#L160" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/b5628f8857c292ca521f9efa57aa5a55d4b26ffb/lib/elixir/lib/record.ex#L179" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -188,34 +237,7 @@ User.user() #=\&gt; {User, nil}</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/fcd63208d62caf8bc5edb861a55e47eeb66393ae/lib/elixir/lib/record.ex#L178" class="view_source">Source</a>
-  
-</section>
-<section class="detail">
-  <div class="detail_header" id="extract/2">
-    <span class="signature"><strong>extract(name, opts)</strong></span>
-    <div class="detail_header_links">
-      <span class="detail_type">(macro)</span>
-      <a href="#extract/2" class="detail_link" title="Link to this macro">#</a>
-      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
-    </div>
-  </div>
-  
-  <section class="docstring">
-    <p>Extracts record information from an Erlang file.</p>
-<p>Returns a quoted expression containing the fields as a list
-of tuples. It expects the record name to be an atom and the
-library path to be a string at expansion time.</p>
-<h2>Examples</h2>
-<pre><code>iex\&gt; Record.extract(:file_info, from_lib: \&quot;kernel/include/file.hrl\&quot;)
-[size: :undefined, type: :undefined, access: :undefined, atime: :undefined,
- mtime: :undefined, ctime: :undefined, mode: :undefined, links: :undefined,
- major_device: :undefined, minor_device: :undefined, inode: :undefined,
- uid: :undefined, gid: :undefined]</code></pre>
-
-  </section>
-  
-    <a href="https://github.com/elixir-lang/elixir/blob/fcd63208d62caf8bc5edb861a55e47eeb66393ae/lib/elixir/lib/record.ex#L55" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/b5628f8857c292ca521f9efa57aa5a55d4b26ffb/lib/elixir/lib/record.ex#L197" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -241,7 +263,7 @@ false</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/fcd63208d62caf8bc5edb861a55e47eeb66393ae/lib/elixir/lib/record.ex#L102" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/b5628f8857c292ca521f9efa57aa5a55d4b26ffb/lib/elixir/lib/record.ex#L102" class="view_source">Source</a>
   
 </section>
 <section class="detail">
@@ -264,7 +286,7 @@ true</code></pre>
 
   </section>
   
-    <a href="https://github.com/elixir-lang/elixir/blob/fcd63208d62caf8bc5edb861a55e47eeb66393ae/lib/elixir/lib/record.ex#L71" class="view_source">Source</a>
+    <a href="https://github.com/elixir-lang/elixir/blob/b5628f8857c292ca521f9efa57aa5a55d4b26ffb/lib/elixir/lib/record.ex#L71" class="view_source">Source</a>
   
 </section>
 
